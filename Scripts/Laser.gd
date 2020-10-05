@@ -7,7 +7,7 @@ extends Spatial
 signal pressed
 
 onready var beam = load("res://Assets/Beam.tscn")
-export var color = Color(0,0,0)
+export var color = Color(1,1,1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,4 +32,6 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 
 func _on_Tip_ready():
 	var tip = get_node("Cylinder/Tip")
-	tip.get_surface_material(0).albedo_color = color
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	tip.set_material_override(material)

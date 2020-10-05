@@ -34,7 +34,9 @@ func set_orientation():
 	look_at(connectedPosition, Vector3(0,1,0))
 	
 func set_color(c):
-	mesh.get_surface_material(0).albedo_color = c
+	var material = SpatialMaterial.new()
+	material.albedo_color = c
+	mesh.set_material_override(material)
 	
 	
 

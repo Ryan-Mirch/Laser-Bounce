@@ -99,7 +99,9 @@ func bounce():
 	
 
 func set_color():
-	mesh.get_surface_material(0).albedo_color = color
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	mesh.set_material_override(material)
 	
 func _get_closest_tile(state): 
 	var tiles =  get_tree().get_nodes_in_group("Tile")

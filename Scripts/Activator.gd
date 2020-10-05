@@ -8,7 +8,7 @@ signal pressed
 
 var activatedCount = 0
 
-export var color = Color(0,0,0)
+export var color = Color(1,1,1)
 export var activatedGroups = ["group name"]
 
 onready var wire = load("res://Assets/Wire.tscn")
@@ -70,8 +70,18 @@ func spawn_wires():
 			add_child(newWire)
 
 func _on_Sphere_ready():
-	$"Sphere".get_surface_material(0).albedo_color = color
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	$"Sphere".set_material_override(material)
 
 
 func _on_Cube052_ready():
-	$"Cube052".get_surface_material(0).albedo_color = color
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	$"Cube052".set_material_override(material)
+
+
+func _on_Cube075_ready():
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	$"Cube074/Cube075".set_material_override(material)

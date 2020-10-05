@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=2]
@@ -26,10 +26,12 @@
 [ext_resource path="res://Assets/Activator Gate/R90 - AGate.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Lasers/R45 - Laser.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Activator Gate/Activator Gate.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Assets/Activator Absorber/Drag - Absorber.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Assets/Activator Absorber/Activator Absorber.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=29]
-[ext_resource path="res://UI/Play.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/Activator Mirror/Activator Mirror.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/Activator Mirror/R90 - AMirror.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Assets/Activator Absorber/Drag - Absorber.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/Activator Absorber/Activator Absorber.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=31]
+[ext_resource path="res://UI/Play.tscn" type="PackedScene" id=32]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -630,6 +632,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2 )
 [node name="R90 - Laser" parent="Objects" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 16, 1, -2 )
 
+[node name="Laser" parent="Objects/R90 - Laser" index="2"]
+color = Color( 1, 1, 1, 1 )
+
 [node name="Drag - R90 - Laser" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2 )
 
@@ -676,43 +681,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2 )
 [node name="DraggableBase2" parent="Objects" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -14 )
 
-[node name="DraggableBase" parent="." instance=ExtResource( 21 )]
+[node name="DraggableBase3" parent="Objects" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -14 )
 
-[node name="DraggableBase2" parent="." instance=ExtResource( 22 )]
+[node name="DraggableBase4" parent="Objects" instance=ExtResource( 22 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -14 )
 
-[node name="45 Rotatable Base2" parent="." instance=ExtResource( 23 )]
+[node name="45 Rotatable Base2" parent="Objects" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -14 )
 
-[node name="90 Rotatable Base" parent="." instance=ExtResource( 24 )]
+[node name="90 Rotatable Base2" parent="Objects" instance=ExtResource( 24 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -14 )
 
-[node name="45 Rotatable Base" parent="." instance=ExtResource( 25 )]
+[node name="45 Rotatable Base3" parent="Objects" instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -2 )
 
-[node name="Activator Gate" parent="." instance=ExtResource( 26 )]
+[node name="Activator Gate" parent="Objects" instance=ExtResource( 26 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18, 0, -14 )
 color = Color( 1, 0, 0, 1 )
 
-[node name="Drag - Absorber" parent="." instance=ExtResource( 27 )]
+[node name="Activator Mirror" parent="Objects" instance=ExtResource( 27 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18, 0, -18 )
+
+[node name="90 Rotatable Base3" parent="Objects" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -18 )
+
+[node name="Drag - Absorber" parent="Objects" instance=ExtResource( 29 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10 )
 
-[node name="Activator Absorber" parent="Drag - Absorber" index="2"]
-color = Color( 1, 0, 0, 1 )
-activatedGroups = [ "activator1" ]
-
-[node name="Activator Absorber" parent="." instance=ExtResource( 28 )]
+[node name="Activator Absorber" parent="Objects" instance=ExtResource( 30 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18, 0, -10 )
 color = Color( 1, 0, 0, 1 )
 
 [node name="Camera Related" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Camera" type="Camera" parent="Camera Related"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9 )
 environment = SubResource( 4 )
-script = ExtResource( 29 )
+script = ExtResource( 31 )
 mouse_mode = 0
 sensitivity = 0.582
 smoothness = 0.634
@@ -728,13 +736,13 @@ transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0
 light_energy = 0.68
 
 [node name="Camera Rotation Point" type="Spatial" parent="Camera Related"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4843, 2, -5.10161 )
 
-[node name="Play Button" parent="." instance=ExtResource( 30 )]
+[node name="Play Button" parent="." instance=ExtResource( 32 )]
 [connection signal="pressed" from="Play Button" to="." method="_on_Play_Button_pressed"]
+
+[editable path="Objects/R90 - Laser"]
 
 [editable path="Objects/Drag - R90 - 1SM2"]
 
 [editable path="Objects/Drag - R90 - 1SM3"]
-
-[editable path="Drag - Absorber"]
