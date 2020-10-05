@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	call_deferred(\"_close_closest_tile\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _get_closest_tile(state): 
+	var tiles =  get_tree().get_nodes_in_group(\"Tile\")
+	var shortest = -1
+	var tile
+	
+	for t in tiles:
+		
+		if state == \"Open\":
+			if t.isOpen() == false: #skip if closed
+				continue
+		if state == \"Closed\":
+			if t.isOpen() == true: #skip if open
+				continue
+			
+		var currentDistance = t.translation.distance_to(get_parent().translation)
+		if currentDistance < shortest or shortest == -1:
+			shortest = currentDistance
+			tile = t
+			
+	return tile
+
+func _close_closest_tile():
+	var tile = _get_closest_tile(\"\")
+	tile.open = false
+
+"
+
+[node name="Close Closest Tile On Ready" type="Node"]
+script = SubResource( 1 )

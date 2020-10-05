@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+signal clicked
+signal dragStart
+
+var posOfClickStart
+var isPressed = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	if isPressed:
+		if posOfClickStart != get_viewport().get_mouse_position():
+			emit_signal(\"dragStart\")
+			isPressed = false
+			
+func _input(event):		
+	if event.is_action_released(\"grab\") and isPressed:
+		if posOfClickStart == get_viewport().get_mouse_position():
+			emit_signal(\"clicked\")
+			isPressed = false
+			
+		
+func pressed():
+	posOfClickStart = get_viewport().get_mouse_position()
+	isPressed = true
+	
+func _on_1SM_pressed():
+	pressed()
+
+func _on_DraggableBase_pressed():
+	pressed()
+
+func _on_90_Rotatable_Base_pressed():
+	pressed()
+
+func _on_Drag__1SM_pressed():
+	pressed()
+
+func _on_Laser_pressed():
+	pressed()
+	
+func _on_Activator_Absorber_pressed():
+	pressed()
+
+func _on_45_Rotatable_Base_pressed():
+	pressed()
+
+func _on_Activator_Gate_pressed():
+	pressed()
+"
+
+[node name="Click Manager" type="Node"]
+script = SubResource( 1 )
