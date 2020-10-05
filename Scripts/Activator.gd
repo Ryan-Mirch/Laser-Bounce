@@ -9,7 +9,7 @@ signal pressed
 var activatedCount = 0
 
 export var color = Color(1,1,1)
-export var activatedGroups = ["group name"]
+export(Array, NodePath) var activatedObjects
 
 onready var wire = load("res://Assets/Wire.tscn")
 
@@ -26,14 +26,15 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		emit_signal("pressed")
 			
 func activated():
-	print("activated")
-	for g in activatedGroups:
-		get_tree().call_group(g, "activate")
+	if activatedObjects.size() > 0:
+		for path in activatedObjects:
+			get_node(path).activate()
 	
 	
 func deactivated():
-	for g in activatedGroups:
-		get_tree().call_group(g, "deactivate")
+	if activatedObjects.size() > 0:
+		for path in activatedObjects:
+			get_node(path).deactivate()
 
 func _on_Area_body_entered(body):
 	var sensedColor = body.get_parent().color
@@ -59,10 +60,13 @@ func check_color(_c): #check if the color is correct
 	return true
 	
 func spawn_wires():	
-	for g in activatedGroups:
-		for n in get_tree().get_nodes_in_group(g):
-			print("spawning")
+	if activatedObjects.size() > 0:
+		for path in activatedObjects:
+			
+			var n = get_node(path)
+			
 			n.activateTarget += 1
+			
 			var newWire = wire.instance()
 			newWire.connectedObject = n
 			newWire.translation.y = translation.y + 1.5

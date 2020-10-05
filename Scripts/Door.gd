@@ -7,6 +7,7 @@ extends Spatial
 signal pressed
 var activateCount = 0
 var activateTarget = 0
+var activated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,13 +24,13 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		
 func activate():
 	activateCount += 1
-	print(activateCount)
 	
 	if activateCount == activateTarget:
 		$AP.play("Open")
+		activated = true
 	
 func deactivate():
 	activateCount -= 1
-	print(activateCount)
-	if activateCount != activateTarget:
+	if activateCount != activateTarget and activated == true:
 		$AP.play_backwards("Open")
+		activated = false

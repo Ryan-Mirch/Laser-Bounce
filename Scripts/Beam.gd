@@ -10,7 +10,8 @@ onready var body = get_node("StaticBody")
 onready var beam = load("res://Assets/Beam.tscn")
 
 var color
-var canBounce = true
+var hasBounced = false
+var readyToBounce = false
 var scaleY
 var collision_point
 var distance = 0
@@ -39,9 +40,9 @@ func _physics_process(_delta):
 	set_length(distance)
 		
 	if ray.is_colliding():
-		if ray.get_collider().is_in_group("Reflect") and canBounce and scaleY != 0:
-			bounce()
-		if !canBounce and !ray.get_collider().is_in_group("Reflect"):
+		if ray.get_collider().is_in_group("Reflect") and !hasBounced and scaleY != 0:
+			readyToBounce = true
+		if hasBounced and !ray.get_collider().is_in_group("Reflect"):
 			unBounce()
 			
 
@@ -66,10 +67,14 @@ func unBounce():
 	if child_beam != null:
 		child_beam.queue_free()
 		
-	canBounce = true
+	hasBounced = false
+	readyToBounce = true
 	
 func bounce():
-	canBounce = false
+	if !readyToBounce: return
+		
+	hasBounced = true
+	readyToBounce = false
 	
 	
 	var normal = ray.get_collision_normal()

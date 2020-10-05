@@ -32,8 +32,9 @@ func _input(event):
 			
 		
 func pressed():
-	posOfClickStart = get_viewport().get_mouse_position()
-	isPressed = true
+	if !Global.playing:
+		posOfClickStart = get_viewport().get_mouse_position()
+		isPressed = true
 	
 func _on_1SM_pressed():
 	pressed()
@@ -58,6 +59,10 @@ func _on_45_Rotatable_Base_pressed():
 
 func _on_Activator_Gate_pressed():
 	pressed()
+
+
+func _on_Activator_Mirror_pressed():
+	pass # Replace with function body.
 "
 
 [node name="Click Manager" type="Node"]

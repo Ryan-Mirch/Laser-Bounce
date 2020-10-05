@@ -2,6 +2,7 @@ extends Node
 
 var pointerTranslation
 var debug = false
+var playing = false
 
 
 
