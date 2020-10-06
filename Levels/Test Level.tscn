@@ -649,7 +649,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -2 )
 
 [node name="Drag - Laser" parent="Objects" instance=ExtResource( 14 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2 )
+
+[node name="Laser" parent="Objects/Drag - Laser" index="2"]
+color = Color( 0, 0, 0.862745, 1 )
 
 [node name="R90 - Laser" parent="Objects" instance=ExtResource( 15 )]
 editor/display_folded = true
@@ -691,11 +695,53 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8 )
 [node name="1SM" parent="Objects/Drag - R90 - 1SM2/90 Rotatable Base" index="2"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
 
+[node name="Drag - R90 - 1SM4" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM4/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
+[node name="Drag - R90 - 1SM6" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM6/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
+[node name="Drag - R90 - 1SM9" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM9/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
 [node name="Drag - R90 - 1SM3" parent="Objects" instance=ExtResource( 23 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8 )
 
 [node name="1SM" parent="Objects/Drag - R90 - 1SM3/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
+[node name="Drag - R90 - 1SM5" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM5/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
+[node name="Drag - R90 - 1SM7" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM7/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
+
+[node name="Drag - R90 - 1SM8" parent="Objects" instance=ExtResource( 23 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8 )
+
+[node name="1SM" parent="Objects/Drag - R90 - 1SM8/90 Rotatable Base" index="2"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -2.25, -0.00723457 )
 
 [node name="Drag - R45 - Laser" parent="Objects" instance=ExtResource( 24 )]
@@ -735,6 +781,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10 )
 
 [node name="Activator Absorber" parent="Objects/Drag - Absorber" index="2"]
+color = Color( 0, 0, 0.862745, 1 )
 activatedObjects = [ NodePath("../../Door") ]
 
 [node name="Activator Absorber" parent="Objects" instance=ExtResource( 35 )]
@@ -775,11 +822,25 @@ wait_time = 0.4
 
 [editable path="Objects/45 Rotatable Base4"]
 
+[editable path="Objects/Drag - Laser"]
+
 [editable path="Objects/R90 - Laser"]
 
 [editable path="Objects/Drag - R90 - 1SM2"]
 
+[editable path="Objects/Drag - R90 - 1SM4"]
+
+[editable path="Objects/Drag - R90 - 1SM6"]
+
+[editable path="Objects/Drag - R90 - 1SM9"]
+
 [editable path="Objects/Drag - R90 - 1SM3"]
+
+[editable path="Objects/Drag - R90 - 1SM5"]
+
+[editable path="Objects/Drag - R90 - 1SM7"]
+
+[editable path="Objects/Drag - R90 - 1SM8"]
 
 [editable path="Objects/90 Rotatable Base3"]
 

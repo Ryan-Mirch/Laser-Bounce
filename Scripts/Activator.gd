@@ -8,7 +8,7 @@ signal pressed
 
 var activatedCount = 0
 
-export var color = Color(1,1,1)
+export var color = Color(255,255,255)
 export(Array, NodePath) var activatedObjects
 
 onready var wire = load("res://Assets/Wire.tscn")
@@ -56,8 +56,11 @@ func _on_Area_body_exited(body):
 			deactivated()
 
 
-func check_color(_c): #check if the color is correct
-	return true
+func check_color(c): #check if the color is correct
+	if color == c: return true
+	if color == Color(255,255,255): return true
+	if c == Color(255,255,255): return true
+	return false
 	
 func spawn_wires():	
 	if activatedObjects.size() > 0:
