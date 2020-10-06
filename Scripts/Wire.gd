@@ -10,6 +10,7 @@ var scaleY
 var connectedObject
 var color
 var connectedPosition
+var material
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,9 +35,15 @@ func set_orientation():
 	look_at(connectedPosition, Vector3(0,1,0))
 	
 func set_color(c):
-	var material = SpatialMaterial.new()
-	material.albedo_color = c
+	color = c
+	material = SpatialMaterial.new()
+	material.albedo_color = c.darkened(0.85)
 	mesh.set_material_override(material)
 	
+func activate():
+	material.albedo_color = color.darkened(-0.85)
+	
+func deactivate():
+	material.albedo_color = color.darkened(0.85)
 	
 

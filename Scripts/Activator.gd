@@ -7,6 +7,7 @@ extends Spatial
 signal pressed
 
 var activatedCount = 0
+var wires = []
 
 export var color = Color(255,255,255)
 export(Array, NodePath) var activatedObjects
@@ -26,6 +27,9 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		emit_signal("pressed")
 			
 func activated():
+	for w in wires:
+		w.activate()
+	
 	if activatedObjects.size() > 0:
 		for path in activatedObjects:
 			get_node(path).activate()
@@ -33,6 +37,9 @@ func activated():
 	
 func deactivated():
 	if activatedObjects.size() > 0:
+		for w in wires:
+			w.deactivate()
+		
 		for path in activatedObjects:
 			get_node(path).deactivate()
 
@@ -75,6 +82,7 @@ func spawn_wires():
 			newWire.translation.y = translation.y + 1.5
 			newWire.color = color
 			add_child(newWire)
+			wires.append(newWire)
 
 func _on_Sphere_ready():
 	var material = SpatialMaterial.new()
