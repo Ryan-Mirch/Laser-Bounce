@@ -4,7 +4,9 @@ extends Spatial
 # var a = 2
 # var b = "text"
 var state = 0 # 0 = edit 1 = play
+var complete = false
 
+onready var victory = get_node("Victory")
 onready var timer = get_node("Cycle Timer")
 
 # Called when the node enters the scene tree for the first time.
@@ -38,8 +40,15 @@ func Edit():
 	get_tree().call_group("Beam", "queue_free")
 	Global.playing = false
 	timer.stop()
+	victory.visible = false
+	complete = false
 	
 
 func _on_Cycle_Timer_timeout():
 	timer.start()
 	get_tree().call_group("Beam", "bounce")
+
+
+func _on_Goal_LevelComplete():
+	complete = true
+	victory.visible = true

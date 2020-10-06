@@ -64,9 +64,10 @@ func _on_Area_body_exited(body):
 
 
 func check_color(c): #check if the color is correct
+	print(c)
 	if color == c: return true
-	if color == Color(255,255,255): return true
-	if c == Color(255,255,255): return true
+	if color == Color(1,1,1): return true
+	if c == Color(1,1,1): return true
 	return false
 	
 func spawn_wires():	
