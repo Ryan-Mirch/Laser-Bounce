@@ -119,7 +119,7 @@ func _update_Global_Pointer_Trans():
 
 func _update_mouselook():
 	_mouse_position *= sensitivity
-	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness)
+	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness) * -1
 	_pitch = _pitch * smoothness + _mouse_position.y * (1.0 - smoothness)
 	_mouse_position = Vector2(0, 0)
 

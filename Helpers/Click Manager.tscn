@@ -60,9 +60,8 @@ func _on_45_Rotatable_Base_pressed():
 func _on_Activator_Gate_pressed():
 	pressed()
 
-
 func _on_Activator_Mirror_pressed():
-	pass # Replace with function body.
+	pressed()
 "
 
 [node name="Click Manager" type="Node"]

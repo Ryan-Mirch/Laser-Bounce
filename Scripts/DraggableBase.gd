@@ -61,7 +61,7 @@ func _get_closest_tile(state):
 			if t.isOpen() == true: #skip if open
 				continue
 			
-		var currentDistance = t.translation.distance_to(translation)
+		var currentDistance = t.translation.distance_to(global_transform.origin)
 		if currentDistance < shortest or shortest == -1:
 			shortest = currentDistance
 			tile = t

@@ -65,3 +65,14 @@ __meta__ = {
 					
 					"
 }
+
+[node name="OpenFlag" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 0.4, 0, -6.03983e-008, 0, -0.01, 0, 6.03983e-008, 0, 0.4, 0, 0.503124, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "					
+					
+					"
+}

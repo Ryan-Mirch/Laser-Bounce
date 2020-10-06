@@ -17,31 +17,17 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _get_closest_tile(state): 
+func _close_closest_tile():
 	var tiles =  get_tree().get_nodes_in_group(\"Tile\")
 	var shortest = -1
 	var tile
 	
-	for t in tiles:
-		
-		if state == \"Open\":
-			if t.isOpen() == false: #skip if closed
-				continue
-		if state == \"Closed\":
-			if t.isOpen() == true: #skip if open
-				continue
-			
-		var currentDistance = t.translation.distance_to(get_parent().translation)
+	for t in tiles:			
+		var currentDistance = t.translation.distance_to(get_parent().global_transform.origin)
 		if currentDistance < shortest or shortest == -1:
 			shortest = currentDistance
 			tile = t
-			
-	return tile
-
-func _close_closest_tile():
-	var tile = _get_closest_tile(\"\")
-	tile.open = false
+	tile.setOpen(false)
 
 "
 

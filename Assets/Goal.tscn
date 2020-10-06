@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Goal.gd" type="Script" id=1]
 [ext_resource path="res://Imports/Laser Base.material" type="Material" id=2]
 [ext_resource path="res://Imports/Sensor_001.material" type="Material" id=3]
+[ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.033"
@@ -73,6 +74,8 @@ shape = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube033/StaticBody"]
 shape = SubResource( 5 )
+
+[node name="Close Closest Tile On Ready" parent="." instance=ExtResource( 4 )]
 [connection signal="ready" from="Cube033/Sphere001" to="." method="_on_Sphere001_ready"]
 [connection signal="body_entered" from="Cube033/Sphere001/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Cube033/Sphere001/Area" to="." method="_on_Area_body_exited"]
