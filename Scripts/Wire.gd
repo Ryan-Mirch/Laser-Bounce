@@ -27,7 +27,7 @@ func _process(delta):
 
 	
 func set_length():
-	scaleY = global_transform.origin.distance_to(connectedPosition)
+	scaleY = global_transform.origin.distance_to(connectedPosition) * 2
 	mesh.scale.y = scaleY
 	mesh.translation.z = -scaleY*.5
 
