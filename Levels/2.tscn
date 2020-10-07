@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=4]
+[ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Victory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/1S Mirrors/1SM - R90 - Drag.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Lasers/Laser.tscn" type="PackedScene" id=20]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 54.2461, 0.502, 100 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_color = Color( 0.207843, 0.443137, 0.454902, 1 )
+ambient_light_color = Color( 0.8, 0.8, 0.8, 1 )
+fog_enabled = true
+fog_depth_begin = 20.0
+
+[sub_resource type="SphereMesh" id=3]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends CSGMesh
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	translation = Global.pointerTranslation
+	visible = Global.debug
+"
+
+[node name="2" type="Spatial"]
+script = ExtResource( 1 )
+nextLevel = "2"
+
+[node name="Objects" type="Spatial" parent="."]
+
+[node name="Goal" parent="Objects" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
+
+[node name="Tiles" type="Spatial" parent="Objects"]
+
+[node name="Tile149" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
+
+[node name="Tile160" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
+
+[node name="Tile154" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
+
+[node name="Tile159" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
+
+[node name="Plane" type="StaticBody" parent="Objects" groups=[
+"Plane",
+]]
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Objects/Plane"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Objects/Plane"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, -52 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Objects/Plane"]
+transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 46, 31, -5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Objects/Plane"]
+transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -45, 31, -3 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Objects/Plane"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, 47 )
+shape = SubResource( 1 )
+
+[node name="Border Walls" type="StaticBody" parent="Objects" groups=[
+"Plane",
+]]
+visible = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="Objects/Border Walls"]
+transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, -150 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Objects/Border Walls"]
+transform = Transform( -1.22392e-07, -1, -4.37114e-08, 0, -4.37114e-08, 1, -2.8, 4.37114e-08, 1.91069e-15, 150, 31, -5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Objects/Border Walls"]
+transform = Transform( -1.22392e-07, -1, -4.37114e-08, 0, -4.37114e-08, 1, -2.8, 4.37114e-08, 1.91069e-15, -150, 31, -3 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Objects/Border Walls"]
+transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, 150 )
+shape = SubResource( 1 )
+
+[node name="Laser" parent="Objects" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 1 )
+
+[node name="1SM - R90 - Drag" parent="Objects" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
+
+[node name="1SM" parent="Objects/1SM - R90 - Drag/90 Rotatable Base" index="2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -1.25, -0.00723505 )
+
+[node name="Camera Related" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Camera Related"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9 )
+environment = SubResource( 2 )
+script = ExtResource( 4 )
+mouse_mode = 0
+sensitivity = 0.582
+smoothness = 0.634
+pivot = NodePath("../../../Level/Camera Related/Camera Rotation Point")
+min_distance = 2
+max_distance = 40
+collisions = false
+pitch_limit = 45
+pitch_offset = 45
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Camera Related/Camera"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 6 )
+light_energy = 0.68
+
+[node name="Camera Rotation Point" type="Spatial" parent="Camera Related"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4843, 2, -0.10161 )
+
+[node name="Cursor" type="CSGMesh" parent="Camera Related"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 13 )
+mesh = SubResource( 3 )
+script = SubResource( 4 )
+
+[node name="Cycle Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="Victory" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="LevelUI" parent="." instance=ExtResource( 5 )]
+[connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
+[connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
+
+[editable path="Objects/1SM - R90 - Drag"]

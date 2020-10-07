@@ -17,7 +17,7 @@ func _ready():
 	set_color(color)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	connectedPosition = connectedObject.translation
 	connectedPosition.y += 1	
