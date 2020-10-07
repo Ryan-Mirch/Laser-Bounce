@@ -16,7 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	rotation_degrees.y = lerp(rotation_degrees.y, newRotationY, 0.1)	
+	rotation_degrees.y = lerp(rotation_degrees.y, newRotationY, 0.2)	
 	
 
 
