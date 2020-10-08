@@ -1,29 +1,37 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
+[ext_resource path="res://Icons/Continue.png" type="Texture" id=2]
+[ext_resource path="res://Icons/LevelSelect.png" type="Texture" id=3]
 
-[sub_resource type="AnimatedTexture" id=1]
-
-[node name="Victory" type="Node2D"]
+[node name="Victory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 205.0
-margin_bottom = 16.0
+margin_left = 378.573
+margin_top = 117.942
+margin_right = 432.573
+margin_bottom = 133.942
 rect_scale = Vector2( 5, 5 )
-text = "					You Win"
+text = "You Win"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Next" type="TouchScreenButton" parent="."]
-position = Vector2( 923.709, 500.565 )
-scale = Vector2( 41.0452, 37.0407 )
-normal = SubResource( 1 )
+position = Vector2( 598.217, 423.982 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
 
-[node name="Back" type="TouchScreenButton" parent="."]
-position = Vector2( 82.7601, 507.239 )
-scale = Vector2( 41.0452, 37.0407 )
-normal = SubResource( 1 )
+[node name="Level Select" type="TouchScreenButton" parent="."]
+position = Vector2( 366.983, 423.149 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
 [connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Level Select" to="." method="_on_Level_Select_pressed"]

@@ -1,26 +1,59 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
+[ext_resource path="res://Icons/Play.png" type="Texture" id=2]
+[ext_resource path="res://Icons/LevelSelect.png" type="Texture" id=3]
+[ext_resource path="res://Icons/Settings.png" type="Texture" id=4]
 
-[sub_resource type="AnimatedTexture" id=1]
-
-[node name="LevelUI" type="CenterContainer"]
+[node name="LevelUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -71.0
+margin_top = -74.0
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="TouchScreenButton" parent="."]
-position = Vector2( 33.2697, 536.877 )
-scale = Vector2( 27.1725, 24.465 )
-normal = SubResource( 1 )
+[node name="Play" type="TouchScreenButton" parent="CenterContainer"]
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
 
-[node name="Back" type="TouchScreenButton" parent="."]
-position = Vector2( 24.4502, 34.1685 )
-scale = Vector2( 27.1725, 24.465 )
-normal = SubResource( 1 )
-[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_bottom = 74.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level Select" type="TouchScreenButton" parent="CenterContainer2"]
+position = Vector2( 0, 16.9706 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+margin_right = 61.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="TouchScreenButton" parent="CenterContainer3"]
+position = Vector2( 10.1021, 8.97971 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 4 )
+[connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CenterContainer2/Level Select" to="." method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="CenterContainer3/Settings" to="." method="_on_Settings_pressed"]

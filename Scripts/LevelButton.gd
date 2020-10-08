@@ -5,6 +5,7 @@ extends Button
 # var a = 2
 # var b = "text"
 
+onready var levelSelect = get_node("../..")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +21,4 @@ func _ready():
 
 func _on_Level_1_pressed():
 	Global.load_level(text)
+	levelSelect.queue_free()

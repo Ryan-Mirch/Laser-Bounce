@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -16,11 +16,11 @@ func _ready():
 #	pass
 
 
-func _on_Back_pressed():
-	var Level = get_parent()
-	Level.back_pressed()
-
 
 func _on_Next_pressed():
 	var Level = get_parent()
 	Level.next_pressed()
+
+
+func _on_Level_Select_pressed():
+	Global.open_level_select()

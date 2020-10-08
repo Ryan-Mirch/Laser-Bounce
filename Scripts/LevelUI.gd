@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -20,7 +20,8 @@ func _on_Play_pressed():
 	var Level = get_parent()
 	Level.play_pressed()
 
+func _on_Level_Select_pressed():
+	Global.open_level_select()
 
-func _on_Back_pressed():
-	var Level = get_parent()
-	Level.back_pressed()
+func _on_Settings_pressed():
+	Global.open_settings()
