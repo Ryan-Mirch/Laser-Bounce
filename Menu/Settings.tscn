@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/LevelButton.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/tres/Noir Regular.tres" type="DynamicFont" id=1]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Control
@@ -27,7 +27,7 @@ func _on_Back_pressed():
 
 [sub_resource type="AnimatedTexture" id=1]
 
-[node name="Level Select" type="Control"]
+[node name="Settings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 2 )
@@ -43,23 +43,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 1" type="Button" parent="VBoxContainer"]
-margin_top = 278.0
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+margin_top = 280.0
 margin_right = 1024.0
-margin_bottom = 298.0
-text = "1"
-script = ExtResource( 1 )
+margin_bottom = 320.0
+__meta__ = {
+"_editor_description_": ""
+}
 
-[node name="Level 2" type="Button" parent="VBoxContainer"]
-margin_top = 302.0
-margin_right = 1024.0
-margin_bottom = 322.0
-text = "2"
-script = ExtResource( 1 )
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 397.051
+margin_top = 14.9831
+margin_right = -385.949
+margin_bottom = 116.983
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="TouchScreenButton" parent="."]
-scale = Vector2( 62.9086, 59.7338 )
+scale = Vector2( 54.9391, 50.4441 )
 normal = SubResource( 1 )
-[connection signal="pressed" from="VBoxContainer/Level 1" to="VBoxContainer/Level 1" method="_on_Level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level 2" to="VBoxContainer/Level 2" method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

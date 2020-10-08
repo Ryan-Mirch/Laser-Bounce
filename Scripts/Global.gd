@@ -10,7 +10,7 @@ var currentScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pointerTranslation = Vector3(0,0,0)
-	currentScene = get_tree().get_root().get_node("Level Select")
+	currentScene = get_tree().get_root().get_node("Main Menu")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +29,7 @@ func load_level(levelID):
 	currentScene = levelInstance
 	
 func load_menu():
-	var scene = load("res://Menu/Level Select.tscn")
+	var scene = load("res://Menu/Main Menu.tscn")
 	var sceneInstance = scene.instance()
 	currentScene.queue_free()
 	get_parent().add_child(sceneInstance)

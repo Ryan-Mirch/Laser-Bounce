@@ -25,6 +25,7 @@ height = 1.0
 [sub_resource type="SpatialMaterial" id=3]
 
 [node name="Wire" type="Spatial"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
@@ -34,6 +35,6 @@ cast_to = Vector3( 0, 0, 1000 )
 script = SubResource( 1 )
 
 [node name="Mesh" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, -8.74228e-009, -0.6, 0, 0.2, -2.62268e-008, 9.25625e-031, 0, 0 )
+transform = Transform( 0.6, 0, 0, 0, -8.74228e-09, -0.6, 0, 0.2, -2.62268e-08, 9.25625e-31, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
