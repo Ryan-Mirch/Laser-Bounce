@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
-[ext_resource path="res://Icons/LevelSelect.png" type="Texture" id=3]
-[ext_resource path="res://Icons/Settings.png" type="Texture" id=4]
+[ext_resource path="res://Icons/Stop.png" type="Texture" id=3]
+[ext_resource path="res://Icons/LevelSelect.png" type="Texture" id=4]
+[ext_resource path="res://Icons/Settings.png" type="Texture" id=5]
 
 [node name="LevelUI" type="Control"]
 anchor_right = 1.0
@@ -29,6 +30,11 @@ __meta__ = {
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 2 )
 
+[node name="Pause" type="TouchScreenButton" parent="CenterContainer"]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -41,7 +47,7 @@ __meta__ = {
 [node name="Level Select" type="TouchScreenButton" parent="CenterContainer2"]
 position = Vector2( 0, 16.9706 )
 scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 margin_right = 61.0
@@ -53,7 +59,8 @@ __meta__ = {
 [node name="Settings" type="TouchScreenButton" parent="CenterContainer3"]
 position = Vector2( 10.1021, 8.97971 )
 scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Level Select" to="." method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="CenterContainer3/Settings" to="." method="_on_Settings_pressed"]
