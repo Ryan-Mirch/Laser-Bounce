@@ -39,7 +39,7 @@ func Edit():
 func _on_Cycle_Timer_timeout():
 	timer.start()
 	get_tree().call_group("Beam", "bounce")
-
+	get_tree().call_group("Laser Absorber", "shoot")
 
 func _on_Goal_LevelComplete():
 	complete = true

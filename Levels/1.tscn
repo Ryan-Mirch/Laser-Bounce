@@ -49,6 +49,7 @@ script = ExtResource( 1 )
 [node name="Objects" type="Spatial" parent="."]
 
 [node name="1SM - Drag" parent="Objects" instance=ExtResource( 2 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
 
 [node name="1SM" parent="Objects/1SM - Drag" index="1"]
@@ -58,6 +59,7 @@ transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
 
 [node name="Tiles" type="Spatial" parent="Objects"]
+editor/display_folded = true
 
 [node name="Tile149" parent="Objects/Tiles" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
