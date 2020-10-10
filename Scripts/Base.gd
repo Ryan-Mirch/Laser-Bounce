@@ -9,7 +9,6 @@ onready var meshDrag = get_node("Mesh Drag")
 onready var mesh90 = get_node("Mesh 90")
 onready var mesh45 = get_node("Mesh 45")
 
-export (NodePath) var attachedObjectPath
 export var draggable = false
 export(String, "none", "45", "90") var rotationType = "none"
 
@@ -26,9 +25,13 @@ var step = 0
 signal pressed
 
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	attachedObject = get_node(attachedObjectPath)
+	getAttachedObject()
+	attachedObject.connect("pressed", self, "_on_Attached_Pressed")
+	
 	newRotationYAttached = attachedObject.rotation_degrees.y
 	newRotationYRotatable = mesh90.rotation_degrees.y
 	drop_point = translation
@@ -52,6 +55,11 @@ func _process(_delta):
 		translation.x = lerp(translation.x, drop_point.x , 0.2)
 		translation.y = lerp(translation.y, drop_point.y, 0.2)
 		translation.z = lerp(translation.z, drop_point.z, 0.2)
+
+func getAttachedObject():
+	for n in get_children():
+		if n is Spatial:
+			attachedObject = n
 
 func setRotationMeshHeight():
 	if !draggable and rotationType != "none":
@@ -131,5 +139,5 @@ func _on_Click_Manager_clicked():
 
 
 
-func _on_1SM_pressed():
+func _on_Attached_Pressed():
 	emit_signal("pressed")

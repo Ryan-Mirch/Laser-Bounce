@@ -24,6 +24,9 @@ func _input(event):
 		debug = !debug
 			
 func load_level(levelID):
+	for n in get_tree().get_nodes_in_group("Level Select"):
+		n.queue_free()
+	
 	if currentScene.name == levelID: return
 	var level = load("res://Levels/" + levelID + ".tscn")
 	var levelInstance = level.instance()

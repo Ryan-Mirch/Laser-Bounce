@@ -6,15 +6,14 @@
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/1SM.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Lasers/Laser.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Activator Gate/AGate.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Activator Absorber/AAbsorber.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Lasers/Laser - R90 - Drag.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Pieces/AGate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=12]
 [ext_resource path="res://UI/Victory.tscn" type="PackedScene" id=13]
 [ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=14]
-
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -221,6 +220,7 @@ color = Color( 0.862745, 0.862745, 0, 1 )
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
 "Plane",
 ]]
+editor/display_folded = true
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -247,6 +247,7 @@ shape = SubResource( 1 )
 [node name="Border Walls" type="StaticBody" parent="Objects" groups=[
 "Plane",
 ]]
+editor/display_folded = true
 visible = false
 
 [node name="CollisionShape2" type="CollisionShape" parent="Objects/Border Walls"]
@@ -300,19 +301,69 @@ transform = Transform( -2.18557e-008, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-008,
 color = Color( 0.862745, 0, 0, 1 )
 activatedObjects = [ NodePath("../Door Right") ]
 
-[node name="Laser - R90 - Drag" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 1 )
+[node name="Base" parent="Objects" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
+draggable = true
+rotationType = "90"
 
-[node name="Laser" parent="Objects/Laser - R90 - Drag/90 Rotatable Base" index="2"]
+[node name="1SM" parent="Objects/Base" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Base2" parent="Objects" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9 )
+draggable = true
+rotationType = "90"
+
+[node name="1SM" parent="Objects/Base2" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Base3" parent="Objects" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 9 )
+draggable = true
+rotationType = "90"
+
+[node name="1SM" parent="Objects/Base3" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Base4" parent="Objects" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 9 )
+draggable = true
+rotationType = "90"
+
+[node name="1SM" parent="Objects/Base4" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Base5" parent="Objects" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 9 )
+draggable = true
+rotationType = "90"
+
+[node name="1SM" parent="Objects/Base5" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Base6" parent="Objects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 3 )
+draggable = true
+rotationType = "90"
+
+[node name="Laser" parent="Objects/Base6" instance=ExtResource( 8 )]
 color = Color( 0, 0, 0.862745, 1 )
 
-[node name="Laser - R90 - Drag2" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 7 )
+[node name="Base7" parent="Objects" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 9 )
+draggable = true
+rotationType = "90"
 
-[node name="Laser" parent="Objects/Laser - R90 - Drag2/90 Rotatable Base" index="2"]
+[node name="Laser" parent="Objects/Base7" instance=ExtResource( 8 )]
 color = Color( 0.862745, 0, 0, 1 )
 
 [node name="Camera Related" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
 [node name="Camera" type="Camera" parent="Camera Related"]
@@ -346,7 +397,3 @@ visible = false
 [node name="LevelUI" parent="." instance=ExtResource( 14 )]
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
-
-[editable path="Objects/Laser - R90 - Drag"]
-
-[editable path="Objects/Laser - R90 - Drag2"]

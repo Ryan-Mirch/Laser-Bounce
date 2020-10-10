@@ -31,6 +31,10 @@ func _on_Pause_pressed():
 	play.visible = true
 
 func _on_Level_Select_pressed():
+	for n in get_tree().get_nodes_in_group("Level Select"):
+		n.queue_free()
+		return
+		
 	Global.open_level_select()
 
 func _on_Settings_pressed():

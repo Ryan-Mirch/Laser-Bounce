@@ -2,31 +2,31 @@
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/1S Mirrors/1SM - Drag.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/1SM.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/1S Mirrors/1SM - R45 - Drag.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/1S Mirrors/1SM - R45.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/1S Mirrors/1SM - R90 - Drag.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/1S Mirrors/1SM - R90.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Activator Absorber/AAbsorber - Drag.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Activator Absorber/AAbsorber.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Activator Gate/AGate - Drag.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Activator Gate/AGate - R45 - Drag.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Activator Gate/AGate - R45.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Activator Gate/AGate - R90 - Drag.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Activator Gate/AGate - R90.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Activator Gate/AGate.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Pieces/AGate.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Activator Mirror/AMirror - Drag.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Activator Mirror/AMirror - R45 - Drag.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Activator Mirror/AMirror - R45.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Activator Mirror/AMirror - R90 - Drag.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Activator Mirror/AMirror - R90.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Activator Mirror/AMirror.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Pieces/AMirror.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/Lasers/Laser - Drag.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/Lasers/Laser - R45 - Drag.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/Lasers/Laser - R45.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Lasers/Laser - R90 - Drag.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Lasers/Laser - R90.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Assets/Lasers/Laser.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/Walls/Corner Wall.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/Walls/HalfWall.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Assets/Walls/Plus Wall.tscn" type="PackedScene" id=30]
@@ -38,6 +38,15 @@
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=36]
 [ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=37]
 [ext_resource path="res://UI/Victory.tscn" type="PackedScene" id=38]
+
+
+
+
+
+
+
+
+
 
 
 [sub_resource type="BoxShape" id=1]

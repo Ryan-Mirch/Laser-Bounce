@@ -46,7 +46,7 @@ func _ready():
 	set_enabled(enabled)
 
 func _input(event):
-
+	if get_tree().get_nodes_in_group("Level Select").size() > 0: return
 	if event.is_action_pressed("grab"):
 		if Camera_Pannable():			
 			_pressed = true
