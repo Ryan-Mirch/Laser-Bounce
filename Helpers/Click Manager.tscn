@@ -67,6 +67,9 @@ func _on_Activator_Mirror_pressed():
 
 func _on_Laser_Absorber_pressed():
 	pressed()
+
+func _on_Base_pressed():
+	pressed()
 "
 
 [node name="Click Manager" type="Node"]

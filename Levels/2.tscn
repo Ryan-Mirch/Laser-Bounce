@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Walls/Wall.tscn" type="PackedScene" id=2]
@@ -6,15 +6,15 @@
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/1S Mirrors/1SM.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/1SM.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Lasers/Laser.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Activator Gate/AGate.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Activator Absorber/AAbsorber.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/1S Mirrors/1SM - R90 - Drag.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Lasers/Laser - R90 - Drag.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=13]
-[ext_resource path="res://UI/Victory.tscn" type="PackedScene" id=14]
-[ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Lasers/Laser - R90 - Drag.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=12]
+[ext_resource path="res://UI/Victory.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=14]
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -213,7 +213,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="Objects" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Goal" parent="Objects" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
@@ -301,43 +300,13 @@ transform = Transform( -2.18557e-008, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-008,
 color = Color( 0.862745, 0, 0, 1 )
 activatedObjects = [ NodePath("../Door Right") ]
 
-[node name="1SM - R90 - Drag" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
-
-[node name="1SM" parent="Objects/1SM - R90 - Drag/90 Rotatable Base" index="2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -1.25, -0.00723457 )
-
-[node name="1SM - R90 - Drag2" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9 )
-
-[node name="1SM" parent="Objects/1SM - R90 - Drag2/90 Rotatable Base" index="2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -1.25, -0.00723457 )
-
-[node name="1SM - R90 - Drag3" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 9 )
-
-[node name="1SM" parent="Objects/1SM - R90 - Drag3/90 Rotatable Base" index="2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -1.25, -0.00723457 )
-
-[node name="1SM - R90 - Drag4" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 9 )
-
-[node name="1SM" parent="Objects/1SM - R90 - Drag4/90 Rotatable Base" index="2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -1.25, -0.00723457 )
-
-[node name="1SM - R90 - Drag5" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 9 )
-
-[node name="1SM" parent="Objects/1SM - R90 - Drag5/90 Rotatable Base" index="2"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -1.25, -0.00723457 )
-
-[node name="Laser - R90 - Drag" parent="Objects" instance=ExtResource( 12 )]
+[node name="Laser - R90 - Drag" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 1 )
 
 [node name="Laser" parent="Objects/Laser - R90 - Drag/90 Rotatable Base" index="2"]
 color = Color( 0, 0, 0.862745, 1 )
 
-[node name="Laser - R90 - Drag2" parent="Objects" instance=ExtResource( 12 )]
+[node name="Laser - R90 - Drag2" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 7 )
 
 [node name="Laser" parent="Objects/Laser - R90 - Drag2/90 Rotatable Base" index="2"]
@@ -349,7 +318,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 [node name="Camera" type="Camera" parent="Camera Related"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9 )
 environment = SubResource( 2 )
-script = ExtResource( 13 )
+script = ExtResource( 12 )
 mouse_mode = 0
 sensitivity = 0.582
 smoothness = 0.634
@@ -371,22 +340,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4843, 2, 4.89839 )
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
 
-[node name="Victory" parent="." instance=ExtResource( 14 )]
+[node name="Victory" parent="." instance=ExtResource( 13 )]
 visible = false
 
-[node name="LevelUI" parent="." instance=ExtResource( 15 )]
+[node name="LevelUI" parent="." instance=ExtResource( 14 )]
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
-
-[editable path="Objects/1SM - R90 - Drag"]
-
-[editable path="Objects/1SM - R90 - Drag2"]
-
-[editable path="Objects/1SM - R90 - Drag3"]
-
-[editable path="Objects/1SM - R90 - Drag4"]
-
-[editable path="Objects/1SM - R90 - Drag5"]
 
 [editable path="Objects/Laser - R90 - Drag"]
 

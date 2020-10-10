@@ -5,23 +5,45 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
+onready var meshDrag = get_node("Mesh Drag")
+onready var mesh90 = get_node("Mesh 90")
+onready var mesh45 = get_node("Mesh 45")
+
+export (NodePath) var attachedObjectPath
 export var draggable = false
 export(String, "none", "45", "90") var rotationType = "none"
+
+var attachedObject
 
 var DragOffset = 0.2
 var dragging = false
 var drop_point
+
+var newRotationYAttached
+var newRotationYRotatable
+var step = 0
 
 signal pressed
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	attachedObject = get_node(attachedObjectPath)
+	newRotationYAttached = attachedObject.rotation_degrees.y
+	newRotationYRotatable = mesh90.rotation_degrees.y
 	drop_point = translation
+	
+	if rotationType == "45": step = 45
+	if rotationType == "90": step = 90
+	setMeshVisibility()
+	setRotationMeshHeight()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	mesh90.rotation_degrees.y = lerp(mesh90.rotation_degrees.y, newRotationYRotatable, 20 * _delta)	
+	mesh45.rotation_degrees.y = lerp(mesh45.rotation_degrees.y, newRotationYRotatable, 20 * _delta)	
+	attachedObject.rotation_degrees.y = lerp(attachedObject.rotation_degrees.y, newRotationYAttached, 20 * _delta)	
 	
 	if dragging:
 		translation = Global.pointerTranslation
@@ -30,6 +52,24 @@ func _process(_delta):
 		translation.x = lerp(translation.x, drop_point.x , 0.2)
 		translation.y = lerp(translation.y, drop_point.y, 0.2)
 		translation.z = lerp(translation.z, drop_point.z, 0.2)
+
+func setRotationMeshHeight():
+	if !draggable and rotationType != "none":
+		mesh90.translation.y += -.25
+		mesh45.translation.y += -.25
+
+func setMeshVisibility():
+	meshDrag.visible = draggable
+	
+	if rotationType == "none":
+		mesh90.visible = false
+		mesh45.visible = false
+	if rotationType == "45":
+		mesh90.visible = false
+		mesh45.visible = true
+	if rotationType == "90":
+		mesh90.visible = true
+		mesh45.visible = false
 
 func _dragStart():
 	dragging = true
@@ -81,4 +121,15 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 
 
 func _on_Click_Manager_dragStart():
-	_dragStart()
+	if draggable: _dragStart()
+	
+func _on_Click_Manager_clicked():
+	if rotationType != "none": 
+		newRotationYAttached = newRotationYAttached + step
+		newRotationYRotatable = newRotationYRotatable + step
+	
+
+
+
+func _on_1SM_pressed():
+	emit_signal("pressed")
