@@ -10,6 +10,10 @@ var levelSelect = load("res://Menu/Level Select.tscn")
 var tabs = load("res://Menu/Tabs.tscn")
 var tabsInstance
 
+var camera_sensitivity = 0.5
+var music = true
+var sound_effects =  true
+
 signal tabChanged
 
 

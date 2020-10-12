@@ -10,7 +10,6 @@ export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 2
 
 # Mouslook settings
 export var mouselook = true
-export (float, 0.0, 1.0) var sensitivity = 0.5
 export (float, 0.0, 0.999, 0.001) var smoothness = 0.5 setget set_smoothness
 export(NodePath) var pivot setget set_pivot
 export var min_distance = 1
@@ -22,7 +21,6 @@ export (int, 0, 360) var yaw_limit = 360
 export (int, 0, 360) var pitch_limit = 360
 export (int, 0, 90) var pitch_offset = 0
 
-var zoom_sensitivity = 3
 
 
 # Intern variables.
@@ -135,9 +133,9 @@ func _unhandled_input(event):
 			if last_drag_distance == 0:
 				last_drag_distance = drag_distance
 			elif drag_distance > last_drag_distance:
-				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * zoom_sensitivity)
+				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * 3)
 			elif drag_distance < last_drag_distance:
-				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * zoom_sensitivity)
+				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * 3)
 			
 			distance = clamp(distance, min_distance, max_distance)	
 			
@@ -160,7 +158,7 @@ func _update_Global_Pointer_Trans():
 
 func _update_mouselook():
 	
-	_mouse_position *= sensitivity
+	_mouse_position *= Global.camera_sensitivity
 	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness)
 	_pitch = _pitch * smoothness + _mouse_position.y * (1.0 - smoothness)
 	_mouse_position = Vector2(0, 0)

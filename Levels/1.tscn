@@ -166,7 +166,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9 )
 environment = SubResource( 2 )
 script = ExtResource( 7 )
 mouse_mode = 0
-sensitivity = 0.582
 smoothness = 0.634
 pivot = NodePath("../../../1/Camera Related/Camera Rotation Point")
 min_distance = 2

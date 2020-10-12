@@ -23,6 +23,10 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
+
+func _on_HSlider_value_changed(value):
+	Global.camera_sensitivity = value
 "
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -173,7 +177,8 @@ custom_icons/grabber = ExtResource( 4 )
 custom_styles/slider = SubResource( 2 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 3 )
-min_value = 1.0
-max_value = 11.0
-value = 6.0
-ticks_on_borders = true
+min_value = 0.05
+max_value = 0.5
+step = 0.05
+value = 0.25
+[connection signal="value_changed" from="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2/Camera Sensitivity/HSlider" to="." method="_on_HSlider_value_changed"]
