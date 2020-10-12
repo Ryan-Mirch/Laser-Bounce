@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Continue.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=3]
 
 [node name="Victory" type="Control"]
 anchor_right = 1.0
@@ -9,22 +10,36 @@ anchor_bottom = 1.0
 mouse_filter = 1
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 378.573
-margin_top = 117.942
-margin_right = 432.573
-margin_bottom = 133.942
-rect_scale = Vector2( 5, 5 )
-text = "You Win"
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 159.0
+margin_right = 187.0
+margin_bottom = 273.0
+custom_fonts/font = ExtResource( 3 )
+text = "Victory!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Next" type="TouchScreenButton" parent="."]
-position = Vector2( 598.217, 423.982 )
-scale = Vector2( 0.5, 0.5 )
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -248.036
+margin_top = -203.466
+margin_right = -32.0361
+margin_bottom = 12.5341
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="TouchScreenButton" parent="CenterContainer"]
+scale = Vector2( 1.72805, 1.72805 )
 normal = ExtResource( 2 )
-[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="CenterContainer/Next" to="." method="_on_Next_pressed"]
