@@ -88,7 +88,8 @@ func _dragStart():
 	
 	
 func _input(event):		
-	if event.is_action_released("grab") and dragging:
+	
+	if event.is_action_released("grab") and dragging:		
 		dragging = false
 		
 		var tile = _get_closest_tile("Open")
@@ -126,6 +127,7 @@ func get_dragging():
 func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		emit_signal("pressed")
+		
 
 
 func _on_Click_Manager_dragStart():

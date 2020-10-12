@@ -18,9 +18,6 @@ func _ready():
 
 
 func _on_Next_pressed():
+	if Global.get_current_tab() != 0: return
 	var Level = get_parent()
 	Level.next_pressed()
-
-
-func _on_Level_Select_pressed():
-	Global.open_level_select()

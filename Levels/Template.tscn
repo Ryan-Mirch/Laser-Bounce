@@ -64,8 +64,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
-"Plane",
+"Drag To Rotate Camera",
 ]]
+editor/display_folded = true
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -90,8 +91,9 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 31
 shape = SubResource( 1 )
 
 [node name="Border Walls" type="StaticBody" parent="Objects" groups=[
-"Plane",
+"Drag To Rotate Camera",
 ]]
+editor/display_folded = true
 visible = false
 
 [node name="CollisionShape2" type="CollisionShape" parent="Objects/Border Walls"]

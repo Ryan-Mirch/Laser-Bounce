@@ -22,6 +22,8 @@ export (int, 0, 360) var yaw_limit = 360
 export (int, 0, 360) var pitch_limit = 360
 export (int, 0, 90) var pitch_offset = 0
 
+var zoom_sensitivity = 3
+
 
 # Intern variables.
 var _mouse_position = Vector2(0.0, 0.0)
@@ -35,6 +37,9 @@ var rayEnd = Vector3()
 
 var _pressed = false
 
+var events = {}
+var last_drag_distance = 0
+
 
 func _ready():
 
@@ -46,7 +51,7 @@ func _ready():
 	set_enabled(enabled)
 
 func _input(event):
-	if get_tree().get_nodes_in_group("Level Select").size() > 0: return
+	if Global.get_current_tab() != 0: return
 	if event.is_action_pressed("grab"):
 		if Camera_Pannable():			
 			_pressed = true
@@ -70,6 +75,7 @@ func _input(event):
 				_mouse_position = event.relative
 				
 func Camera_Pannable():
+	
 	var space_state = get_world().get_direct_space_state()
 	var mouse_position = get_viewport().get_mouse_position()
 	rayOrigin = project_ray_origin(mouse_position)
@@ -80,13 +86,20 @@ func Camera_Pannable():
 	if intersection.empty():
 		return true
 	
-	if intersection.collider.is_in_group("Plane"):
+	if intersection.collider.is_in_group("Drag To Rotate Camera"):
 		return true
 	
 	return false
 	
 
 func _process(_delta):
+	
+	if events.size() > 1:
+		_pressed = false
+		
+	if events.size() < 2:
+			last_drag_distance = 0
+			
 	if pivot:
 		_update_distance()
 	if mouselook:
@@ -104,7 +117,35 @@ func _physics_process(_delta):
 	if not obstacle.empty():
 		set_translation(obstacle.position)
 	
-		
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			events[event.index] = event
+		else:
+			events.erase(event.index)
+			
+	if event is InputEventScreenDrag:
+		events[event.index] = event
+			
+		if events.size() == 2:
+			var drag_distance = events[0].position.distance_to(events[1].position)
+			
+			
+			if last_drag_distance == 0:
+				last_drag_distance = drag_distance
+			elif drag_distance > last_drag_distance:
+				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * zoom_sensitivity)
+			elif drag_distance < last_drag_distance:
+				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * zoom_sensitivity)
+			
+			distance = clamp(distance, min_distance, max_distance)	
+			
+			last_drag_distance = drag_distance 
+				
+			
+			
+
 func _update_Global_Pointer_Trans():
 	
 	var space_state = get_world().get_direct_space_state()
@@ -118,6 +159,7 @@ func _update_Global_Pointer_Trans():
 		Global.pointerTranslation = intersection.position
 
 func _update_mouselook():
+	
 	_mouse_position *= sensitivity
 	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness)
 	_pitch = _pitch * smoothness + _mouse_position.y * (1.0 - smoothness)

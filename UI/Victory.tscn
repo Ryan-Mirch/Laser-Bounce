@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Continue.png" type="Texture" id=2]
-[ext_resource path="res://Icons/LevelSelect.png" type="Texture" id=3]
 
 [node name="Victory" type="Control"]
 anchor_right = 1.0
@@ -28,10 +27,4 @@ __meta__ = {
 position = Vector2( 598.217, 423.982 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 2 )
-
-[node name="Level Select" type="TouchScreenButton" parent="."]
-position = Vector2( 366.983, 423.149 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
 [connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
-[connection signal="pressed" from="Level Select" to="." method="_on_Level_Select_pressed"]

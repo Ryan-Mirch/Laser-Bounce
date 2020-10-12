@@ -9,7 +9,7 @@ onready var pause = get_node("CenterContainer/Pause")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.connect("tabChanged", self, "setVisibility")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,28 +17,22 @@ func _process(delta):
 	pass
 		
 
+func setVisibility():
+	visible = Global.get_current_tab() == 0
 
 func _on_Play_pressed():
+	if Global.get_current_tab() != 0: return
 	var Level = get_parent()
 	Level.play_pressed()
 	pause.visible = true
 	play.visible = false
 	
 func _on_Pause_pressed():
+	if Global.get_current_tab() != 0: return
 	var Level = get_parent()
 	Level.play_pressed()
 	pause.visible = false
 	play.visible = true
-
-func _on_Level_Select_pressed():
-	for n in get_tree().get_nodes_in_group("Level Select"):
-		n.queue_free()
-		return
-		
-	Global.open_level_select()
-
-func _on_Settings_pressed():
-	Global.open_settings()
 
 
 

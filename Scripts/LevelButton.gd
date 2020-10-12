@@ -24,4 +24,7 @@ func set_level(l):
 
 
 func _on_TouchScreenButton_pressed():
+	if get_tree().get_nodes_in_group("Settings").size() != 0:
+		return
+		
 	Global.load_level(level)

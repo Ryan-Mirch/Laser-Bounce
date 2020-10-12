@@ -212,13 +212,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="Objects" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Goal" parent="Objects" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
 color = Color( 0.862745, 0.862745, 0, 1 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
-"Plane",
+"Drag To Rotate Camera",
 ]]
 editor/display_folded = true
 visible = false
@@ -245,7 +246,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 31
 shape = SubResource( 1 )
 
 [node name="Border Walls" type="StaticBody" parent="Objects" groups=[
-"Plane",
+"Drag To Rotate Camera",
 ]]
 editor/display_folded = true
 visible = false
@@ -363,7 +364,6 @@ rotationType = "90"
 color = Color( 0.862745, 0, 0, 1 )
 
 [node name="Camera Related" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
 [node name="Camera" type="Camera" parent="Camera Related"]
@@ -386,7 +386,7 @@ transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0
 light_energy = 0.68
 
 [node name="Camera Rotation Point" type="Spatial" parent="Camera Related"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4843, 2, 4.89839 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4843, -1, 4.89839 )
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
