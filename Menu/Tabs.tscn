@@ -1,23 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Tabs.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Settings.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menu/Level Select.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Store.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Icons/Game Selected.png" type="Texture" id=5]
+[ext_resource path="res://Icons/Game Unselected.png" type="Texture" id=6]
+[ext_resource path="res://Icons/Level Select Selected.png" type="Texture" id=7]
+[ext_resource path="res://Icons/Level Select Unselected.png" type="Texture" id=8]
+[ext_resource path="res://Icons/Store Selected.png" type="Texture" id=9]
+[ext_resource path="res://Icons/Store Unselected.png" type="Texture" id=10]
+[ext_resource path="res://Icons/Settings Unselected.png" type="Texture" id=11]
+[ext_resource path="res://Icons/Settings Selected.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
-corner_radius_top_left = 10
-corner_radius_top_right = 10
+bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+shadow_size = 12
 
 [node name="Tabs" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Settings" parent="." instance=ExtResource( 2 )]
 visible = false
 
-[node name="Store" parent="." instance=ExtResource( 2 )]
+[node name="Store" parent="." instance=ExtResource( 4 )]
 visible = false
 
 [node name="Level Select" parent="." instance=ExtResource( 3 )]
@@ -29,43 +41,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -200.0
 custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+custom_constants/separation = 102
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Game" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 96.0
-margin_right = 296.0
-margin_bottom = 180.0
+[node name="Game" type="CheckButton" parent="Panel/HBoxContainer"]
+margin_left = 407.0
+margin_right = 607.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
-text = "Game"
+focus_mode = 0
+custom_icons/off = ExtResource( 6 )
+custom_icons/on = ExtResource( 5 )
+pressed = true
+enabled_focus_mode = 0
 
-[node name="Level Select" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 300.0
-margin_right = 500.0
-margin_bottom = 180.0
+[node name="Level Select" type="CheckButton" parent="Panel/HBoxContainer"]
+margin_left = 709.0
+margin_right = 909.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
-text = "Level Select"
+focus_mode = 0
+custom_icons/off = ExtResource( 8 )
+custom_icons/on = ExtResource( 7 )
+enabled_focus_mode = 0
 
-[node name="Store" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 504.0
-margin_right = 704.0
-margin_bottom = 180.0
+[node name="Store" type="CheckButton" parent="Panel/HBoxContainer"]
+margin_left = 1011.0
+margin_right = 1211.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
-text = "Store"
+focus_mode = 0
+custom_icons/off = ExtResource( 10 )
+custom_icons/on = ExtResource( 9 )
+enabled_focus_mode = 0
 
-[node name="Settings" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 708.0
-margin_right = 908.0
-margin_bottom = 180.0
+[node name="Settings" type="CheckButton" parent="Panel/HBoxContainer"]
+margin_left = 1313.0
+margin_right = 1513.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
-text = "Settings"
+focus_mode = 0
+custom_icons/off = ExtResource( 11 )
+custom_icons/on = ExtResource( 12 )
+enabled_focus_mode = 0
 [connection signal="pressed" from="Panel/HBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Store" to="." method="_on_Store_pressed"]

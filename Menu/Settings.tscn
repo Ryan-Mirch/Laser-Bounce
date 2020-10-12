@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Icons/LevelButton.png" type="Texture" id=2]
@@ -36,6 +36,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
@@ -167,9 +171,9 @@ focus_mode = 0
 custom_icons/grabber_highlight = ExtResource( 4 )
 custom_icons/grabber = ExtResource( 4 )
 custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 3 )
 min_value = 1.0
 max_value = 11.0
 value = 6.0
 ticks_on_borders = true
-focus_mode = 0

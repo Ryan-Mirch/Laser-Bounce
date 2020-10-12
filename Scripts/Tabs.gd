@@ -4,9 +4,14 @@ extends Control
 # var a = 2
 # var b = "text"
 
-onready var settingsTab = get_node("Settings")
-onready var levelSelectTab = get_node("Level Select")
-onready var storeTab = get_node("Store")
+onready var settingsWindow= get_node("Settings")
+onready var levelSelectWindow = get_node("Level Select")
+onready var storeWindow = get_node("Store")
+
+onready var gameTab = get_node("Panel/HBoxContainer/Game")
+onready var levelSelectTab = get_node("Panel/HBoxContainer/Level Select")
+onready var storeTab = get_node("Panel/HBoxContainer/Store")
+onready var settingsTab = get_node("Panel/HBoxContainer/Settings")
 
 signal tabChanged
 
@@ -29,29 +34,38 @@ func set_current_tab(tab):
 
 func _on_Game_pressed():
 	close_all_tabs()
+	gameTab.pressed = true
 	currentTab = 0
 	Global.emit_signal("tabChanged")
 
 func _on_Level_Select_pressed():
 	close_all_tabs()
-	levelSelectTab.visible = true
+	levelSelectWindow.visible = true
+	levelSelectTab.pressed = true
 	currentTab = 1
 	Global.emit_signal("tabChanged")
 	
 func _on_Store_pressed():
 	close_all_tabs()
-	storeTab.visible = true
+	storeWindow.visible = true
+	storeTab.pressed = true
 	currentTab = 2
 	Global.emit_signal("tabChanged")
 
 func _on_Settings_pressed():
 	close_all_tabs()
-	settingsTab.visible = true
+	settingsWindow.visible = true
+	settingsTab.pressed = true
 	currentTab = 3
 	Global.emit_signal("tabChanged")
 
 	
 func close_all_tabs():
-	settingsTab.visible = false
-	levelSelectTab.visible = false
-	storeTab.visible = false
+	settingsWindow.visible = false
+	levelSelectWindow.visible = false
+	storeWindow.visible = false
+	
+	gameTab.pressed = false
+	levelSelectTab.pressed = false
+	storeTab.pressed = false
+	settingsTab.pressed = false

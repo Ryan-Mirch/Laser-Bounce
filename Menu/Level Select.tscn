@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/LevelButton.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
@@ -53,282 +53,261 @@ margin_bottom = -200.0
 mouse_filter = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect2/MarginContainer"]
-margin_right = 2028.0
+margin_right = 1880.0
 margin_bottom = 860.0
 mouse_filter = 2
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/MarginContainer/ScrollContainer"]
-margin_right = 2016.0
-margin_bottom = 3044.0
+margin_right = 1516.0
+margin_bottom = 2629.0
 mouse_filter = 2
 
 [node name="Label2" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_right = 2016.0
-margin_bottom = 40.0
+margin_right = 1516.0
+margin_bottom = 97.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 1 )
 text = " Theme"
 valign = 1
 
 [node name="grid" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 44.0
-margin_right = 2016.0
-margin_bottom = 1252.0
+margin_top = 101.0
+margin_right = 1516.0
+margin_bottom = 1009.0
 columns = 5
 
 [node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_right = 400.0
-margin_bottom = 400.0
+margin_right = 300.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D33" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 400.0
+margin_left = 304.0
+margin_right = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D34" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_right = 1208.0
-margin_bottom = 400.0
+margin_left = 608.0
+margin_right = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D35" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 1212.0
-margin_right = 1612.0
-margin_bottom = 400.0
+margin_left = 912.0
+margin_right = 1212.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D36" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 1616.0
-margin_right = 2016.0
-margin_bottom = 400.0
+margin_left = 1216.0
+margin_right = 1516.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_top = 404.0
-margin_right = 400.0
-margin_bottom = 804.0
+margin_top = 304.0
+margin_right = 300.0
+margin_bottom = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_top = 404.0
-margin_right = 804.0
-margin_bottom = 804.0
+margin_left = 304.0
+margin_top = 304.0
+margin_right = 604.0
+margin_bottom = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D37" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_top = 404.0
-margin_right = 1208.0
-margin_bottom = 804.0
+margin_left = 608.0
+margin_top = 304.0
+margin_right = 908.0
+margin_bottom = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D38" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 1212.0
-margin_top = 404.0
-margin_right = 1612.0
-margin_bottom = 804.0
+margin_left = 912.0
+margin_top = 304.0
+margin_right = 1212.0
+margin_bottom = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D39" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 1616.0
-margin_top = 404.0
-margin_right = 2016.0
-margin_bottom = 804.0
+margin_left = 1216.0
+margin_top = 304.0
+margin_right = 1516.0
+margin_bottom = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D40" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_top = 808.0
-margin_right = 400.0
-margin_bottom = 1208.0
+margin_top = 608.0
+margin_right = 300.0
+margin_bottom = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D41" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_top = 808.0
-margin_right = 804.0
-margin_bottom = 1208.0
+margin_left = 304.0
+margin_top = 608.0
+margin_right = 604.0
+margin_bottom = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Label3" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1256.0
-margin_right = 2016.0
-margin_bottom = 1296.0
+margin_top = 1013.0
+margin_right = 1516.0
+margin_bottom = 1110.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 1 )
 text = " Theme"
 valign = 1
 
 [node name="grid2" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 1300.0
-margin_right = 2016.0
-margin_bottom = 1700.0
+margin_top = 1114.0
+margin_right = 1516.0
+margin_bottom = 1414.0
 columns = 5
 
 [node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_right = 400.0
-margin_bottom = 400.0
+margin_right = 300.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 400.0
+margin_left = 304.0
+margin_right = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_right = 1208.0
-margin_bottom = 400.0
+margin_left = 608.0
+margin_right = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Label4" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1704.0
-margin_right = 2016.0
-margin_bottom = 1744.0
+margin_top = 1418.0
+margin_right = 1516.0
+margin_bottom = 1515.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 1 )
 text = " Theme"
 valign = 1
 
 [node name="grid3" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 1748.0
-margin_right = 2016.0
-margin_bottom = 2148.0
+margin_top = 1519.0
+margin_right = 1516.0
+margin_bottom = 1819.0
 columns = 5
 
 [node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_right = 400.0
-margin_bottom = 400.0
+margin_right = 300.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 400.0
+margin_left = 304.0
+margin_right = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_right = 1208.0
-margin_bottom = 400.0
+margin_left = 608.0
+margin_right = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Label5" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2152.0
-margin_right = 2016.0
-margin_bottom = 2192.0
+margin_top = 1823.0
+margin_right = 1516.0
+margin_bottom = 1920.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 1 )
 text = " Theme"
 valign = 1
 
 [node name="grid4" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 2196.0
-margin_right = 2016.0
-margin_bottom = 2596.0
+margin_top = 1924.0
+margin_right = 1516.0
+margin_bottom = 2224.0
 columns = 5
 
 [node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_right = 400.0
-margin_bottom = 400.0
+margin_right = 300.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 400.0
+margin_left = 304.0
+margin_right = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_right = 1208.0
-margin_bottom = 400.0
+margin_left = 608.0
+margin_right = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Label6" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2600.0
-margin_right = 2016.0
-margin_bottom = 2640.0
+margin_top = 2228.0
+margin_right = 1516.0
+margin_bottom = 2325.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 1 )
 text = " Theme"
 valign = 1
 
 [node name="grid5" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 2644.0
-margin_right = 2016.0
-margin_bottom = 3044.0
+margin_top = 2329.0
+margin_right = 1516.0
+margin_bottom = 2629.0
 columns = 5
 
 [node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_right = 400.0
-margin_bottom = 400.0
+margin_right = 300.0
 rect_scale = Vector2( 1, 1 )
 level = "1"
 
 [node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 400.0
+margin_left = 304.0
+margin_right = 604.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
 
 [node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 2 )]
 anchor_right = 0.0
-margin_left = 808.0
-margin_right = 1208.0
-margin_bottom = 400.0
+margin_left = 608.0
+margin_right = 908.0
 rect_scale = Vector2( 1, 1 )
 level = "2"
