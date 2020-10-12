@@ -13,7 +13,6 @@ onready var levelSelectTab = get_node("Panel/HBoxContainer/Level Select")
 onready var storeTab = get_node("Panel/HBoxContainer/Store")
 onready var settingsTab = get_node("Panel/HBoxContainer/Settings")
 
-signal tabChanged
 
 var currentTab = 0
 

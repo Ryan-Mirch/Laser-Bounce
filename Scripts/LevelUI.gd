@@ -9,11 +9,11 @@ onready var pause = get_node("CenterContainer/Pause")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.connect("tabChanged", self, "setVisibility")
+	var _err = Global.connect("tabChanged", self, "setVisibility")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 		
 

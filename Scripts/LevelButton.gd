@@ -6,7 +6,7 @@ extends Control
 # var b = "text"
 
 onready var levelSelect = get_node("../..")
-onready var label = get_node("CenterContainer/Level")
+onready var label = get_node("Level")
 export (String) var level
 
 # Called when the node enters the scene tree for the first time.
@@ -23,8 +23,7 @@ func set_level(l):
 	label.text = level
 
 
-func _on_TouchScreenButton_pressed():
-	if get_tree().get_nodes_in_group("Settings").size() != 0:
-		return
-		
+
+
+func _on_Button_pressed():
 	Global.load_level(level)

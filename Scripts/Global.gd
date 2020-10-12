@@ -20,6 +20,8 @@ func _ready():
 	
 	tabsInstance = tabs.instance()
 	get_parent().call_deferred("add_child", tabsInstance)
+	
+	emit_signal("tabChanged")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -49,7 +51,7 @@ func load_next_level(levelString):
 	currentScene = levelInstance
 	
 func get_current_tab():
-	if get_tree().get_root().get_node("Tabs") == null:
+	if get_tree().get_root().get_node_or_null("Tabs") == null:
 		return 0
 	return get_tree().get_root().get_node("Tabs").currentTab
 
