@@ -6,7 +6,6 @@ extends Spatial
 var state = 0 # 0 = edit 1 = play
 var complete = false
 
-onready var victory = get_node("Victory")
 onready var levelUI = get_node("LevelUI")
 onready var timer = get_node("Cycle Timer")
 
@@ -32,7 +31,6 @@ func Edit():
 	get_tree().call_group("Beam", "queue_free")
 	Global.playing = false
 	timer.stop()
-	victory.visible = false
 	complete = false
 	
 
@@ -43,8 +41,7 @@ func _on_Cycle_Timer_timeout():
 
 func _on_Goal_LevelComplete():
 	complete = true
-	victory.visible = true
-	levelUI.visible = false
+	levelUI._Level_Complete()
 	
 	
 func next_pressed():

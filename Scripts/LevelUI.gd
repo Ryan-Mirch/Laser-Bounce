@@ -6,6 +6,7 @@ extends Control
 # var b = "text"
 onready var play = get_node("CenterContainer/Play")
 onready var pause = get_node("CenterContainer/Pause")
+onready var cont = get_node("CenterContainer/Continue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,5 +35,13 @@ func _on_Pause_pressed():
 	pause.visible = false
 	play.visible = true
 
+func _Level_Complete():
+	cont.visible = true
+	pause.visible = false
+	play.visible = false
+	
 
-
+func _on_Continue_pressed():
+	if Global.get_current_tab() != 0: return
+	var Level = get_parent()
+	Level.next_pressed()
