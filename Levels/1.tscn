@@ -144,7 +144,7 @@ fontSize = 20.0
 borderColor = Color( 1, 1, 1, 1 )
 borderThickness = 5.0
 cornerRadius = 10.0
-margin = 1.0
+margin = 15.0
 
 [node name="Camera Related" parent="." instance=ExtResource( 8 )]
 editor/display_folded = true
