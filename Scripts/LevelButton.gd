@@ -13,7 +13,6 @@ export (String) var level
 func _ready():
 	set_level(level)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -23,7 +22,5 @@ func set_level(l):
 	label.text = level
 
 
-
-
-func _on_Button_pressed():
+func _on_TextureButton_pressed():
 	Global.load_level(level)

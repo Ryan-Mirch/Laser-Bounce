@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Scripts/Tabs.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Settings.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Menu/Level Select.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menu/Store.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Icons/Game Selected.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Game Unselected.png" type="Texture" id=6]
-[ext_resource path="res://Icons/Level Select Selected.png" type="Texture" id=7]
-[ext_resource path="res://Icons/Level Select Unselected.png" type="Texture" id=8]
-[ext_resource path="res://Icons/Store Selected.png" type="Texture" id=9]
-[ext_resource path="res://Icons/Store Unselected.png" type="Texture" id=10]
+[ext_resource path="res://Menu/Store.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Level Select.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Icons/Game Unselected.png" type="Texture" id=5]
+[ext_resource path="res://Icons/Game Selected.png" type="Texture" id=6]
+[ext_resource path="res://Icons/Level Select Unselected.png" type="Texture" id=7]
+[ext_resource path="res://Icons/Level Select Selected.png" type="Texture" id=8]
+[ext_resource path="res://Icons/Store Unselected.png" type="Texture" id=9]
+[ext_resource path="res://Icons/Store Selected.png" type="Texture" id=10]
 [ext_resource path="res://Icons/Settings Unselected.png" type="Texture" id=11]
 [ext_resource path="res://Icons/Settings Selected.png" type="Texture" id=12]
 
@@ -29,10 +29,10 @@ __meta__ = {
 [node name="Settings" parent="." instance=ExtResource( 2 )]
 visible = false
 
-[node name="Store" parent="." instance=ExtResource( 4 )]
+[node name="Store" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[node name="Level Select" parent="." instance=ExtResource( 3 )]
+[node name="Level Select" parent="." instance=ExtResource( 4 )]
 visible = false
 
 [node name="Panel" type="Panel" parent="."]
@@ -60,8 +60,8 @@ margin_right = 607.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
-custom_icons/off = ExtResource( 6 )
-custom_icons/on = ExtResource( 5 )
+custom_icons/off = ExtResource( 5 )
+custom_icons/on = ExtResource( 6 )
 pressed = true
 enabled_focus_mode = 0
 
@@ -71,8 +71,8 @@ margin_right = 909.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
-custom_icons/off = ExtResource( 8 )
-custom_icons/on = ExtResource( 7 )
+custom_icons/off = ExtResource( 7 )
+custom_icons/on = ExtResource( 8 )
 enabled_focus_mode = 0
 
 [node name="Store" type="CheckButton" parent="Panel/HBoxContainer"]
@@ -81,8 +81,8 @@ margin_right = 1211.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
-custom_icons/off = ExtResource( 10 )
-custom_icons/on = ExtResource( 9 )
+custom_icons/off = ExtResource( 9 )
+custom_icons/on = ExtResource( 10 )
 enabled_focus_mode = 0
 
 [node name="Settings" type="CheckButton" parent="Panel/HBoxContainer"]

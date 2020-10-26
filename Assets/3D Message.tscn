@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/3D Message.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Billboard.gd" type="Script" id=2]
+
+[node name="3D Message" type="Spatial"]
+script = ExtResource( 1 )
+messageOnBack = true
+fontPath = "res://Fonts/otfs/NoirPro-Regular.otf"
+
+[node name="Back" type="MeshInstance" parent="."]
+script = ExtResource( 2 )
+
+[node name="GUI" type="Viewport" parent="Back"]
+size = Vector2( 300, 300 )
+transparent_bg = true
+hdr = false
+disable_3d = true
+usage = 1
+render_target_v_flip = true
+
+[node name="Back Background" type="Panel" parent="Back/GUI"]
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Back Label" type="Label" parent="Back/GUI/Back Background"]
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Front" type="MeshInstance" parent="."]
+script = ExtResource( 2 )
+
+[node name="GUI" type="Viewport" parent="Front"]
+size = Vector2( 300, 300 )
+transparent_bg = true
+hdr = false
+disable_3d = true
+usage = 1
+render_target_v_flip = true
+
+[node name="Front Background" type="Panel" parent="Front/GUI"]
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="Front Label" type="Label" parent="Front/GUI/Front Background"]
+align = 1
+valign = 1
+autowrap = true

@@ -22,6 +22,7 @@ func _ready():
 	set_length(0)
 	color = get_parent().color
 	call_deferred("set_color")
+	Global.soundManager.play_sound_Laser()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -8,7 +8,9 @@ var currentScene
 var settings = load("res://Menu/Settings.tscn")
 var levelSelect = load("res://Menu/Level Select.tscn")
 var tabs = load("res://Menu/Tabs.tscn")
+var soundManagerResource = load("res://Sounds/SoundManager.tscn")
 var tabsInstance
+var soundManager
 
 var camera_sensitivity = 0.5
 var music = true
@@ -22,14 +24,21 @@ func _ready():
 	pointerTranslation = Vector3(0,0,0)
 	currentScene = get_tree().get_root().get_node("1")
 	
-	tabsInstance = tabs.instance()
-	get_parent().call_deferred("add_child", tabsInstance)
-	
-	emit_signal("tabChanged")
+	create_tabs()
+	create_soundManager()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+	
+func create_tabs():
+	tabsInstance = tabs.instance()
+	get_parent().call_deferred("add_child", tabsInstance)	
+	emit_signal("tabChanged")
+	
+func create_soundManager():
+	soundManager = soundManagerResource.instance()
+	get_parent().call_deferred("add_child", soundManager)	
 
 func _input(event):
 	if event.is_action_pressed("debug"):
@@ -49,6 +58,7 @@ func load_next_level(levelString):
 	levelInt += 1
 	
 	var level = load("res://Levels/" + str(levelInt) + ".tscn")
+	
 	var levelInstance = level.instance()
 	currentScene.queue_free()
 	get_parent().add_child(levelInstance)

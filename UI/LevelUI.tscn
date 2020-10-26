@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
-[ext_resource path="res://Icons/Stop.png" type="Texture" id=3]
-[ext_resource path="res://Icons/Continue.png" type="Texture" id=4]
+[ext_resource path="res://Icons/Continue.png" type="Texture" id=3]
+[ext_resource path="res://Icons/Stop.png" type="Texture" id=4]
 
 [node name="LevelUI" type="Control"]
 anchor_right = 1.0
@@ -37,13 +37,13 @@ normal = ExtResource( 2 )
 visible = false
 position = Vector2( 2.37842, 3.96404 )
 scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 4 )
+normal = ExtResource( 3 )
 
 [node name="Pause" type="TouchScreenButton" parent="CenterContainer"]
 visible = false
 position = Vector2( 3.55957, 3.55957 )
 scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]

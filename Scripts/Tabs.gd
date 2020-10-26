@@ -29,6 +29,7 @@ func set_current_tab(tab):
 	if tab == 1: _on_Level_Select_pressed()
 	if tab == 2: _on_Store_pressed()
 	if tab == 3: _on_Settings_pressed()	
+	
 		
 
 func _on_Game_pressed():
@@ -60,6 +61,8 @@ func _on_Settings_pressed():
 
 	
 func close_all_tabs():
+	Global.soundManager.play_sound_Rotate()
+	
 	settingsWindow.visible = false
 	levelSelectWindow.visible = false
 	storeWindow.visible = false

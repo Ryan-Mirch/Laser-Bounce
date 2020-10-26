@@ -23,11 +23,13 @@ func _physics_process(_delta):
 	
 		
 func Play():
+	Global.soundManager.play_sound_PlayLevel()
 	get_tree().call_group("Laser","Play")
 	Global.playing = true
 	timer.start()
 	
 func Edit():
+	Global.soundManager.play_sound_StopLevel()
 	get_tree().call_group("Beam", "queue_free")
 	Global.playing = false
 	timer.stop()
@@ -40,6 +42,7 @@ func _on_Cycle_Timer_timeout():
 	get_tree().call_group("Laser Absorber", "shoot")
 
 func _on_Goal_LevelComplete():
+	Global.soundManager.play_sound_Win()
 	complete = true
 	levelUI._Level_Complete()
 	

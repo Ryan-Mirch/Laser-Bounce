@@ -57,5 +57,5 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-quality/filters/msaa=2
+quality/filters/msaa=4
 environment/default_environment="res://default_env.tres"
