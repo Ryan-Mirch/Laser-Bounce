@@ -5,20 +5,20 @@ extends Spatial
 # var b = "text"
 export var message = "enter message here"
 export var messageOnBack = false
-export(float) var width
-export(float) var height
+export(float) var width = 300
+export(float) var height = 150
 
-export(Color) var frontColor
-export(Color) var backColor
+export(Color) var frontColor = Color(0,0,0,1)
+export(Color) var backColor = Color(0,0,0,1)
 
-export(Color) var textColor
+export(Color) var textColor = Color(1,1,1,1)
 export(String, FILE) var fontPath
-export(float) var fontSize
+export(float) var fontSize = 25
 
-export(Color) var borderColor
-export(float) var borderThickness
-export(float) var cornerRadius
-export(float) var margin = 0
+export(Color) var borderColor = Color(1,1,1,1)
+export(float) var borderThickness = 5
+export(float) var cornerRadius = 10
+export(float) var margin = 15
 
 
 enum VALIGN { VALIGN_TOP, VALIGN_CENTER, VALIGN_BOTTOM }
@@ -41,6 +41,7 @@ onready var backLabel = get_node("Back/GUI/Back Background/Back Label")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup()
+	$"Guide".queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -32,6 +32,7 @@ func activate():
 	
 func deactivate():
 	activateCount -= 1
+	activateCount = clamp(activateCount, 0, 100)
 	if activateCount != activateTarget and activated == true:
 		Global.soundManager.play_sound_DoorClose()
 		$AP.play_backwards("Open")

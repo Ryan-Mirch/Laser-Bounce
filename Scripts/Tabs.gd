@@ -7,6 +7,7 @@ extends Control
 onready var settingsWindow= get_node("Settings")
 onready var levelSelectWindow = get_node("Level Select")
 onready var storeWindow = get_node("Store")
+onready var blockGameScreen = get_node("BlockGameScreen")
 
 onready var gameTab = get_node("Panel/HBoxContainer/Game")
 onready var levelSelectTab = get_node("Panel/HBoxContainer/Level Select")
@@ -18,12 +19,26 @@ var currentTab = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Settings.connect("orientationChanged",self,"make_room_for_Banner")
+	make_room_for_Banner()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	pass
+		
+func make_room_for_Banner():	
+	if Settings.enable_ads == true && Settings.admob:
+		var ratio = get_viewport().get_visible_rect().size.y / get_viewport().get_visible_rect().size.x
+		ratio = clamp(ratio, 1, 100)
+		var h = pow(Settings.admob.getBannerHeight() * ratio, 1.05)
+		settingsWindow.margin_top = h
+		levelSelectWindow.margin_top = h
+		storeWindow.margin_top = h
+	else: 
+		settingsWindow.margin_top = 0
+		levelSelectWindow.margin_top = 0
+		storeWindow.margin_top = 0
+		
 func set_current_tab(tab):
 	if tab == 0: _on_Game_pressed()
 	if tab == 1: _on_Level_Select_pressed()
@@ -37,6 +52,7 @@ func _on_Game_pressed():
 	gameTab.pressed = true
 	currentTab = 0
 	Global.emit_signal("tabChanged")
+	blockGameScreen.visible = false
 
 func _on_Level_Select_pressed():
 	close_all_tabs()
@@ -44,6 +60,7 @@ func _on_Level_Select_pressed():
 	levelSelectTab.pressed = true
 	currentTab = 1
 	Global.emit_signal("tabChanged")
+	
 	
 func _on_Store_pressed():
 	close_all_tabs()
@@ -71,3 +88,5 @@ func close_all_tabs():
 	levelSelectTab.pressed = false
 	storeTab.pressed = false
 	settingsTab.pressed = false
+	
+	blockGameScreen.visible = true

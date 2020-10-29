@@ -26,6 +26,7 @@ func _ready():
 	
 	create_tabs()
 	create_soundManager()
+	Settings.show_ad_banner()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -48,24 +49,21 @@ func load_level(levelID):
 	tabsInstance.set_current_tab(0)
 	if currentScene.name == levelID: return
 	var level = load("res://Levels/" + levelID + ".tscn")
+	print("Loading level: " + levelID)
 	var levelInstance = level.instance()
 	currentScene.queue_free()
 	get_parent().add_child(levelInstance)
 	currentScene = levelInstance
+	
 	
 func load_next_level(levelString):
 	var levelInt = int(levelString)
 	levelInt += 1
-	
-	var level = load("res://Levels/" + str(levelInt) + ".tscn")
-	
-	var levelInstance = level.instance()
-	currentScene.queue_free()
-	get_parent().add_child(levelInstance)
-	currentScene = levelInstance
+	load_level(str(levelInt))
 	
 func get_current_tab():
 	if get_tree().get_root().get_node_or_null("Tabs") == null:
 		return 0
 	return get_tree().get_root().get_node("Tabs").currentTab
+
 

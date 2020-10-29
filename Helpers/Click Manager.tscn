@@ -13,7 +13,7 @@ signal dragStart
 var posOfClickStart
 var isPressed = false
 
-var deadZone = 7
+var deadZone = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

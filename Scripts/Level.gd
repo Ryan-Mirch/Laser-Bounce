@@ -6,12 +6,15 @@ extends Spatial
 var state = 0 # 0 = edit 1 = play
 var complete = false
 
+export(String) var nextLevelID
+
 onready var levelUI = get_node("LevelUI")
 onready var timer = get_node("Cycle Timer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Edit()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

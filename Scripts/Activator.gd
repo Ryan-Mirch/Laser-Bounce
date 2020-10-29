@@ -19,8 +19,10 @@ func _ready():
 	call_deferred("spawn_wires")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if !Global.playing && activatedCount != 0:
+		deactivated()
+		
 
 func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):	
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
@@ -36,6 +38,7 @@ func activated():
 	
 	
 func deactivated():
+	activatedCount = 0
 	if activatedObjects.size() > 0:
 		for w in wires:
 			w.deactivate()
@@ -50,6 +53,11 @@ func _on_Area_body_entered(body):
 		
 		if activatedCount == 1:
 			activated()
+	else:
+		activatedCount -= 1
+		
+		if activatedCount < 1:
+			deactivated()
 		
 	
 
@@ -59,8 +67,13 @@ func _on_Area_body_exited(body):
 		activatedCount -= 1
 		activatedCount = clamp(activatedCount, 0, 100)
 		
-		if activatedCount == 0:
+		if activatedCount < 1:
 			deactivated()
+	else: 
+		activatedCount += 1
+		
+		if activatedCount == 1:
+			activated()
 
 
 func check_color(c): #check if the color is correct

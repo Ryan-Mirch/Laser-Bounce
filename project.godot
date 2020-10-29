@@ -13,6 +13,10 @@ _global_script_class_icons={
 
 }
 
+[android]
+
+modules="org/godotengine/godot/GodotAdMob"
+
 [application]
 
 config/name="Laser Bounce"
@@ -21,7 +25,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
+Global="*res://Singletons/Global.gd"
+Settings="*res://Singletons/Settings.gd"
 
 [display]
 
@@ -59,3 +64,4 @@ pointing/emulate_touch_from_mouse=true
 
 quality/filters/msaa=4
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
