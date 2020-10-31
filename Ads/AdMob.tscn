@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=1]
+
+[node name="AdMob" type="Node"]
+script = ExtResource( 1 )
+banner_id = "ca-app-pub-8392398739941139/5564438865"
+interstitial_id = "ca-app-pub-8392398739941139/6741789162"
+rewarded_id = "ca-app-pub-8392398739941139/7488852480"
+max_ad_content_rate = "T"

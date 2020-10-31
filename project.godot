@@ -8,19 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+} ]
 _global_script_class_icons={
-
+"AdMob": "res://admob-lib/icon.png"
 }
-
-[android]
-
-modules="org/godotengine/godot/GodotAdMob"
 
 [application]
 
 config/name="Laser Bounce"
-run/main_scene="res://Levels/1.tscn"
+run/main_scene="res://Levels/Theme1/1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -30,9 +31,9 @@ Settings="*res://Singletons/Settings.gd"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/handheld/orientation="sensor"
+window/size/width=1080
+window/size/height=1920
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 

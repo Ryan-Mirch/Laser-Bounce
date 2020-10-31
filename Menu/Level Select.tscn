@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/TouchToScroll.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=2]
-[ext_resource path="res://UI/LevelButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ThemeGrid.gd" type="Script" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -13,10 +13,12 @@ script/source = "extends Control
 # var b = \"text\"
 
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(\"level select opened\")
-	get_node(\"ColorRect2/MarginContainer/ScrollContainer\").get_v_scrollbar().rect_min_size.x = 0
+	get_node(\"Panel/MarginContainer/ScrollContainer\").get_v_scrollbar().rect_min_size.x = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,273 +28,90 @@ func _process(_delta):
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
-corner_detail = 12
-shadow_size = 2
 
 [node name="Level Select" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 50.0
 mouse_filter = 2
 script = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="ColorRect2" type="Panel" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 2 )
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -200.0
-mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect2/MarginContainer"]
-margin_right = 1930.0
-margin_bottom = 860.0
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -518.0
+margin_right = 518.0
+margin_bottom = 1870.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+margin_right = 1036.0
+margin_bottom = 1870.0
 mouse_filter = 2
 scroll_horizontal_enabled = false
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/MarginContainer/ScrollContainer"]
-margin_right = 1875.0
-margin_bottom = 2336.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
+margin_right = 312.0
+margin_bottom = 158.0
 mouse_filter = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_right = 1875.0
-margin_bottom = 97.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 158.0
+
+[node name="Baby Steps" type="Label" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 2 )
-text = " Theme"
+text = "Baby Steps"
 valign = 1
 
-[node name="grid" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 101.0
-margin_right = 1875.0
-margin_bottom = 716.0
+[node name="ThemeGrid" type="GridContainer" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+margin_top = 77.0
+margin_right = 312.0
+margin_bottom = 77.0
 custom_constants/vseparation = 15
-custom_constants/hseparation = 15
-columns = 6
+custom_constants/hseparation = 9
+columns = 5
+script = ExtResource( 4 )
+themePath = "res://Levels/Theme1"
 
-[node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_right = 300.0
-margin_bottom = 300.0
-level = "1"
-
-[node name="Node2D33" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_right = 615.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Node2D34" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_right = 930.0
-margin_bottom = 300.0
-level = "3"
-
-[node name="Node2D35" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 945.0
-margin_right = 1245.0
-margin_bottom = 300.0
-level = "4"
-
-[node name="Node2D36" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 1260.0
-margin_right = 1560.0
-margin_bottom = 300.0
-level = "5"
-
-[node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 1575.0
-margin_right = 1875.0
-margin_bottom = 300.0
-level = "6"
-
-[node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_top = 315.0
-margin_right = 300.0
-margin_bottom = 615.0
-level = "7"
-
-[node name="Node2D37" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_top = 315.0
-margin_right = 615.0
-margin_bottom = 615.0
-level = "8"
-
-[node name="Node2D38" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_top = 315.0
-margin_right = 930.0
-margin_bottom = 615.0
-level = "9"
-
-[node name="Node2D39" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 945.0
-margin_top = 315.0
-margin_right = 1245.0
-margin_bottom = 615.0
-level = "10"
-
-[node name="Node2D40" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 1260.0
-margin_top = 315.0
-margin_right = 1560.0
-margin_bottom = 615.0
-level = "11"
-
-[node name="Node2D41" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid" instance=ExtResource( 3 )]
-margin_left = 1575.0
-margin_top = 315.0
-margin_right = 1875.0
-margin_bottom = 615.0
-level = "12"
-
-[node name="Label3" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 720.0
-margin_right = 1875.0
-margin_bottom = 817.0
+[node name="Tests" type="Label" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 312.0
+margin_bottom = 154.0
 rect_min_size = Vector2( 200, 40 )
 custom_fonts/font = ExtResource( 2 )
-text = " Theme"
+text = "Tests"
 valign = 1
 
-[node name="grid2" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 821.0
-margin_right = 1875.0
-margin_bottom = 1121.0
+[node name="ThemeGrid2" type="GridContainer" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+margin_top = 158.0
+margin_right = 312.0
+margin_bottom = 158.0
 custom_constants/vseparation = 15
-custom_constants/hseparation = 15
-columns = 6
-
-[node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 3 )]
-margin_right = 300.0
-margin_bottom = 300.0
-level = "20"
-
-[node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_right = 615.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid2" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_right = 930.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Label4" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1125.0
-margin_right = 1875.0
-margin_bottom = 1222.0
-rect_min_size = Vector2( 200, 40 )
-custom_fonts/font = ExtResource( 2 )
-text = " Theme"
-valign = 1
-
-[node name="grid3" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1226.0
-margin_right = 1875.0
-margin_bottom = 1526.0
-custom_constants/vseparation = 15
-custom_constants/hseparation = 15
-columns = 6
-
-[node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 3 )]
-margin_right = 300.0
-margin_bottom = 300.0
-level = "1"
-
-[node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_right = 615.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid3" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_right = 930.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Label5" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1530.0
-margin_right = 1875.0
-margin_bottom = 1627.0
-rect_min_size = Vector2( 200, 40 )
-custom_fonts/font = ExtResource( 2 )
-text = " Theme"
-valign = 1
-
-[node name="grid4" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1631.0
-margin_right = 1875.0
-margin_bottom = 1931.0
-custom_constants/vseparation = 15
-custom_constants/hseparation = 15
-columns = 6
-
-[node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 3 )]
-margin_right = 300.0
-margin_bottom = 300.0
-level = "1"
-
-[node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_right = 615.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid4" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_right = 930.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Label6" type="Label" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1935.0
-margin_right = 1875.0
-margin_bottom = 2032.0
-rect_min_size = Vector2( 200, 40 )
-custom_fonts/font = ExtResource( 2 )
-text = " Theme"
-valign = 1
-
-[node name="grid5" type="GridContainer" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2036.0
-margin_right = 1875.0
-margin_bottom = 2336.0
-custom_constants/vseparation = 15
-custom_constants/hseparation = 15
-columns = 6
-
-[node name="Node2D30" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 3 )]
-margin_right = 300.0
-margin_bottom = 300.0
-level = "1"
-
-[node name="Node2D31" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 3 )]
-margin_left = 315.0
-margin_right = 615.0
-margin_bottom = 300.0
-level = "2"
-
-[node name="Node2D32" parent="ColorRect2/MarginContainer/ScrollContainer/VBoxContainer/grid5" instance=ExtResource( 3 )]
-margin_left = 630.0
-margin_right = 930.0
-margin_bottom = 300.0
-level = "2"
+custom_constants/hseparation = 9
+columns = 5
+script = ExtResource( 4 )
+themePath = "res://Levels/Tests"

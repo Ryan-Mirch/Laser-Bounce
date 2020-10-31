@@ -13,11 +13,11 @@
 [ext_resource path="res://Icons/Settings Unselected.png" type="Texture" id=11]
 [ext_resource path="res://Icons/Settings Selected.png" type="Texture" id=12]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 shadow_size = 5
 
@@ -34,7 +34,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -49,12 +49,11 @@ visible = false
 visible = false
 
 [node name="Panel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -200.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,15 +61,15 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 102
+custom_constants/separation = 70
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Game" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 407.0
-margin_right = 607.0
+margin_left = 35.0
+margin_right = 235.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -80,8 +79,8 @@ pressed = true
 enabled_focus_mode = 0
 
 [node name="Level Select" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 709.0
-margin_right = 909.0
+margin_left = 305.0
+margin_right = 505.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -90,8 +89,8 @@ custom_icons/on = ExtResource( 8 )
 enabled_focus_mode = 0
 
 [node name="Store" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 1011.0
-margin_right = 1211.0
+margin_left = 575.0
+margin_right = 775.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -100,8 +99,8 @@ custom_icons/on = ExtResource( 10 )
 enabled_focus_mode = 0
 
 [node name="Settings" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 1313.0
-margin_right = 1513.0
+margin_left = 845.0
+margin_right = 1045.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0

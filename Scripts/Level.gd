@@ -51,8 +51,7 @@ func _on_Goal_LevelComplete():
 	
 	
 func next_pressed():
-	print(name)
-	Global.load_next_level(name)
+	Global.load_next_level(get_filename(), name)
 
 func play_pressed():
 	if state == 0:

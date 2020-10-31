@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/LevelButton.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Level Button Unpressed.png" type="Texture" id=2]
@@ -9,24 +9,48 @@
 size = 140
 font_data = ExtResource( 4 )
 
+[sub_resource type="GDScript" id=2]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	text = $\"..\".levelName
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
 [node name="Node2D" type="CenterContainer"]
-rect_min_size = Vector2( 300, 300 )
+margin_right = 200.0
+margin_bottom = 200.0
 mouse_filter = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 300.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 300, 300 )
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
 [node name="Level" type="Label" parent="."]
-margin_left = 150.0
-margin_top = 65.0
-margin_right = 150.0
-margin_bottom = 234.0
+margin_left = 100.0
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 184.0
 custom_fonts/font = SubResource( 1 )
 align = 1
+script = SubResource( 2 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

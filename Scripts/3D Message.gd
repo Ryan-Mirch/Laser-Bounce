@@ -67,12 +67,16 @@ func setText(text):
 func setMesh():
 	frontMesh.mesh = PlaneMesh.new()	
 	frontMesh.mesh.size.x = width/100
-	frontMesh.mesh.size.y = height/100
+	frontMesh.mesh.size.y = (height/100)
 	
 	backMesh.mesh = PlaneMesh.new()
 	backMesh.mesh.size.x = width/100
-	backMesh.mesh.size.y = height/100
+	backMesh.mesh.size.y = (height/100)
 	backMesh.mesh.flip_faces = true
+	
+	if OS.get_name() == "Android":
+		frontMesh.mesh.size.y = frontMesh.mesh.size.y * 1.5
+		backMesh.mesh.size.y = backMesh.mesh.size.y * 1.5
 	
 func setViewport():
 	frontViewport.size.x = width

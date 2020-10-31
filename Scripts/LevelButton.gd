@@ -7,20 +7,21 @@ extends Control
 
 onready var levelSelect = get_node("../..")
 onready var label = get_node("Level")
-export (String) var level
+
+export (String, FILE) var levelPath
+export (String) var levelName
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_level(level)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func set_level(l):
-	level = l
-	label.text = level
+func setLabelText():
+	label.text = levelName
 
 
 func _on_TextureButton_pressed():
-	Global.load_level(level)
+	Global.load_level(levelPath)

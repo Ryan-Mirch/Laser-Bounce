@@ -7,10 +7,14 @@ var currentScene
 
 var settings = load("res://Menu/Settings.tscn")
 var levelSelect = load("res://Menu/Level Select.tscn")
-var tabs = load("res://Menu/Tabs.tscn")
+var tabsResource = load("res://Menu/Tabs.tscn")
 var soundManagerResource = load("res://Sounds/SoundManager.tscn")
-var tabsInstance
+var admobResource = load("res://Ads/AdMob.tscn")
+var tabs
 var soundManager
+var admob
+
+var showAds = true
 
 var camera_sensitivity = 0.5
 var music = true
@@ -23,18 +27,28 @@ signal tabChanged
 func _ready():
 	pointerTranslation = Vector3(0,0,0)
 	currentScene = get_tree().get_root().get_node("1")
-	
+	create_adMob()
 	create_tabs()
 	create_soundManager()
-	Settings.show_ad_banner()
+	loadAds()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 	
+func loadAds() -> void:
+	yield(get_tree(), "idle_frame")
+	admob.load_banner()
+	#admob.load_interstitial()
+	admob.load_rewarded_video()
+	
+func create_adMob():
+	admob = admobResource.instance()
+	get_parent().call_deferred("add_child", admob)
+	
 func create_tabs():
-	tabsInstance = tabs.instance()
-	get_parent().call_deferred("add_child", tabsInstance)	
+	tabs = tabsResource.instance()
+	get_parent().call_deferred("add_child", tabs)	
 	emit_signal("tabChanged")
 	
 func create_soundManager():
@@ -45,21 +59,39 @@ func _input(event):
 	if event.is_action_pressed("debug"):
 		debug = !debug
 			
-func load_level(levelID):
-	tabsInstance.set_current_tab(0)
-	if currentScene.name == levelID: return
-	var level = load("res://Levels/" + levelID + ".tscn")
-	print("Loading level: " + levelID)
+func load_level(levelPath):
+	tabs.set_current_tab(0)
+	var level = load(levelPath)
+	print("Loading level: " + levelPath)
 	var levelInstance = level.instance()
 	currentScene.queue_free()
 	get_parent().add_child(levelInstance)
 	currentScene = levelInstance
 	
 	
-func load_next_level(levelString):
-	var levelInt = int(levelString)
-	levelInt += 1
-	load_level(str(levelInt))
+func load_next_level(currentLevelPath, currentLevelName):
+	print ("currentLevelPath: " + currentLevelPath)
+	print ("currentLevelName: " + currentLevelName)
+	
+	var nextLevelNum = int(currentLevelName.replace(".tscn",""))
+	nextLevelNum += 1
+	
+	var nextLevelPath = currentLevelPath
+	nextLevelPath = nextLevelPath.replace(currentLevelName + ".tscn", "")
+	nextLevelPath = nextLevelPath + str(nextLevelNum) + ".tscn"
+	
+	print ("nextLevelPath: " + nextLevelPath)
+	
+	var file2Check = File.new()
+	var doesFileExist = file2Check.file_exists(nextLevelPath)
+	
+	if doesFileExist:
+		load_level(nextLevelPath)
+	
+	else:
+		tabs.set_current_tab(1)
+		
+	
 	
 func get_current_tab():
 	if get_tree().get_root().get_node_or_null("Tabs") == null:

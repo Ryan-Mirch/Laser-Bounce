@@ -6,6 +6,7 @@ extends HBoxContainer
 
 onready var countLabel = get_node("Count")
 onready var hintPopup = get_node("../Hint Popup")
+onready var watchAdButton = get_node("../Hint Popup/VBoxContainer/HBoxContainer/Button Yes")
 
 
 export var startingHints = 5
@@ -13,10 +14,15 @@ export var startingHints = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Settings.hintCount = startingHints
-
+	Global.admob.connect("rewarded", self, "rewardRecieved")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	watchAdButton.disabled = !Global.admob._is_rewarded_video_loaded
+
+func rewardRecieved(currency, amount):
+	if currency == "Hint":
+		Settings.hintCount += amount
 
 func giveHint():
 	Settings.hintCount -= 1
@@ -29,10 +35,8 @@ func _on_Button_pressed():
 	giveHint()
 
 func _on_Button_Yes_pressed():	
-		if Settings.admob:
-			Settings.admob.resize()
-			Settings.admob.showRewardedVideo()
-		hintPopup.hide()
+	Global.admob.show_rewarded_video()
+	hintPopup.hide()
 
 func _on_Button_No_pressed():
 	hintPopup.hide()

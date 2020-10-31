@@ -3,5 +3,5 @@
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 80
+size = 60
 font_data = ExtResource( 1 )
