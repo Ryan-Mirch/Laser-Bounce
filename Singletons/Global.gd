@@ -14,12 +14,6 @@ var tabs
 var soundManager
 var admob
 
-var showAds = true
-
-var camera_sensitivity = 0.5
-var music = true
-var sound_effects =  true
-
 signal tabChanged
 
 

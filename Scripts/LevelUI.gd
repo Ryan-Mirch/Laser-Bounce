@@ -43,5 +43,8 @@ func _Level_Complete():
 
 func _on_Continue_pressed():
 	if Global.get_current_tab() != 0: return
-	var Level = get_parent()
-	Level.next_pressed()
+	Global.load_next_level(get_parent().get_filename(), get_parent().levelID)
+
+
+func _on_Retry_pressed():
+	Global.load_level(get_parent().get_filename())

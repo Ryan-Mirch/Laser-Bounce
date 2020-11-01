@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scripts/Hint Popup.gd" type="Script" id=10]
+[ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -22,19 +23,19 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 80
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 60
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 60
 font_data = ExtResource( 8 )
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Label
 
 # Declare member variables here. Examples:
@@ -48,7 +49,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	text = str(Settings.hintCount)
+	text = str(Saving.hintCount)
 "
 
 [node name="LevelUI" type="Control"]
@@ -69,7 +70,7 @@ margin_left = -520.0
 margin_top = -571.5
 margin_right = 520.0
 margin_bottom = 571.5
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,7 +109,7 @@ margin_right = 483.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Ok!"
 
@@ -118,7 +119,7 @@ margin_right = 967.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "No Thanks"
 
@@ -134,7 +135,7 @@ margin_right = 825.0
 margin_bottom = 115.0
 rect_min_size = Vector2( 650, 115 )
 focus_mode = 0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 enabled_focus_mode = 0
 text = "Buy 25 Hints ($0.99)"
 
@@ -156,7 +157,7 @@ enabled_focus_mode = 0
 [node name="Label" type="Label" parent="Hint Popup/VBoxContainer/HBoxContainer3/Button Full Version"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "Unlimited Hints and Remove All Ads ($5.99)"
 align = 1
 valign = 1
@@ -196,6 +197,23 @@ position = Vector2( 3.55957, 3.55957 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 4 )
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 28.5088
+margin_top = -401.851
+margin_right = 99.5087
+margin_bottom = -327.851
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="TouchScreenButton" parent="CenterContainer2"]
+position = Vector2( 2.37842, 3.96404 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
+
 [node name="Hint" type="HBoxContainer" parent="."]
 anchor_top = 0.12
 anchor_bottom = 0.12
@@ -220,10 +238,11 @@ margin_right = 240.0
 margin_bottom = 136.0
 custom_fonts/font = ExtResource( 7 )
 text = "3"
-script = SubResource( 1 )
+script = SubResource( 5 )
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="Hint/Container/Button" to="Hint" method="_on_Button_pressed"]

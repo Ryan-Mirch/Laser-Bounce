@@ -13,7 +13,7 @@ export var startingHints = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Settings.hintCount = startingHints
+	Saving.hintCount = startingHints
 	Global.admob.connect("rewarded", self, "rewardRecieved")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,14 +22,14 @@ func _process(delta):
 
 func rewardRecieved(currency, amount):
 	if currency == "Hint":
-		Settings.hintCount += amount
+		Saving.hintCount += amount
 
 func giveHint():
-	Settings.hintCount -= 1
+	Saving.hintCount -= 1
 	pass
 
 func _on_Button_pressed():
-	if Settings.hintCount == 0:
+	if Saving.hintCount == 0:
 		hintPopup.popup()	
 		return
 	giveHint()

@@ -27,7 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Singletons/Global.gd"
-Settings="*res://Singletons/Settings.gd"
+Saving="*res://Singletons/Saving.gd"
 
 [display]
 

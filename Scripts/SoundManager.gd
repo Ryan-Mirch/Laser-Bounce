@@ -21,39 +21,47 @@ func _ready():
 #	pass
 
 func play_sound_Laser():
-	if !Global.sound_effects: return
-	Laser.playSound()
+	if !Saving.enableSound: return
+	if Laser:
+		Laser.playSound()
 	
 func play_sound_DoorOpen():
-	if !Global.sound_effects: return
-	DoorOpen.playSound()
+	if !Saving.enableSound: return
+	if DoorOpen:
+		DoorOpen.playSound()
 	
 func play_sound_DoorClose():
-	if !Global.sound_effects: return
-	DoorClose.playSound()
+	if !Saving.enableSound: return
+	if DoorClose:
+		DoorClose.playSound()
 	
 func play_sound_PlayLevel():
-	if !Global.sound_effects: return
-	PlayLevel.playSound()
+	if !Saving.enableSound: return
+	if PlayLevel:
+		PlayLevel.playSound()
 	
 func play_sound_StopLevel():
-	if !Global.sound_effects: return
-	if StopLevel != null:
+	if !Saving.enableSound: return
+	if StopLevel:
 		StopLevel.playSound()
 	
 func play_sound_PickUp():
-	if !Global.sound_effects: return
-	PickUp.playSound()
+	if !Saving.enableSound: return
+	if PickUp:
+		PickUp.playSound()
 	
 func play_sound_PutDown():
-	if !Global.sound_effects: return
-	PutDown.playSound()
+	if !Saving.enableSound: return
+	if PutDown:
+		PutDown.playSound()
 	
 func play_sound_Rotate():
-	if !Global.sound_effects: return
-	Rotate.playSound()
+	if !Saving.enableSound: return
+	if Rotate:
+		Rotate.playSound()
 	
 func play_sound_Win():
-	if !Global.sound_effects: return
-	Win.playSound()
+	if !Saving.enableSound: return
+	if Win:
+		Win.playSound()
 

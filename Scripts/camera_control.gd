@@ -11,15 +11,18 @@ export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 2
 # Mouslook settings
 export var mouselook = true
 export (float, 0.0, 0.999, 0.001) var smoothness = 0.5 setget set_smoothness
-export(NodePath) var pivot setget set_pivot
+var pivot 
 export var min_distance = 1
 export var max_distance = 10
 export var distance = 5.0 setget set_distance
 export var rotate_pivot = false
 export var collisions = true setget set_collisions
 export (int, 0, 360) var yaw_limit = 360
-export (int, 0, 360) var pitch_limit = 360
-export (int, 0, 90) var pitch_offset = 0
+#export (int, 0, 360) var pitch_limit = 360
+export (int, 0, 360) var upper_pitch_limit = 360
+export (int, 0, 360) var lower_pitch_limit = 360
+export var startDistance = 20
+
 
 
 
@@ -40,13 +43,9 @@ var last_drag_distance = 0
 
 
 func _ready():
-
-	if pivot:
-		pivot = get_node(pivot)
-	else:
-		pivot = null
-
+	pivot = get_node("../Camera Rotation Point")	
 	set_enabled(enabled)
+	distance = startDistance
 
 func _input(event):
 	if Global.get_current_tab() != 0: return
@@ -72,6 +71,8 @@ func _input(event):
 			if _pressed:
 				_mouse_position = event.relative
 				
+
+
 func Camera_Pannable():
 	
 	var space_state = get_world().get_direct_space_state()
@@ -158,15 +159,15 @@ func _update_Global_Pointer_Trans():
 
 func _update_mouselook():
 	
-	_mouse_position *= Global.camera_sensitivity
+	_mouse_position *= Saving.camera_sensitivity
 	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness)
 	_pitch = _pitch * smoothness + _mouse_position.y * (1.0 - smoothness)
 	_mouse_position = Vector2(0, 0)
 
 	if yaw_limit < 360:
 		_yaw = clamp(_yaw, -yaw_limit - _total_yaw, yaw_limit - _total_yaw)
-	if pitch_limit < 360:
-		_pitch = clamp(_pitch, (-pitch_limit - _total_pitch) + pitch_offset, (pitch_limit - _total_pitch) + pitch_offset)
+		
+	_pitch = clamp(_pitch, (-lower_pitch_limit - _total_pitch) , (upper_pitch_limit - _total_pitch) )
 
 	_total_yaw += _yaw
 	_total_pitch += _pitch
@@ -206,9 +207,6 @@ func _check_actions(actions=[]):
 			if not InputMap.has_action(action):
 				print('WARNING: No action "' + action + '"')
 
-func set_pivot(value):
-	pivot = value
-	_update_process_func()
 
 func set_collisions(value):
 	collisions = value

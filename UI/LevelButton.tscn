@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/LevelButton.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Level Button Unpressed.png" type="Texture" id=2]
 [ext_resource path="res://Icons/Level Button Pressed.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Icons/Check.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 140
@@ -28,9 +29,10 @@ func _ready():
 #	pass
 "
 
-[node name="Node2D" type="CenterContainer"]
+[node name="Node2D" type="Container"]
 margin_right = 200.0
 margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 mouse_filter = 1
 script = ExtResource( 1 )
 __meta__ = {
@@ -46,11 +48,19 @@ texture_pressed = ExtResource( 3 )
 expand = true
 
 [node name="Level" type="Label" parent="."]
-margin_left = 100.0
-margin_top = 15.0
-margin_right = 100.0
-margin_bottom = 184.0
+margin_right = 200.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 200, 200 )
 custom_fonts/font = SubResource( 1 )
 align = 1
+valign = 1
 script = SubResource( 2 )
+
+[node name="LevelCompletedIcon" type="TextureRect" parent="."]
+visible = false
+margin_right = 100.0
+margin_bottom = 100.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 5 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

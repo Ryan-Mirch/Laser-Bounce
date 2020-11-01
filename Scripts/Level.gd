@@ -5,8 +5,7 @@ extends Spatial
 # var b = "text"
 var state = 0 # 0 = edit 1 = play
 var complete = false
-
-export(String) var nextLevelID
+export(String) var levelID = "0"
 
 onready var levelUI = get_node("LevelUI")
 onready var timer = get_node("Cycle Timer")
@@ -48,10 +47,8 @@ func _on_Goal_LevelComplete():
 	Global.soundManager.play_sound_Win()
 	complete = true
 	levelUI._Level_Complete()
+	Saving.updateLevelCompleted(levelID)
 	
-	
-func next_pressed():
-	Global.load_next_level(get_filename(), name)
 
 func play_pressed():
 	if state == 0:
