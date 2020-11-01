@@ -10,9 +10,11 @@ var levelSelect = load("res://Menu/Level Select.tscn")
 var tabsResource = load("res://Menu/Tabs.tscn")
 var soundManagerResource = load("res://Sounds/SoundManager.tscn")
 var admobResource = load("res://Ads/AdMob.tscn")
+var iapResource = load("res://In-App Purchases/iap.tscn")
 var tabs
 var soundManager
 var admob
+var iap
 
 signal tabChanged
 
@@ -22,6 +24,7 @@ func _ready():
 	pointerTranslation = Vector3(0,0,0)
 	currentScene = get_tree().get_root().get_node("1")
 	create_adMob()
+	create_iap()
 	create_tabs()
 	create_soundManager()
 	loadAds()
@@ -35,6 +38,10 @@ func loadAds() -> void:
 	admob.load_banner()
 	#admob.load_interstitial()
 	admob.load_rewarded_video()
+	
+func create_iap():
+	iap = iapResource.instance()
+	get_parent().call_deferred("add_child", iap)
 	
 func create_adMob():
 	admob = admobResource.instance()

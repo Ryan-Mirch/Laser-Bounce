@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://Icons/Hint Disabled.png" type="Texture" id=12]
 [ext_resource path="res://Menu/Transition.tscn" type="PackedScene" id=13]
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -54,7 +54,27 @@ func _process(delta):
 	text = str(Saving.hintCount)
 "
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="GDScript" id=7]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Global.iap.payment:
+		text = str(Global.iap.payment.isReady())
+"
+
+[sub_resource type="DynamicFont" id=6]
 size = 125
 font_data = ExtResource( 8 )
 
@@ -76,7 +96,7 @@ margin_left = -520.0
 margin_top = -571.5
 margin_right = 520.0
 margin_bottom = 571.5
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -255,27 +275,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-rect_min_size = Vector2( 0, 450 )
-alignment = 1
+[node name="Transition Effect" parent="." instance=ExtResource( 13 )]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.5
+margin_top = -252.5
+margin_right = 73.5
+margin_bottom = -179.5
+custom_fonts/font = ExtResource( 7 )
+script = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level Completed" type="Label" parent="HBoxContainer"]
+[node name="Level Completed" type="Label" parent="."]
 visible = false
-margin_left = 68.0
-margin_top = 150.0
-margin_right = 1012.0
-margin_bottom = 300.0
-custom_fonts/font = SubResource( 7 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -472.0
+margin_top = 320.0
+margin_right = 472.0
+margin_bottom = 470.0
+custom_fonts/font = SubResource( 6 )
 text = "Level Completed"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Transition Effect" parent="." instance=ExtResource( 13 )]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]

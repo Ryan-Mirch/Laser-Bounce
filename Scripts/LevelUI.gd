@@ -7,11 +7,14 @@ extends Control
 onready var play = get_node("CenterContainer/Play")
 onready var pause = get_node("CenterContainer/Pause")
 onready var cont = get_node("CenterContainer/Continue")
-onready var levelCompleteMessage = get_node("HBoxContainer/Level Completed")
+onready var levelCompleteMessage = get_node("Level Completed")
 onready var hintButton = get_node("Hint/Button")
+onready var retryButton = get_node("CenterContainer2/Retry")
 onready var transitionEffect = get_node("Transition Effect")
 
 var levelComplete = false
+var retryDisabled = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _err = Global.connect("tabChanged", self, "setVisibility")
@@ -58,4 +61,6 @@ func _on_Continue_pressed():
 
 
 func _on_Retry_pressed():
-	Global.load_level(get_parent().get_filename())
+	if transitionEffect.ap.current_animation != "Fade":
+		Global.load_level(get_parent().get_filename())
+
