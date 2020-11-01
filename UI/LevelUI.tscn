@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -11,8 +11,10 @@
 [ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scripts/Hint Popup.gd" type="Script" id=10]
 [ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
+[ext_resource path="res://Icons/Hint Disabled.png" type="Texture" id=12]
+[ext_resource path="res://Menu/Transition.tscn" type="PackedScene" id=13]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -52,6 +54,10 @@ func _process(delta):
 	text = str(Saving.hintCount)
 "
 
+[sub_resource type="DynamicFont" id=7]
+size = 125
+font_data = ExtResource( 8 )
+
 [node name="LevelUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,7 +76,7 @@ margin_left = -520.0
 margin_top = -571.5
 margin_right = 520.0
 margin_bottom = 571.5
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 6 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -214,35 +220,66 @@ position = Vector2( 2.37842, 3.96404 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 11 )
 
-[node name="Hint" type="HBoxContainer" parent="."]
-anchor_top = 0.12
-anchor_bottom = 0.12
+[node name="Hint" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -234.125
+margin_top = -398.983
+margin_right = 5.87488
+margin_bottom = -198.983
 script = ExtResource( 5 )
+
+[node name="Count" type="Label" parent="Hint"]
+margin_left = 43.4182
+margin_top = 102.643
+margin_right = 79.4182
+margin_bottom = 175.643
+custom_fonts/font = ExtResource( 7 )
+text = "3"
+script = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="CenterContainer" parent="Hint"]
-margin_right = 200.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 200, 200 )
+[node name="Button" type="TextureButton" parent="Hint"]
+margin_left = 60.9512
+margin_top = 21.4268
+margin_right = 160.951
+margin_bottom = 121.427
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button" type="TouchScreenButton" parent="Hint/Container"]
-scale = Vector2( 2, 2 )
-normal = ExtResource( 6 )
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 450 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Count" type="Label" parent="Hint"]
-margin_left = 204.0
-margin_top = 63.0
-margin_right = 240.0
-margin_bottom = 136.0
-custom_fonts/font = ExtResource( 7 )
-text = "3"
-script = SubResource( 5 )
+[node name="Level Completed" type="Label" parent="HBoxContainer"]
+visible = false
+margin_left = 68.0
+margin_top = 150.0
+margin_right = 1012.0
+margin_bottom = 300.0
+custom_fonts/font = SubResource( 7 )
+text = "Level Completed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition Effect" parent="." instance=ExtResource( 13 )]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
-[connection signal="pressed" from="Hint/Container/Button" to="Hint" method="_on_Button_pressed"]
+[connection signal="pressed" from="Hint/Button" to="Hint" method="_on_Button_pressed"]

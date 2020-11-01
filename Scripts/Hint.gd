@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -7,7 +7,6 @@ extends HBoxContainer
 onready var countLabel = get_node("Count")
 onready var hintPopup = get_node("../Hint Popup")
 onready var watchAdButton = get_node("../Hint Popup/VBoxContainer/HBoxContainer/Button Yes")
-
 
 export var startingHints = 5
 
@@ -29,6 +28,7 @@ func giveHint():
 	pass
 
 func _on_Button_pressed():
+	if 	Global.playing == true: return
 	if Saving.hintCount == 0:
 		hintPopup.popup()	
 		return

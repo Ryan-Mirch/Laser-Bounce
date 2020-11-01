@@ -21,9 +21,7 @@ func _process(_delta):
 	
 func _physics_process(_delta):
 	pass
-
 	
-		
 func Play():
 	Global.soundManager.play_sound_PlayLevel()
 	get_tree().call_group("Laser","Play")
