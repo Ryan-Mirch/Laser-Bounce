@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Tabs.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Settings.tscn" type="PackedScene" id=2]
@@ -18,8 +18,40 @@ bg_color = Color( 0, 0, 0, 1 )
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+bg_color = Color( 0.309804, 0.32549, 0.341176, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
 shadow_size = 5
+
+[sub_resource type="Animation" id=3]
+resource_name = "Grey"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:custom_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.309804, 0.32549, 0.341176, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "See Through Black"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:custom_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.196078 ) ]
+}
 
 [node name="Tabs" type="Control"]
 anchor_right = 1.0
@@ -107,6 +139,10 @@ focus_mode = 0
 custom_icons/off = ExtResource( 11 )
 custom_icons/on = ExtResource( 12 )
 enabled_focus_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Grey = SubResource( 3 )
+"anims/See Through Black" = SubResource( 4 )
 [connection signal="pressed" from="Panel/HBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Store" to="." method="_on_Store_pressed"]

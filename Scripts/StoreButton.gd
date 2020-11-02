@@ -38,7 +38,9 @@ func getSaveDictionary():
 		return Saving.tilesEquipped
 	
 func loadFromSaveData():
-	if getSaveDictionary().has(itemName):
+	var dic = getSaveDictionary()
+	
+	if dic.has(itemName):
 		selected = getSaveDictionary()[itemName]
 	else:
 		selected = defaultOn

@@ -22,6 +22,8 @@ signal dataLoaded
 
 func _ready():
 	loadData()
+	initializeSaveData()
+	updateSaveData()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -60,6 +62,18 @@ func loadData():
 		f.close()
 	
 	emit_signal("dataLoaded")
+	
+func initializeSaveData():
+	if !hintCount: hintCount = 0
+	if !showAds: showAds = true
+	if !enableSound: enableSound = true
+	if !enableMusic: enableMusic = true
+	if !camera_sensitivity: camera_sensitivity = 0.5
+	if !levelCompleted: levelCompleted = {}
+	if !lasersEquipped: lasersEquipped = {}
+	if !laserSoundsEquipped: laserSoundsEquipped = {}
+	if !backgroundsEquipped: backgroundsEquipped = {}
+	if !tilesEquipped: tilesEquipped = {}
 
 func updateLevelCompleted(levelID):
 	levelCompleted[levelID] = true	

@@ -28,6 +28,7 @@ func isOpen():
 	return open
 
 func updateSkin():
+	if !Saving.tilesEquipped: return
 	var keys = Saving.tilesEquipped.keys()
 	if keys.size() > 0:
 		

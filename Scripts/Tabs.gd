@@ -20,6 +20,7 @@ var currentTab = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
+	$AnimationPlayer.play("See Through Black")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,6 +55,7 @@ func _on_Game_pressed():
 	currentTab = 0
 	Global.emit_signal("tabChanged")
 	blockGameScreen.visible = false
+	$AnimationPlayer.play("See Through Black")
 
 func _on_Level_Select_pressed():
 	close_all_tabs()
@@ -61,6 +63,7 @@ func _on_Level_Select_pressed():
 	levelSelectTab.pressed = true
 	currentTab = 1
 	Global.emit_signal("tabChanged")
+	$AnimationPlayer.play("Grey")
 	
 	
 func _on_Store_pressed():
@@ -69,6 +72,7 @@ func _on_Store_pressed():
 	storeTab.pressed = true
 	currentTab = 2
 	Global.emit_signal("tabChanged")
+	$AnimationPlayer.play("Grey")
 
 func _on_Settings_pressed():
 	close_all_tabs()
@@ -76,6 +80,7 @@ func _on_Settings_pressed():
 	settingsTab.pressed = true
 	currentTab = 3
 	Global.emit_signal("tabChanged")
+	$AnimationPlayer.play("Grey")
 
 	
 func close_all_tabs():
