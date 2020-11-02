@@ -12,7 +12,8 @@ onready var beam = load("res://Assets/Beam.tscn")
 var color
 var hasBounced = false
 var readyToBounce = false
-var scaleY
+var scaleY = 0
+var targetScaleY
 var collision_point
 var distance = 0
 
@@ -59,7 +60,9 @@ func fix_position():
 	
 
 func set_length(length):
-	scaleY = length
+	targetScaleY = length
+	scaleY = lerp(scaleY, targetScaleY, 0.7)
+	
 	body.scale.y = scaleY + .1
 	body.translation.z = scaleY*.5
 	
