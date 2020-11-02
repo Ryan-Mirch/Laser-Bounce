@@ -20,6 +20,7 @@ var currentTab = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -28,16 +29,16 @@ func _process(delta):
 func make_room_for_Banner():	
 	var ratio = get_viewport().get_visible_rect().size.y / get_viewport().get_visible_rect().size.x
 	ratio = clamp(ratio, 1, 100)
-	var h = pow(Global.admob.get_banner_dimension().y * ratio, 1.05)
-	settingsWindow.margin_top = h
-	levelSelectWindow.margin_top = h
-	storeWindow.margin_top = h
+	var h = pow(Global.admob.get_banner_dimension().y * ratio, 1.01)
+	settingsWindow.setMarginTop(h)
+	levelSelectWindow.setMarginTop(h)
+	storeWindow.setMarginTop(h)
 		
 		
 func remove_room_for_Banner():
-	settingsWindow.margin_top = 0
-	levelSelectWindow.margin_top = 0
-	storeWindow.margin_top = 0
+	settingsWindow.setMarginTop(0)
+	levelSelectWindow.setMarginTop(0)
+	storeWindow.setMarginTop(0)
 		
 func set_current_tab(tab):
 	if tab == 0: _on_Game_pressed()

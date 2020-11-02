@@ -7,9 +7,17 @@ var showAds = true
 var enableSound = true
 var enableMusic = true
 var camera_sensitivity = 0.25
+
+var lasersEquipped = {}
+var laserSoundsEquipped = {}
+var backgroundsEquipped = {}
+var tilesEquipped = {}
+
 var levelCompleted = {}
 
+
 signal saveDataUpdated
+signal saveDataReset
 signal dataLoaded
 
 func _ready():
@@ -28,6 +36,10 @@ func updateSaveData():
 	f.store_var(enableMusic)
 	f.store_var(camera_sensitivity)
 	f.store_var(levelCompleted)
+	f.store_var(lasersEquipped)
+	f.store_var(laserSoundsEquipped)
+	f.store_var(backgroundsEquipped)
+	f.store_var(tilesEquipped)
 	f.close()
 	emit_signal("saveDataUpdated")
 	
@@ -41,10 +53,29 @@ func loadData():
 		enableMusic = f.get_var()
 		camera_sensitivity = f.get_var()
 		levelCompleted = f.get_var()
+		lasersEquipped = f.get_var()
+		laserSoundsEquipped = f.get_var()
+		backgroundsEquipped = f.get_var()
+		tilesEquipped = f.get_var()
 		f.close()
-		
+	
 	emit_signal("dataLoaded")
 
 func updateLevelCompleted(levelID):
 	levelCompleted[levelID] = true	
 	updateSaveData()
+	
+func resetSaveData():
+	hintCount = 0
+	showAds = true
+	enableSound = true
+	enableMusic = true
+	camera_sensitivity = 0.25
+	levelCompleted.clear()
+	lasersEquipped.clear()		
+	laserSoundsEquipped.clear()	
+	backgroundsEquipped.clear()	
+	tilesEquipped.clear()	
+	
+	updateSaveData()
+	emit_signal("saveDataReset")
