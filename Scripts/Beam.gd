@@ -16,6 +16,7 @@ var scaleY = 0
 var targetScaleY
 var collision_point
 var distance = 0
+var lengthMultiplier = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,10 +62,15 @@ func fix_position():
 
 func set_length(length):
 	targetScaleY = length
-	scaleY = lerp(scaleY, targetScaleY, 0.7)
+	#scaleY = targetScaleY
+	#scaleY = lerp(scaleY, targetScaleY, .8)
+	#scaleY = clamp(scaleY + lengthMultiplier,0.1,targetScaleY)
+	scaleY = clamp(scaleY*lengthMultiplier,0.1,targetScaleY)
+	#scaleY = clamp(scaleY * 2,0.1,targetScaleY)
 	
 	body.scale.y = scaleY + .1
 	body.translation.z = scaleY*.5
+	lengthMultiplier += 1
 	
 func unBounce():
 	var child_beam = get_node_or_null("Beam")

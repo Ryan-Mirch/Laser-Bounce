@@ -6,7 +6,7 @@ extends Control
 # var b = "text"
 
 onready var levelSelect = get_node("../..")
-onready var label = get_node("Level")
+onready var label = get_node("TextureButton/Level")
 onready var levelCompletedIcon = get_node("LevelCompletedIcon")
 
 export (String, FILE) var levelPath

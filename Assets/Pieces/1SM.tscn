@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/1SM.gd" type="Script" id=1]
-[ext_resource path="res://Imports/Mirror_001.material" type="Material" id=2]
+[ext_resource path="res://Materials/Mirror_001.material" type="Material" id=2]
 [ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Imports/Laser Base.material" type="Material" id=4]
+[ext_resource path="res://Materials/Laser Base.material" type="Material" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube053"
@@ -35,10 +35,10 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="ConcavePolygonShape" id=5]
+[sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -0.5, -4.5, -0.75, -0.5, 1.5, -1.25, -0.5, 1.5, -0.75, -0.5, -4.5, -0.75, -0.5, -4.5, -1.25, -0.5, 1.5, -1.25, -0.5, -4.5, -1.25, 1.5, 1.5, -1.25, -0.5, 1.5, -1.25, -0.5, -4.5, -1.25, 1.5, -4.5, -1.25, 1.5, 1.5, -1.25, 1.5, -4.5, -1.25, 1.5, 1.5, -0.75, 1.5, 1.5, -1.25, 1.5, -4.5, -1.25, 1.5, -4.5, -0.75, 1.5, 1.5, -0.75, 1.5, -4.5, -0.75, -0.5, 1.5, -0.75, 1.5, 1.5, -0.75, 1.5, -4.5, -0.75, -0.5, -4.5, -0.75, -0.5, 1.5, -0.75, -0.5, -4.5, -1.25, 1.5, -4.5, -0.75, 1.5, -4.5, -1.25, -0.5, -4.5, -1.25, -0.5, -4.5, -0.75, 1.5, -4.5, -0.75, 1.5, 1.5, -1.25, -0.5, 1.5, -0.75, -0.5, 1.5, -1.25, 1.5, 1.5, -1.25, 1.5, 1.5, -0.75, -0.5, 1.5, -0.75 )
 
-[sub_resource type="ConcavePolygonShape" id=3]
+[sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -1.5, 0, 0.5, -1.5, 6, -0.5, -1.5, 6, 0.5, -1.5, 0, 0.5, -1.5, 0, -0.5, -1.5, 6, -0.5, 1.5, 0, -0.5, 1.5, 6, 0.5, 1.5, 6, -0.5, 1.5, 0, -0.5, 1.5, 0, 0.5, 1.5, 6, 0.5, -1, 6, -0.25, -1, 0, 0, -1, 6, 0, -1, 6, -0.25, -0.99, 0, -0.25, -1, 0, 0, 1, 0, -0.5, 1.5, 6, -0.5, 1, 6, -0.5, 1, 0, -0.5, 1.5, 0, -0.5, 1.5, 6, -0.5, -1, 6, -0.5, -1.5, 0, -0.5, -1, 0, -0.5, -1, 6, -0.5, -1.5, 6, -0.5, -1.5, 0, -0.5, -1, 0, 0.5, -1.5, 6, 0.5, -1, 6, 0.5, -1, 0, 0.5, -1.5, 0, 0.5, -1.5, 6, 0.5, 1, 6, 0.5, 1.5, 0, 0.5, 1, 0, 0.5, 1, 6, 0.5, 1.5, 6, 0.5, 1.5, 0, 0.5, 1, 0, -0.25, 1, 6, 0, 1, 0, 0, 1, 0, -0.25, 1, 6, -0.25, 1, 6, 0, -1, 6, 0, -1, 0, 0.5, -1, 6, 0.5, -1, 6, 0, -1, 0, 0, -1, 0, 0.5, 1, 0, 0, 1, 6, 0.5, 1, 0, 0.5, 1, 0, 0, 1, 6, 0, 1, 6, 0.5, -1, 0, -0.5, 1, 6, -0.5, 1, 0, -0.5, -1, 0, -0.5, -1, 6, -0.5, 1, 6, -0.5, 1, 0, -0.25, -1, 6, -0.25, 1, 6, -0.25, 1, 0, -0.25, -0.99, 0, -0.25, -1, 6, -0.25, 1, 6, 0, 1.5, 6, 0.5, 1, 6, 0.5, 1.5, 6, 0.5, 1, 6, -0.5, 1.5, 6, -0.5, -1, 6, -0.5, -1.5, 6, 0.5, -1.5, 6, -0.5, 1, 6, -0.25, 1.5, 6, 0.5, 1, 6, 0, -1, 6, 0.5, -1, 6, -0.25, -1, 6, 0, 1, 6, -0.25, 1, 6, -0.5, 1.5, 6, 0.5, -1.5, 6, 0.5, -1, 6, -0.25, -1, 6, 0.5, -1, 6, -0.25, 1, 6, -0.5, 1, 6, -0.25, -1, 6, -0.5, -1, 6, -0.25, -1.5, 6, 0.5, -1, 6, -0.25, -1, 6, -0.5, 1, 6, -0.5, -1.5, 0, 0.5, -1, 0, -0.5, -1.5, 0, -0.5, 1, 0, -0.5, 1.5, 0, 0.5, 1.5, 0, -0.5, -1, 0, 0.5, -1, 0, -0.5, -1.5, 0, 0.5, -1, 0, 0, -1, 0, -0.5, -1, 0, 0.5, 1.5, 0, 0.5, 1, 0, 0, 1, 0, 0.5, 1.5, 0, 0.5, 1, 0, -0.25, 1, 0, 0, -0.99, 0, -0.25, -1, 0, -0.5, -1, 0, 0, 1, 0, -0.5, 1, 0, -0.25, 1.5, 0, 0.5, 1, 0, -0.25, -1, 0, -0.5, -0.99, 0, -0.25, -1, 0, -0.5, 1, 0, -0.25, 1, 0, -0.5 )
 
 [node name="1SM" type="Spatial"]
@@ -59,13 +59,13 @@ material/0 = null
 ]]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube054/Cube055/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube054"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00103201 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube054/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Close Closest Tile On Ready" parent="." instance=ExtResource( 3 )]
 [connection signal="input_event" from="Cube054/Cube055/StaticBody" to="." method="_on_StaticBody_input_event"]

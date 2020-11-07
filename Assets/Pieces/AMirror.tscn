@@ -1,9 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Activator.gd" type="Script" id=1]
-[ext_resource path="res://Imports/Laser Base.material" type="Material" id=2]
-[ext_resource path="res://Imports/Mirror_001.material" type="Material" id=3]
+[ext_resource path="res://Materials/Laser Base.material" type="Material" id=2]
+[ext_resource path="res://Materials/Mirror_001.material" type="Material" id=3]
 [ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.074"
