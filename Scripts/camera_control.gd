@@ -58,11 +58,13 @@ func _input(event):
 
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			var change = distance/5
+			change = clamp(change, 1, 100)
 			if event.button_index == BUTTON_WHEEL_UP:
-				distance -= distance/5				
+				distance -= change				
 
 			elif event.button_index == BUTTON_WHEEL_DOWN:
-				distance += distance/5
+				distance += change
 
 			distance = clamp(distance, min_distance, max_distance)	
 
