@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/In-App Purchases.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=2]
 
 [node name="iap" type="Control"]
 anchor_right = 1.0
@@ -11,15 +12,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AlertDialog" type="AcceptDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -540.0
-margin_top = -416.5
-margin_right = 540.0
-margin_bottom = 416.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 164.0
+margin_top = 255.0
+margin_right = -164.0
+margin_bottom = -622.0
+dialog_autowrap = true
+
+[node name="Label2" type="Label" parent="AcceptDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+custom_fonts/font = ExtResource( 2 )
+autowrap = true

@@ -9,23 +9,37 @@ export var setColor = Color(1,1,1,1)
 var activatedCount = 0
 var newMaterial
 onready var glow = get_node("Glow")
+var cyclesAfterHit = 0
+var activated = false
+var levelComplete = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	check()
+
+func check():
+	if activated and cyclesAfterHit > 0 and !levelComplete:
+		emit_signal("LevelComplete")
+		print("Level Complete")
+		newMaterial.flags_unshaded = true
+		glow.visible = true
+		levelComplete = true
+		
+func cycleCount():
+	if activated:
+		cyclesAfterHit += 1
 
 func activated():
-	emit_signal("LevelComplete")
-	print("Level Complete")
-	newMaterial.flags_unshaded = true
-	glow.visible = true
+	activated = true
+	
 
 func deactivated():
-	pass
+	activated = false
+	cyclesAfterHit = 0
 
 
 func _on_Area_body_entered(body):

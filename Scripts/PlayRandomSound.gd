@@ -5,12 +5,31 @@ extends Node
 # var b = "text"
 export(float) var pitch = 1
 export(float) var volume = 0
-export(Array, AudioStreamSample) var sounds
+
+export(String, DIR) var soundDirectory
+var sounds = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	
+	loadSounds(soundDirectory)
+		
+
+func loadSounds(path):
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin()
+	sounds.clear()
+
+	while true:
+		var file = dir.get_next()
+		print(path + "/" + file)
+		if file == "":
+			break
+		elif !file.begins_with(".") and file.ends_with(".import"):
+			sounds.append(load((path + "/" + file).replace(".import","")))
+			
+
 func playSound():	
+	if !sounds.size() > 0: return
 	var soundSample = AudioStreamSample.new()
 	var asp = AudioStreamPlayer.new()
 	get_parent().add_child(asp)

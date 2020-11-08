@@ -6,12 +6,12 @@ const TEST_LASER2_SKU = "laser_2_test"
 
 var payment
 
-onready var alert_dialog = $AlertDialog
+onready var alert_dialog = $"AcceptDialog"
+onready var alert_dialog_text = $"AcceptDialog/Label2"
 
 var test_item_purchase_token = null
 
 func _ready():
-	
 	if Engine.has_singleton("GodotGooglePlayBilling"):
 		payment = Engine.get_singleton("GodotGooglePlayBilling")
 
@@ -51,8 +51,8 @@ func _on_connected():
 
 
 func show_alert(text):
-	alert_dialog.dialog_text = text
-	alert_dialog.popup_centered()
+	#alert_dialog_text.text = text
+	alert_dialog.popup()
 
 func _on_sku_details_query_completed(sku_details):
 	

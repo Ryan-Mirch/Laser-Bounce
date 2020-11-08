@@ -14,11 +14,28 @@ onready var Rotate = get_node("Rotate")
 onready var Win = get_node("Win")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Saving.connect("saveDataUpdated", self, "updateLaserSounds")
+	updateLaserSounds()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func updateLaserSounds():
+	if !Saving.laserSoundsEquipped: return
+	var keys = Saving.laserSoundsEquipped.keys()
+	if keys.size() > 0:
+		
+		var equippedItem = keys[0]
+		for key in keys:
+			if Saving.laserSoundsEquipped[key] == true:
+				equippedItem = key
+				break
+		
+		$Laser.loadSounds("res://Sounds/Lasers/" + equippedItem)
+		
+
 
 func play_sound_Laser():
 	if !Saving.enableSound: return

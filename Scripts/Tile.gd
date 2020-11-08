@@ -5,23 +5,19 @@ extends Spatial
 # var a = 2
 # var b = "text"
 var open
-onready var flag = get_node("StaticBody/OpenFlag")
+
+onready var mesh = get_node("StaticBody/Mesh")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect("saveDataUpdated", self, "updateSkin")
-	$"AnimationPlayer".play("Default Tile")
+	var _x = Saving.connect("saveDataUpdated", self, "updateSkin")
 	updateSkin()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
-	if Global.debug:
-		flag.visible = open
-	else:
-		flag.visible = false
+	pass
 
 func setOpen(b):
 	open = b	
@@ -39,5 +35,7 @@ func updateSkin():
 			if Saving.tilesEquipped[key] == true:
 				equippedItem = key
 				break
-				
-		$"AnimationPlayer".play(equippedItem)
+		
+		mesh.set_surface_material(0,load("res://Materials/Tile/" + equippedItem + " Tile.material"))
+		mesh.set_surface_material(1,load("res://Materials/Tile/" + equippedItem + " TileAccent.material"))
+		

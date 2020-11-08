@@ -15,6 +15,7 @@ func _ready():
 	Edit()
 	
 	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -41,6 +42,7 @@ func _on_Cycle_Timer_timeout():
 	timer.start()
 	get_tree().call_group("Beam", "bounce")
 	get_tree().call_group("Laser Absorber", "shoot")
+	get_tree().call_group("Goal", "cycleCount")
 
 func _on_Goal_LevelComplete():
 	Global.soundManager.play_sound_Win()

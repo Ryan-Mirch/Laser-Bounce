@@ -17,16 +17,21 @@ var retryDisabled = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var _err = Global.connect("tabChanged", self, "setVisibility")
+	var _err = Global.connect("tabChanged", self, "tabChanged")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 		
-
-func setVisibility():
+func tabChanged():
 	visible = Global.get_current_tab() == 0
+	if Global.get_current_tab() != 0 and Global.playing and !Global.complete:
+		var Level = get_parent()
+		Level.play_pressed()
+		pause.visible = false
+		play.visible = true
+		hintButton.disabled = false
 
 func _on_Play_pressed():
 	if Global.get_current_tab() != 0: return

@@ -1,65 +1,38 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://Helpers/PlayRandomSound.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sounds/laser1.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/laser2.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/laser3.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sounds/laser4.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sounds/laser5.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sounds/door1.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/door2.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sounds/door3.wav" type="AudioStream" id=10]
-[ext_resource path="res://Sounds/door4.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sounds/start1.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sounds/start2.wav" type="AudioStream" id=13]
-[ext_resource path="res://Sounds/end1.wav" type="AudioStream" id=14]
-[ext_resource path="res://Sounds/end2.wav" type="AudioStream" id=15]
-[ext_resource path="res://Sounds/pickup1.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sounds/pickup2.wav" type="AudioStream" id=17]
-[ext_resource path="res://Sounds/pickup3.wav" type="AudioStream" id=18]
-[ext_resource path="res://Sounds/putdown1.wav" type="AudioStream" id=19]
-[ext_resource path="res://Sounds/putdown2.wav" type="AudioStream" id=20]
-[ext_resource path="res://Sounds/putdown3.wav" type="AudioStream" id=21]
-[ext_resource path="res://Sounds/rotate1.wav" type="AudioStream" id=22]
-[ext_resource path="res://Sounds/rotate2.wav" type="AudioStream" id=23]
-[ext_resource path="res://Sounds/rotate3.wav" type="AudioStream" id=24]
-[ext_resource path="res://Sounds/rotate4.wav" type="AudioStream" id=25]
-[ext_resource path="res://Sounds/win1.wav" type="AudioStream" id=26]
-[ext_resource path="res://Sounds/win2.wav" type="AudioStream" id=27]
-[ext_resource path="res://Sounds/win3.wav" type="AudioStream" id=28]
-[ext_resource path="res://Sounds/win4.wav" type="AudioStream" id=29]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Laser" parent="." instance=ExtResource( 2 )]
 pitch = 1.2
-sounds = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
+soundDirectory = "res://Sounds/Lasers/Default"
 
 [node name="Door Open" parent="." instance=ExtResource( 2 )]
-sounds = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+soundDirectory = "res://Sounds/door"
 
 [node name="Door Close" parent="." instance=ExtResource( 2 )]
 pitch = 1.4
-sounds = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+soundDirectory = "res://Sounds/door"
 
 [node name="Play Level" parent="." instance=ExtResource( 2 )]
-sounds = [ ExtResource( 12 ), ExtResource( 13 ) ]
+soundDirectory = "res://Sounds/start"
 
 [node name="Stop Level" parent="." instance=ExtResource( 2 )]
-sounds = [ ExtResource( 14 ), ExtResource( 15 ) ]
+soundDirectory = "res://Sounds/end"
 
 [node name="Pick Up" parent="." instance=ExtResource( 2 )]
 volume = -2.0
-sounds = [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ]
+soundDirectory = "res://Sounds/pickup"
 
 [node name="Put Down" parent="." instance=ExtResource( 2 )]
 volume = -6.0
-sounds = [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ]
+soundDirectory = "res://Sounds/putdown"
 
 [node name="Rotate" parent="." instance=ExtResource( 2 )]
-sounds = [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ]
+soundDirectory = "res://Sounds/rotate"
 
 [node name="Win" parent="." instance=ExtResource( 2 )]
-sounds = [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ]
+soundDirectory = "res://Sounds/win"

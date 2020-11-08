@@ -16,7 +16,7 @@ func _ready():
 	Global.admob.connect("rewarded", self, "rewardRecieved")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	watchAdButton.disabled = !Global.admob._is_rewarded_video_loaded
 
 func rewardRecieved(currency, amount):

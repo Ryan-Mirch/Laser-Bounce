@@ -1,4 +1,4 @@
-extends TextureButton
+extends Panel
 
 
 # Declare member variables here. Examples:
@@ -7,9 +7,9 @@ extends TextureButton
 
 onready var levelSelect = get_node("../..")
 onready var label = get_node("Label")
-onready var selectedIcon = get_node("Selected")
 
 export(String) var itemName = ""
+export(String) var ID = ""
 export(String, "Lasers", "Laser Sounds", "Backgrounds", "Tiles") var buttonGroup = ""
 export var defaultOn = false
 
@@ -23,8 +23,8 @@ func _ready():
 	loadFromSaveData()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	selectedIcon.pressed = selected
+func _process(_delta):
+	pass
 	
 func getSaveDictionary():
 	if buttonGroup == "Lasers":
@@ -39,27 +39,48 @@ func getSaveDictionary():
 func loadFromSaveData():
 	var dic = getSaveDictionary()
 	
-	if dic.has(itemName):
-		selected = getSaveDictionary()[itemName]
+	if dic.has(ID):
+		selected = getSaveDictionary()[ID]
 	else:
 		selected = defaultOn
+		updateSaveData()
+		Saving.updateSaveData()
+		
+	get_node("AnimationPlayer").play_backwards("Selected")	
+	
+	setSelected(selected)
 
 func updateSaveData():
-	getSaveDictionary()[itemName] = selected	
+	getSaveDictionary()[ID] = selected	
+	
+func setSelected(b):
+	
+	if selected and !b:
+		get_node("AnimationPlayer").play_backwards("Selected")
+	
+	if b:
+		get_node("AnimationPlayer").play("Selected")
+		
+	selected = b
+	
+	
 	
 
 func setLabelText():
 	label.text = itemName
 
-func _on_Node2D_pressed():
+func pressed():
 	if selected: return
 	
 	for b in get_tree().get_nodes_in_group(buttonGroup):
-		b.selected = false
+		b.setSelected(false)
 		b.updateSaveData()
 	
-	selected = true
+	setSelected(true)
 	Global.soundManager.play_sound_PickUp()
 	updateSaveData()
 	Saving.updateSaveData()
-	
+
+func _on_Panel_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+	   pressed()

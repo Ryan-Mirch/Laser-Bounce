@@ -20,6 +20,8 @@ var lengthMultiplier = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var _x = Saving.connect("saveDataUpdated", self, "updateSkin")
+	updateSkin()
 	fix_position()
 	set_length(0)
 	color = get_parent().color
@@ -29,7 +31,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-	
+
+func updateSkin():
+	if !Saving.lasersEquipped: return
+	var keys = Saving.lasersEquipped.keys()
+	if keys.size() > 0:
+		
+		var equippedItem = keys[0]
+		for key in keys:
+			if Saving.lasersEquipped[key] == true:
+				equippedItem = key
+				break
+		
+		$"CPUParticles".emitting = (equippedItem == "1")
+		
 
 func _physics_process(_delta):	
 	if ray.is_colliding():
@@ -61,6 +76,9 @@ func fix_position():
 	
 
 func set_length(length):
+	
+	$"CPUParticles".setProperties(length)
+	
 	targetScaleY = length
 	#scaleY = targetScaleY
 	#scaleY = lerp(scaleY, targetScaleY, .8)
@@ -116,7 +134,10 @@ func bounce():
 func set_color():
 	var material = SpatialMaterial.new()
 	material.albedo_color = color
+	material.flags_unshaded = true
 	mesh.set_material_override(material)
+	
+	$"CPUParticles".mesh.material = material
 	
 func _get_closest_tile(state): 
 	var tiles =  get_tree().get_nodes_in_group("Tile")

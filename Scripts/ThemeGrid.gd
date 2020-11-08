@@ -29,7 +29,7 @@ func createButtons():
 		
 		add_child(buttonInstance)
 
-func list_files_in_directory(path):
+func list_files_in_directory(_path):
 	var files = []
 	var dir = Directory.new()
 	dir.open(themePath)
