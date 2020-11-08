@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -50,11 +50,14 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	text = str(Saving.hintCount)
 "
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0.839216 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 120
 use_filter = true
 font_data = ExtResource( 8 )
@@ -88,6 +91,54 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -59.5918
+margin_top = -397.83
+margin_right = 11.4082
+margin_bottom = -323.83
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TouchScreenButton" parent="CenterContainer"]
+position = Vector2( 2.37842, 3.96404 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+
+[node name="Continue" type="TouchScreenButton" parent="CenterContainer"]
+visible = false
+position = Vector2( 2.37842, 3.96404 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+
+[node name="Pause" type="TouchScreenButton" parent="CenterContainer"]
+visible = false
+position = Vector2( 3.55957, 3.55957 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 4 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 28.5088
+margin_top = -401.851
+margin_right = 99.5087
+margin_bottom = -327.851
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="TouchScreenButton" parent="CenterContainer2"]
+position = Vector2( 2.37842, 3.96404 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
 
 [node name="Hint Popup" type="Panel" parent="."]
 anchor_left = 0.5
@@ -194,54 +245,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -242.992
-margin_top = -206.354
-margin_right = -171.992
-margin_bottom = -132.354
-rect_scale = Vector2( 3, 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Play" type="TouchScreenButton" parent="CenterContainer"]
-position = Vector2( 2.37842, 3.96404 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 2 )
-
-[node name="Continue" type="TouchScreenButton" parent="CenterContainer"]
-visible = false
-position = Vector2( 2.37842, 3.96404 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-
-[node name="Pause" type="TouchScreenButton" parent="CenterContainer"]
-visible = false
-position = Vector2( 3.55957, 3.55957 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 4 )
-
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 28.5088
-margin_top = -401.851
-margin_right = 99.5087
-margin_bottom = -327.851
-rect_scale = Vector2( 3, 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Retry" type="TouchScreenButton" parent="CenterContainer2"]
-position = Vector2( 2.37842, 3.96404 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 11 )
-
 [node name="Hint" type="Control" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -252,6 +255,9 @@ margin_top = -398.983
 margin_right = 5.87488
 margin_bottom = -198.983
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Count" type="Label" parent="Hint"]
 margin_left = 43.4182
@@ -281,17 +287,14 @@ __meta__ = {
 
 [node name="Level Completed" type="Label" parent="."]
 visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -472.0
-margin_top = 320.0
-margin_right = 472.0
-margin_bottom = 470.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+margin_top = 346.0
+margin_bottom = 570.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "Level Completed"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -304,10 +307,10 @@ custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
-[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
+[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="Hint/Button" to="Hint" method="_on_Button_pressed"]

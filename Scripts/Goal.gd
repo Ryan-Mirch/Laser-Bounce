@@ -5,8 +5,10 @@ extends Spatial
 # var b = "text"
 
 signal LevelComplete
-export var color = Color(255,255,255)
+export var setColor = Color(1,1,1,1)
 var activatedCount = 0
+var newMaterial
+onready var glow = get_node("Glow")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +21,8 @@ func _ready():
 func activated():
 	emit_signal("LevelComplete")
 	print("Level Complete")
+	newMaterial.flags_unshaded = true
+	glow.visible = true
 
 func deactivated():
 	pass
@@ -43,12 +47,14 @@ func _on_Area_body_exited(body):
 			deactivated()
 
 func check_color(c): #check if the color is correct
-	if color == c: return true
-	if color == Color(1,1,1): return true
+	if setColor == c: return true
+	if setColor == Color(1,1,1): return true
 	if c == Color(1,1,1): return true
 	return false
 
 func _on_Sphere001_ready():
-	var material = SpatialMaterial.new()
-	material.albedo_color = color
-	$"Cube033/Sphere001".set_material_override(material)
+	newMaterial = SpatialMaterial.new()
+	newMaterial.albedo_color = setColor
+	
+	
+	$"Cube033/Sphere001".set_material_override(newMaterial)

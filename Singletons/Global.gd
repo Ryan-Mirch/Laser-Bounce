@@ -3,6 +3,7 @@ extends Node
 var pointerTranslation
 var debug = false
 var playing = false
+var complete = false
 var currentScene
 
 var settings = load("res://Menu/Settings.tscn")

@@ -14,10 +14,11 @@ onready var timer = get_node("Cycle Timer")
 func _ready():
 	Edit()
 	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	Global.complete = complete
 	
 func _physics_process(_delta):
 	pass

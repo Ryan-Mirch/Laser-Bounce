@@ -33,6 +33,7 @@ var _pitch = 0.0
 var _total_yaw = 0.0
 var _total_pitch = 0.0
 
+
 var rayOrigin = Vector3()
 var rayEnd = Vector3()
 
@@ -56,7 +57,7 @@ func _input(event):
 	if event.is_action_released("grab"):
 		_pressed = false
 
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and !Global.complete:
 		if event.is_pressed():
 			var change = distance/5
 			change = clamp(change, 1, 100)
@@ -67,6 +68,7 @@ func _input(event):
 				distance += change
 
 			distance = clamp(distance, min_distance, max_distance)	
+			
 
 	if mouselook:
 		if event is InputEventMouseMotion:
@@ -94,7 +96,6 @@ func Camera_Pannable():
 	
 
 func _process(_delta):
-	
 	if events.size() > 1:
 		_pressed = false
 		
@@ -109,6 +110,7 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	# Called when collision are enabled
+	
 	_update_distance()
 	if mouselook:
 		_update_mouselook()
@@ -129,7 +131,7 @@ func _unhandled_input(event):
 	if event is InputEventScreenDrag:
 		events[event.index] = event
 			
-		if events.size() == 2:
+		if events.size() == 2 and !Global.complete:
 			var drag_distance = events[0].position.distance_to(events[1].position)
 			
 			
@@ -141,7 +143,6 @@ func _unhandled_input(event):
 				distance -= (drag_distance - last_drag_distance)*(0.001 * distance * 3)
 			
 			distance = clamp(distance, min_distance, max_distance)	
-			
 			last_drag_distance = drag_distance 
 				
 			
@@ -171,6 +172,12 @@ func _update_mouselook():
 		
 	_pitch = clamp(_pitch, (-lower_pitch_limit - _total_pitch) , (upper_pitch_limit - _total_pitch) )
 
+	
+	if Global.complete:
+		_yaw = 0.2
+		_pitch = -lerp(_total_pitch, 0 , .96)
+		
+	
 	_total_yaw += _yaw
 	_total_pitch += _pitch
 
@@ -191,6 +198,10 @@ func _update_mouselook():
 
 func _update_distance():
 	var t = pivot.get_translation()
+	
+	if Global.complete:
+		distance = lerp(distance,30, 0.05)
+				
 	t.z -= distance
 	set_translation(t)
 
@@ -230,6 +241,7 @@ func set_smoothness(value):
 
 func set_distance(value):
 	distance = max(0, value)
+	
 	
 
 	

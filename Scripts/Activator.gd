@@ -100,6 +100,7 @@ func spawn_wires():
 func _on_Sphere_ready():
 	var material = SpatialMaterial.new()
 	material.albedo_color = color
+	material.emission_enabled = false
 	$"Sphere".set_material_override(material)
 
 

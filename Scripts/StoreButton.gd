@@ -7,7 +7,6 @@ extends TextureButton
 
 onready var levelSelect = get_node("../..")
 onready var label = get_node("Label")
-onready var levelCompletedIcon = get_node("LevelCompletedIcon")
 onready var selectedIcon = get_node("Selected")
 
 export(String) var itemName = ""

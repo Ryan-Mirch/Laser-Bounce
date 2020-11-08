@@ -16,5 +16,8 @@ func _ready():
 	
 func transition():
 	ap.play("Fade")
+
+func levelCompleted():
+	ap.play("Level Completed")
 	
 	

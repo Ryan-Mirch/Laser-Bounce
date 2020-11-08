@@ -50,6 +50,7 @@ func _Level_Complete():
 	play.visible = false
 	levelComplete = true
 	levelCompleteMessage.visible = true
+	#transitionEffect.levelCompleted()
 	
 
 func _on_Continue_pressed():

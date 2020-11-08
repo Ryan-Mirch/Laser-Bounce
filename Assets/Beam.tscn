@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Beam.gd" type="Script" id=1]
 
@@ -9,10 +9,9 @@ points = PoolVector3Array( 0, 0.5, 0.13, 0.0127422, 0.5, 0.129374, 0.0253617, 0.
 top_radius = 0.13
 bottom_radius = 0.13
 height = 1.0
+rings = 3
 
-[sub_resource type="SpatialMaterial" id=3]
-
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 script/source = "extends RayCast
 
 # Declare member variables here. Examples:
@@ -43,11 +42,12 @@ shape = SubResource( 1 )
 
 [node name="Mesh" type="MeshInstance" parent="StaticBody/CollisionShape"]
 transform = Transform( 1, 0, -2.11758e-22, 0, 1, 0, 0, 8.88178e-16, 1, 9.25625e-31, 0, 0 )
+cast_shadow = 0
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = null
 
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1 )
 enabled = true
 cast_to = Vector3( 0, 0, 1000 )
-script = SubResource( 4 )
+script = SubResource( 3 )

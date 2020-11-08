@@ -56,7 +56,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.501961, 0.501961, 0.501961, 1 ) ]
+"values": [ Color( 0.462745, 0.462745, 0.462745, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("StaticBody/Mesh:material/1:albedo_color")
@@ -68,7 +68,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.501961, 0.501961, 0.501961, 1 ) ]
+"values": [ Color( 0.305882, 0.305882, 0.305882, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
