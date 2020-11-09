@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Textures/bg1.png" type="Texture" id=1]
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 1 )
 
 [resource]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 1 )
 background_color = Color( 0.164706, 0.478431, 0.478431, 1 )
 ambient_light_color = Color( 0.8, 0.8, 0.8, 1 )
 ambient_light_energy = 2.15

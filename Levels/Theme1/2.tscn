@@ -13,71 +13,47 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 
-[node name="2" type="Spatial"]
+[node name="Level" type="Spatial"]
 script = ExtResource( 1 )
 levelID = "2"
 
-[node name="Camera Related" parent="." instance=ExtResource( 2 )]
-
-[node name="Camera Rotation Point" parent="Camera Related" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01302, -1, 0.89839 )
-
 [node name="Objects" type="Spatial" parent="."]
 
-[node name="Goal" parent="Objects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
-
-[node name="1SM" parent="Objects" instance=ExtResource( 4 )]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 9, 0, 3 )
-
-[node name="Laser" parent="Objects" instance=ExtResource( 5 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 0, 7 )
-
 [node name="Base" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
 draggable = true
 
-[node name="1SM2" parent="Objects/Base" instance=ExtResource( 4 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.76837e-07, 0, 0 )
-
-[node name="Base2" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
-draggable = true
-
-[node name="1SM2" parent="Objects/Base2" instance=ExtResource( 4 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.76837e-07, 0, 0 )
+[node name="1SM" parent="Objects/Base" instance=ExtResource( 4 )]
+transform = Transform( -0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, -0.819152, 0, 0, 0 )
 
 [node name="Tiles" type="Spatial" parent="Objects"]
 
 [node name="Tile149" parent="Objects/Tiles" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
 
-[node name="Tile160" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
-
-[node name="Tile154" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
-
-[node name="Tile155" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3 )
-
-[node name="Tile156" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
-
-[node name="Tile157" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3 )
-
-[node name="Tile163" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
+[node name="Tile161" parent="Objects/Tiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
 
 [node name="Tile164" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
+
+[node name="Tile157" parent="Objects/Tiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1 )
+
+[node name="Tile160" parent="Objects/Tiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1 )
+
+[node name="Tile162" parent="Objects/Tiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
 
 [node name="Tile158" parent="Objects/Tiles" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1 )
 
-[node name="Tile165" parent="Objects/Tiles" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7 )
+[node name="Tile159" parent="Objects/Tiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
+
+[node name="Goal" parent="Objects" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
 "Drag To Rotate Camera",
@@ -126,12 +102,28 @@ shape = SubResource( 1 )
 transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, 150 )
 shape = SubResource( 1 )
 
-[node name="3D Message" parent="." instance=ExtResource( 8 )]
-transform = Transform( 2.45746, 1.69459, 0.298801, 1.49186e-07, 0.520944, -2.95442, -1.72073, 2.42012, 0.426732, 2, 3, -4 )
-message = "Some pieces can't be dragged"
+[node name="Laser" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 1 )
+
+[node name="Text Box" parent="Objects" instance=ExtResource( 8 )]
+transform = Transform( -2.02803, 2.20799, 0.108995, 0.0332853, 0.178393, -2.99451, -2.21042, -2.02311, -0.145093, 0, 4, 4 )
+message = "Pieces with a light grey base can be moved by dragging and dropping."
+frontColor = Color( 0, 0, 0, 0.784314 )
+backColor = Color( 0, 0, 0, 0.784314 )
+fontSize = 22.0
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
+
+[node name="Camera Related" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 6 )
+
+[node name="Camera" parent="Camera Related" index="0"]
+transform = Transform( 1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 8, 2, 0 )
+min_distance = 4
+
+[node name="Camera Rotation Point" parent="Camera Related" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01302, -1, -9.10161 )
 
 [node name="LevelUI" parent="." instance=ExtResource( 9 )]
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]

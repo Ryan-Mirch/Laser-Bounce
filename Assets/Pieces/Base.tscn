@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Base.gd" type="Script" id=1]
 [ext_resource path="res://Materials/Draggable Base.material" type="Material" id=2]
-[ext_resource path="res://Materials/Rotatable Base_001.material" type="Material" id=3]
 [ext_resource path="res://Materials/Rotatable Base_001.material" type="Material" id=4]
 [ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Helpers/Click Manager.tscn" type="PackedScene" id=6]
-
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube021"
@@ -34,7 +32,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 132,
-"material": ExtResource( 3 ),
+"material": ExtResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 80

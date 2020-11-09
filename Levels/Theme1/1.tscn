@@ -1,7 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=5]
@@ -13,71 +11,28 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 
-[node name="1" type="Spatial"]
+[node name="Level" type="Spatial"]
 script = ExtResource( 9 )
 levelID = "1"
 
 [node name="Objects" type="Spatial" parent="."]
 
-[node name="Base" parent="Objects" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
-draggable = true
-
-[node name="1SM" parent="Objects/Base" instance=ExtResource( 2 )]
-transform = Transform( -0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, -0.819152, 0, 0, 0 )
-
 [node name="Tiles" type="Spatial" parent="Objects"]
-
-[node name="Tile149" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
 
 [node name="Tile160" parent="Objects/Tiles" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
 
-[node name="Tile154" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
-
 [node name="Tile159" parent="Objects/Tiles" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
-[node name="Tile150" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3 )
-
-[node name="Tile161" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
-
-[node name="Tile155" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -3 )
-
-[node name="Tile162" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5 )
-
-[node name="Tile151" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3 )
-
-[node name="Tile163" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5 )
-
-[node name="Tile156" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
-
-[node name="Tile164" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
-
-[node name="Tile152" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1 )
-
 [node name="Tile165" parent="Objects/Tiles" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1 )
-
-[node name="Tile157" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1 )
 
 [node name="Tile166" parent="Objects/Tiles" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1 )
 
 [node name="Goal" parent="Objects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
 "Drag To Rotate Camera",
@@ -127,13 +82,17 @@ transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31
 shape = SubResource( 1 )
 
 [node name="Laser" parent="Objects" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 1 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, -1 )
 
 [node name="Text Box" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( -2.02803, 2.20799, 0.108995, 0.0332853, 0.178393, -2.99451, -2.21042, -2.02311, -0.145093, 0, 4, 4 )
-message = "Drag and drop pieces to move them."
+transform = Transform( 2.21042, 2.02311, 0.145093, 0.0332853, 0.178393, -2.99451, -2.02803, 2.20799, 0.108995, 0, 4, -6 )
+message = "Welcome to Laser Bounce!
+
+Press the play button to start."
+height = 180.0
 frontColor = Color( 0, 0, 0, 0.784314 )
 backColor = Color( 0, 0, 0, 0.784314 )
+fontSize = 22.0
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
@@ -142,7 +101,7 @@ wait_time = 0.4
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 6 )
 
 [node name="Camera" parent="Camera Related" index="0"]
-transform = Transform( 1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 8, 2, 0 )
+transform = Transform( -4.37114e-08, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-08, -2.80972e-08, -2, 2, -10 )
 min_distance = 4
 
 [node name="Camera Rotation Point" parent="Camera Related" index="1"]

@@ -23,7 +23,7 @@ signal tabChanged
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pointerTranslation = Vector3(0,0,0)
-	currentScene = get_tree().get_root().get_node("1")
+	currentScene = get_tree().get_root().get_node("Level")
 	create_adMob()
 	create_iap()
 	create_tabs()

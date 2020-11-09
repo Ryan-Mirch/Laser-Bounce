@@ -3,7 +3,7 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var message = "enter message here"
+export(String, MULTILINE) var message = "enter message here"
 export var messageOnBack = false
 export(float) var width = 300
 export(float) var height = 150
