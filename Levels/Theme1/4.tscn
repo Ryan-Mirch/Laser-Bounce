@@ -127,8 +127,10 @@ transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31
 shape = SubResource( 1 )
 
 [node name="Text Box" parent="." instance=ExtResource( 11 )]
-transform = Transform( 2.45746, 1.69459, 0.298801, 1.49186e-07, 0.520944, -2.95442, -1.72073, 2.42012, 0.426732, 2, 3, -4 )
+transform = Transform( 1.72073, -2.42012, -0.426732, 1.49186e-07, 0.520944, -2.95442, 2.45746, 1.69459, 0.298801, 14, 3, -4 )
 message = "Pieces with no base at all can not be moved or rotated."
+width = 280.0
+height = 160.0
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4

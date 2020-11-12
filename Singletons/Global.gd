@@ -1,33 +1,29 @@
 extends Node
 
+var tabs
+var admob
+var iap
+var currentScene
+
 var pointerTranslation
 var debug = false
 var playing = false
 var complete = false
-var currentScene
+
 
 var settings = load("res://Menu/Settings.tscn")
 var levelSelect = load("res://Menu/Level Select.tscn")
-var tabsResource = load("res://Menu/Tabs.tscn")
-var soundManagerResource = load("res://Sounds/SoundManager.tscn")
-var admobResource = load("res://Ads/AdMob.tscn")
-var iapResource = load("res://In-App Purchases/iap.tscn")
-var tabs
-var soundManager
-var admob
-var iap
+
 
 signal tabChanged
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Saving.connect("saveDataUpdated",self,"hideAds")
+	Saving.connect("dataLoaded",self,"hideAds")
+	
 	pointerTranslation = Vector3(0,0,0)
-	currentScene = get_tree().get_root().get_node("Level")
-	create_adMob()
-	create_iap()
-	create_tabs()
-	create_soundManager()
 	loadAds()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,23 +35,10 @@ func loadAds() -> void:
 	admob.load_banner()
 	#admob.load_interstitial()
 	admob.load_rewarded_video()
-	
-func create_iap():
-	iap = iapResource.instance()
-	get_parent().call_deferred("add_child", iap)
-	
-func create_adMob():
-	admob = admobResource.instance()
-	get_parent().call_deferred("add_child", admob)
-	
-func create_tabs():
-	tabs = tabsResource.instance()
-	get_parent().call_deferred("add_child", tabs)	
-	emit_signal("tabChanged")
-	
-func create_soundManager():
-	soundManager = soundManagerResource.instance()
-	get_parent().call_deferred("add_child", soundManager)	
+
+func hideAds():
+	if !Saving.showAds:
+		admob.hide_banner()
 
 func _input(event):
 	if event.is_action_pressed("debug"):

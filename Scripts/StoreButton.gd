@@ -77,7 +77,7 @@ func pressed():
 		b.updateSaveData()
 	
 	setSelected(true)
-	Global.soundManager.play_sound_PickUp()
+	Sounds.play_sound_PickUp()
 	updateSaveData()
 	Saving.updateSaveData()
 

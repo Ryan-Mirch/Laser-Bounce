@@ -105,8 +105,8 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9, 0, 1
 [node name="Text Box" parent="Objects" instance=ExtResource( 6 )]
 transform = Transform( -2.02803, 2.20799, 0.108995, 0.0332853, 0.178393, -2.99451, -2.21042, -2.02311, -0.145093, 0, 4, 4 )
 message = "Pieces with a dark grey base can be rotated by tapping."
-frontColor = Color( 0, 0, 0, 0.784314 )
-backColor = Color( 0, 0, 0, 0.784314 )
+width = 280.0
+height = 160.0
 fontSize = 22.0
 
 [node name="Cycle Timer" type="Timer" parent="."]

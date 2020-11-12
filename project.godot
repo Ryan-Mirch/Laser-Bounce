@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Laser Bounce"
-run/main_scene="res://Levels/Theme1/1.tscn"
+run/main_scene="res://Main/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Singletons/Global.gd"
 Saving="*res://Singletons/Saving.gd"
+Global="*res://Singletons/Global.gd"
+Sounds="*res://Sounds/SoundManager.tscn"
 
 [display]
 
@@ -62,6 +63,10 @@ debug={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+translations=PoolStringArray( "res://Strings/strings.de.translation", "res://Strings/strings.en.translation", "res://Strings/strings.es.translation", "res://Strings/strings.fr.translation" )
 
 [rendering]
 

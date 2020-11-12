@@ -82,7 +82,7 @@ func setMeshVisibility():
 func _dragStart():
 	dragging = true
 	add_to_group("Dragging")
-	Global.soundManager.play_sound_PickUp()
+	Sounds.play_sound_PickUp()
 	var tile = _get_closest_tile("Closed")
 	if tile != null: tile.setOpen(true)
 	
@@ -97,7 +97,7 @@ func _input(event):
 		drop_point = tile.translation
 		
 		remove_from_group("Dragging")
-		Global.soundManager.play_sound_PutDown()
+		Sounds.play_sound_PutDown()
 		
 func _get_closest_tile(state): 
 	var tiles =  get_tree().get_nodes_in_group("Tile")
@@ -138,7 +138,7 @@ func _on_Click_Manager_clicked():
 	if rotationType != "none": 
 		newRotationYAttached = newRotationYAttached + step
 		newRotationYRotatable = newRotationYRotatable + step
-		Global.soundManager.play_sound_Rotate()
+		Sounds.play_sound_Rotate()
 	
 
 

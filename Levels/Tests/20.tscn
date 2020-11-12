@@ -211,7 +211,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="Goal" parent="Objects" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
-color = Color( 0.862745, 0.862745, 0, 1 )
+setColor = Color( 0.639216, 0.780392, 0.129412, 1 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
 "Drag To Rotate Camera",

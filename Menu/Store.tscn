@@ -54,6 +54,32 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
+[sub_resource type="StyleBoxFlat" id=4]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=5]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
 [sub_resource type="StyleBoxFlat" id=6]
 resource_local_to_scene = true
 draw_center = false
@@ -80,6 +106,19 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
+[sub_resource type="StyleBoxFlat" id=8]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
 [sub_resource type="StyleBoxFlat" id=9]
 resource_local_to_scene = true
 draw_center = false
@@ -94,45 +133,6 @@ corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
 [sub_resource type="StyleBoxFlat" id=10]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=15]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=16]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=17]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -193,9 +193,8 @@ margin_bottom = 455.0
 custom_constants/separation = 0
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers"]
-margin_top = -1.0
 margin_right = 1040.0
-margin_bottom = 124.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 0, 125 )
 custom_fonts/font = ExtResource( 3 )
 text = "Lasers"
@@ -234,9 +233,8 @@ margin_right = 1040.0
 margin_bottom = 1022.0
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds"]
-margin_top = -1.0
 margin_right = 1040.0
-margin_bottom = 124.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 0, 125 )
 custom_fonts/font = ExtResource( 3 )
 text = "Laser Bounce Sounds"
@@ -255,7 +253,7 @@ __meta__ = {
 }
 
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 4 )
 itemName = "Default Sound"
 ID = "Default"
 buttonGroup = "Laser Sounds"
@@ -264,7 +262,7 @@ defaultOn = true
 [node name="Node2D2" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 5 )
 itemName = "Sound 1"
 ID = "1"
 buttonGroup = "Laser Sounds"
@@ -275,9 +273,8 @@ margin_right = 1040.0
 margin_bottom = 1589.0
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds"]
-margin_top = -1.0
 margin_right = 1040.0
-margin_bottom = 124.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 0, 125 )
 custom_fonts/font = ExtResource( 3 )
 text = "Backgrounds"
@@ -296,7 +293,7 @@ __meta__ = {
 }
 
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 6 )
 itemName = "Default Background"
 ID = "Default"
 buttonGroup = "Backgrounds"
@@ -305,7 +302,7 @@ defaultOn = true
 [node name="Node2D2" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 7 )
 itemName = "Space"
 ID = "Space"
 buttonGroup = "Backgrounds"
@@ -316,9 +313,8 @@ margin_right = 1040.0
 margin_bottom = 2156.0
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles"]
-margin_top = -1.0
 margin_right = 1040.0
-margin_bottom = 124.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 0, 125 )
 custom_fonts/font = ExtResource( 3 )
 text = "Tiles"
@@ -337,7 +333,7 @@ __meta__ = {
 }
 
 [node name="Default" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
-custom_styles/panel = SubResource( 15 )
+custom_styles/panel = SubResource( 8 )
 itemName = "Default Tile"
 ID = "Default"
 buttonGroup = "Tiles"
@@ -346,7 +342,7 @@ defaultOn = true
 [node name="Dark Mode" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
-custom_styles/panel = SubResource( 16 )
+custom_styles/panel = SubResource( 9 )
 itemName = "Dark Mode"
 ID = "Dark Mode"
 buttonGroup = "Tiles"
@@ -354,7 +350,7 @@ buttonGroup = "Tiles"
 [node name="Light Mode" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 710.0
 margin_right = 1040.0
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 10 )
 itemName = "Light Mode"
 ID = "Light Mode"
 buttonGroup = "Tiles"

@@ -19,8 +19,11 @@ var currentTab = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
+	Global.tabs = self
+	yield(get_tree(), "idle_frame")
 	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
 	$AnimationPlayer.play("See Through Black")
+	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,7 +87,7 @@ func _on_Settings_pressed():
 
 	
 func close_all_tabs():
-	Global.soundManager.play_sound_Rotate()
+	Sounds.play_sound_Rotate()
 	
 	settingsWindow.visible = false
 	levelSelectWindow.visible = false

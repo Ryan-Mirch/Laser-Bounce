@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://In-App Purchases/iap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Theme1/1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ads/AdMob.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/Tabs.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node"]
+
+[node name="AdMob" parent="." instance=ExtResource( 5 )]
+
+[node name="Level" parent="." instance=ExtResource( 4 )]
+
+[node name="iap" parent="." instance=ExtResource( 2 )]
+
+[node name="Tabs" parent="." instance=ExtResource( 6 )]

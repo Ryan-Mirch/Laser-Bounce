@@ -13,6 +13,7 @@ export var startingHints = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Saving.hintCount = startingHints
+	yield(get_tree(), "idle_frame")
 	Global.admob.connect("rewarded", self, "rewardRecieved")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -52,7 +52,6 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=5]
-flags_unshaded = true
 
 [sub_resource type="SphereShape" id=6]
 radius = 0.51

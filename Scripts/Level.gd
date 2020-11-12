@@ -12,6 +12,7 @@ onready var timer = get_node("Cycle Timer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.currentScene = self
 	Edit()
 	
 	
@@ -25,13 +26,13 @@ func _physics_process(_delta):
 	pass
 	
 func Play():
-	Global.soundManager.play_sound_PlayLevel()
+	Sounds.play_sound_PlayLevel()
 	get_tree().call_group("Laser","Play")
 	Global.playing = true
 	timer.start()
 	
 func Edit():
-	Global.soundManager.play_sound_StopLevel()
+	Sounds.play_sound_StopLevel()
 	get_tree().call_group("Beam", "queue_free")
 	Global.playing = false
 	timer.stop()
@@ -45,10 +46,10 @@ func _on_Cycle_Timer_timeout():
 	get_tree().call_group("Goal", "cycleCount")
 
 func _on_Goal_LevelComplete():
-	Global.soundManager.play_sound_Win()
+	Sounds.play_sound_Win()
 	complete = true
 	levelUI._Level_Complete()
-	Saving.updateLevelCompleted(levelID)
+	Saving.updateLevelCompleted(levelID, true)
 	
 
 func play_pressed():

@@ -8,16 +8,16 @@ onready var ap := $"AnimationPlayer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ap.play_backwards("Fade")
+	ap.play("Fade")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	
 func transition():
-	ap.play("Fade")
+	ap.play_backwards("Fade")
 
 func levelCompleted():
-	ap.play("Level Completed")
+	ap.play_backwards("Level Completed")
 	
 	

@@ -21,7 +21,6 @@ func loadSounds(path):
 
 	while true:
 		var file = dir.get_next()
-		print(path + "/" + file)
 		if file == "":
 			break
 		elif !file.begins_with(".") and file.ends_with(".import"):

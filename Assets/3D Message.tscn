@@ -13,6 +13,8 @@ size = Vector2( 0.2, 1.06 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 script = ExtResource( 1 )
 messageOnBack = true
+frontColor = Color( 0.117647, 0.117647, 0.117647, 0.705882 )
+backColor = Color( 0.117647, 0.117647, 0.117647, 0.705882 )
 fontPath = "res://Fonts/otfs/NoirPro-Regular.otf"
 
 [node name="Guide" type="MeshInstance" parent="."]

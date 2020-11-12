@@ -6,8 +6,7 @@ extends Control
 # var b = "text"
 onready var play = get_node("CenterContainer/Play")
 onready var pause = get_node("CenterContainer/Pause")
-onready var cont = get_node("CenterContainer/Continue")
-onready var levelCompleteMessage = get_node("Level Completed")
+onready var levelCompleteAnimation = get_node("AnimationPlayer")
 onready var hintButton = get_node("Hint/Button")
 onready var retryButton = get_node("CenterContainer2/Retry")
 onready var transitionEffect = get_node("Transition Effect")
@@ -50,11 +49,10 @@ func _on_Pause_pressed():
 	hintButton.disabled = false
 
 func _Level_Complete():
-	cont.visible = true
 	pause.visible = false
 	play.visible = false
 	levelComplete = true
-	levelCompleteMessage.visible = true
+	levelCompleteAnimation.play("Level Complete")
 	#transitionEffect.levelCompleted()
 	
 

@@ -32,11 +32,14 @@ var _admob_singleton = null
 var _is_interstitial_loaded:bool = false
 var _is_rewarded_video_loaded:bool = false
 
+func _ready():
+	Global.admob = self	
 
 func _enter_tree():
 	if not init():
 		print("AdMob Java Singleton not found. This plugin will only work on Android")
-
+	
+	
 # setters
 func is_real_set(new_val) -> void:
 	is_real = new_val

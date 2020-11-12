@@ -75,8 +75,8 @@ func initializeSaveData():
 	if !backgroundsEquipped: backgroundsEquipped = {}
 	if !tilesEquipped: tilesEquipped = {}
 
-func updateLevelCompleted(levelID):
-	levelCompleted[levelID] = true	
+func updateLevelCompleted(levelID, b):
+	levelCompleted[levelID] = b	
 	updateSaveData()
 	
 func resetSaveData():

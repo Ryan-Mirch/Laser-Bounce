@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://Scripts/Hint Popup.gd" type="Script" id=10]
 [ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
 [ext_resource path="res://Icons/Hint Disabled.png" type="Texture" id=12]
-[ext_resource path="res://Menu/Transition.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/Transition.gd" type="Script" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -54,15 +54,61 @@ func _process(_delta):
 	text = str(Saving.hintCount)
 "
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 0.839216 )
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.560784 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 120
+[sub_resource type="DynamicFont" id=7]
+size = 80
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="DynamicFont" id=8]
+size = 160
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 1, 0.403922 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=11]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=12]
+size = 60
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0, 0, 0, 1 )
 draw_center = false
 border_width_left = 350
@@ -82,6 +128,126 @@ expand_margin_bottom = 200.0
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 anti_aliasing_size = 5
+
+[sub_resource type="Animation" id=15]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Level Completed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Level Complete"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Level Complete Panel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Level Complete Panel/VBoxContainer/Level Complete Message:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 0.392292 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Level Complete Panel/VBoxContainer/Message:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.1, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 0.392292 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Level Complete Panel/VBoxContainer/Buttons:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 0.392292 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Level Complete Panel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.2, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hint:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CenterContainer2/Retry:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="LevelUI" type="Control"]
 anchor_right = 1.0
@@ -110,12 +276,6 @@ __meta__ = {
 position = Vector2( 2.37842, 3.96404 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 2 )
-
-[node name="Continue" type="TouchScreenButton" parent="CenterContainer"]
-visible = false
-position = Vector2( 2.37842, 3.96404 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
 
 [node name="Pause" type="TouchScreenButton" parent="CenterContainer"]
 visible = false
@@ -283,34 +443,144 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Transition Effect" parent="." instance=ExtResource( 13 )]
-
-[node name="Level Completed" type="Label" parent="."]
+[node name="Level Complete Panel" type="Panel" parent="."]
 visible = false
+modulate = Color( 1, 1, 1, 0.2 )
 anchor_right = 1.0
-margin_top = 346.0
-margin_bottom = 570.0
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
-text = "Level Completed"
+anchor_bottom = 1.0
+margin_bottom = -200.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level Complete Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1117.0
+margin_top = -370.137
+margin_right = 1117.0
+margin_bottom = 143.863
+custom_constants/separation = 37
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level Complete Message" type="Label" parent="Level Complete Panel/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.2 )
+margin_right = 2234.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 7 )
+text = "Level Complete"
 align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="Level Complete Panel/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 134.0
+margin_right = 2234.0
+margin_bottom = 523.0
+custom_fonts/font = SubResource( 8 )
+text = "LEVEL_COMPLETE_MESSAGE_1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="Level Complete Panel/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 560.0
+margin_right = 2234.0
+margin_bottom = 710.0
+custom_constants/separation = 55
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="Level Complete Panel/VBoxContainer/Buttons"]
+margin_left = 808.0
+margin_right = 920.0
+margin_bottom = 150.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 11 )
+flat = true
+
+[node name="Continue" type="Button" parent="Level Complete Panel/VBoxContainer/Buttons"]
+margin_left = 975.0
+margin_right = 1425.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 450, 150 )
+focus_mode = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level Completed3" type="Label" parent="Level Complete Panel/VBoxContainer/Buttons/Continue"]
+anchor_right = 1.0
+margin_left = 41.0673
+margin_top = 37.2454
+margin_right = -215.933
+margin_bottom = 110.245
+custom_fonts/font = SubResource( 12 )
+text = "Continue"
+align = 2
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Level Complete Panel/VBoxContainer/Buttons/Continue"]
+margin_left = 314.645
+margin_top = 29.9662
+margin_right = 414.645
+margin_bottom = 129.966
+texture = ExtResource( 3 )
+
+[node name="Vignette" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Transition Effect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -200.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition Effect"]
+anims/Fade = SubResource( 15 )
+"anims/Level Completed" = SubResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Level Complete" = SubResource( 14 )
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="CenterContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
 [connection signal="pressed" from="Hint/Button" to="Hint" method="_on_Button_pressed"]
+[connection signal="pressed" from="Level Complete Panel/VBoxContainer/Buttons/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="Level Complete Panel/VBoxContainer/Buttons/Continue" to="." method="_on_Continue_pressed"]

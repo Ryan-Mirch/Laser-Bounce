@@ -75,8 +75,9 @@ func setMesh():
 	backMesh.mesh.flip_faces = true
 	
 	if OS.get_name() == "Android":
-		frontMesh.mesh.size.y = frontMesh.mesh.size.y * 1.5
-		backMesh.mesh.size.y = backMesh.mesh.size.y * 1.5
+		pass
+		#frontMesh.mesh.size.y = frontMesh.mesh.size.y * 1.5
+		#backMesh.mesh.size.y = backMesh.mesh.size.y * 1.5
 	
 func setViewport():
 	frontViewport.size.x = width
