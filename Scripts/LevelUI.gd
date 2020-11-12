@@ -25,6 +25,7 @@ func _process(_delta):
 		
 func tabChanged():
 	visible = Global.get_current_tab() == 0
+	print(Global.get_current_tab())
 	if Global.get_current_tab() != 0 and Global.playing and !Global.complete:
 		var Level = get_parent()
 		Level.play_pressed()

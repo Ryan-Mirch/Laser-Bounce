@@ -129,7 +129,7 @@ shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 anti_aliasing_size = 5
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 resource_name = "Fade"
 length = 0.5
 tracks/0/type = "value"
@@ -145,7 +145,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 resource_name = "Level Completed"
 length = 0.5
 tracks/0/type = "value"
@@ -161,8 +161,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "Level Complete"
+[sub_resource type="Animation" id=16]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Level Complete Panel:visible")
@@ -571,11 +570,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition Effect"]
-anims/Fade = SubResource( 15 )
-"anims/Level Completed" = SubResource( 16 )
+anims/Fade = SubResource( 14 )
+"anims/Level Completed" = SubResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Level Complete" = SubResource( 14 )
+"anims/Level Complete" = SubResource( 16 )
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]

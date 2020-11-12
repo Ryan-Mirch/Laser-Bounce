@@ -53,8 +53,9 @@ func _on_connected():
 
 
 func show_alert(_text):
+	pass
 	#alert_dialog_text.text = text
-	alert_dialog.popup()
+	#alert_dialog.popup()
 
 func _on_sku_details_query_completed(sku_details):
 	

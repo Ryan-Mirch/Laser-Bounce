@@ -79,8 +79,8 @@ func load_next_level(currentLevelPath, currentLevelName):
 	
 	
 func get_current_tab():
-	if get_tree().get_root().get_node_or_null("Tabs") == null:
+	if Global.tabs == null:
 		return 0
-	return get_tree().get_root().get_node("Tabs").currentTab
+	return Global.tabs.currentTab
 
 
