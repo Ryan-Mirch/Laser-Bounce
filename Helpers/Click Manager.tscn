@@ -38,6 +38,9 @@ func pressed():
 	if !Global.playing:
 		posOfClickStart = get_viewport().get_mouse_position()
 		isPressed = true
+		
+	else:
+		Global.currentScene.get_node(\"LevelUI\")._on_Pause_pressed()
 	
 func _on_1SM_pressed():
 	pressed()

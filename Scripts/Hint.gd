@@ -28,16 +28,21 @@ func giveHint():
 	Saving.hintCount -= 1
 	pass
 
-func _on_Button_pressed():
-	if 	Global.playing == true: return
-	if Saving.hintCount == 0:
-		hintPopup.popup()	
-		return
-	giveHint()
-
 func _on_Button_Yes_pressed():	
 	Global.admob.show_rewarded_video()
 	hintPopup.hide()
 
 func _on_Button_No_pressed():
 	hintPopup.hide()
+
+	
+func _on_Panel_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			
+			if 	Global.playing == true: return
+			if Saving.hintCount == 0:
+				hintPopup.popup()	
+				return
+			giveHint()
+			print("hint")

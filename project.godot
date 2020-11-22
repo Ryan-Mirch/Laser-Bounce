@@ -66,7 +66,7 @@ pointing/emulate_touch_from_mouse=true
 
 [locale]
 
-translations=PoolStringArray( "res://Strings/strings.de.translation", "res://Strings/strings.en.translation", "res://Strings/strings.es.translation", "res://Strings/strings.fr.translation" )
+translations=PoolStringArray( "res://Strings/strings - Sheet1.de.translation", "res://Strings/strings - Sheet1.en.translation", "res://Strings/strings - Sheet1.es.translation", "res://Strings/strings - Sheet1.fr.translation", "res://Strings/strings - Sheet1.ja.translation", "res://Strings/strings - Sheet1.zh.translation" )
 
 [rendering]
 

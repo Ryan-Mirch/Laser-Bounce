@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Tabs.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Settings.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Icons/Store Selected.png" type="Texture" id=10]
 [ext_resource path="res://Icons/Settings Unselected.png" type="Texture" id=11]
 [ext_resource path="res://Icons/Settings Selected.png" type="Texture" id=12]
+[ext_resource path="res://Icons/Customize Unselected.png" type="Texture" id=13]
+[ext_resource path="res://Icons/Customize Selected.png" type="Texture" id=14]
+[ext_resource path="res://Menu/Customize.tscn" type="PackedScene" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -56,6 +59,8 @@ tracks/0/keys = {
 [node name="Tabs" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.0
+margin_right = 2.0
 mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -74,16 +79,21 @@ __meta__ = {
 [node name="Settings" parent="." instance=ExtResource( 2 )]
 visible = false
 
-[node name="Store" parent="." instance=ExtResource( 3 )]
+[node name="Customize" parent="." instance=ExtResource( 15 )]
 visible = false
 
 [node name="Level Select" parent="." instance=ExtResource( 4 )]
 visible = false
 
+[node name="Store" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_bottom = 0.0
+
 [node name="Panel" type="Panel" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.0
 margin_top = -200.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
@@ -93,15 +103,16 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 70
+mouse_filter = 0
+custom_constants/separation = 7
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Game" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 35.0
-margin_right = 235.0
+margin_left = 27.0
+margin_right = 227.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -109,10 +120,13 @@ custom_icons/off = ExtResource( 5 )
 custom_icons/on = ExtResource( 6 )
 pressed = true
 enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Level Select" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 305.0
-margin_right = 505.0
+margin_left = 234.0
+margin_right = 434.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -120,9 +134,19 @@ custom_icons/off = ExtResource( 7 )
 custom_icons/on = ExtResource( 8 )
 enabled_focus_mode = 0
 
+[node name="Customize" type="CheckButton" parent="Panel/HBoxContainer"]
+margin_left = 441.0
+margin_right = 641.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 100 )
+focus_mode = 0
+custom_icons/off = ExtResource( 13 )
+custom_icons/on = ExtResource( 14 )
+enabled_focus_mode = 0
+
 [node name="Store" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 575.0
-margin_right = 775.0
+margin_left = 648.0
+margin_right = 848.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -131,8 +155,8 @@ custom_icons/on = ExtResource( 10 )
 enabled_focus_mode = 0
 
 [node name="Settings" type="CheckButton" parent="Panel/HBoxContainer"]
-margin_left = 845.0
-margin_right = 1045.0
+margin_left = 855.0
+margin_right = 1055.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 100 )
 focus_mode = 0
@@ -145,5 +169,6 @@ anims/Grey = SubResource( 3 )
 "anims/See Through Black" = SubResource( 4 )
 [connection signal="pressed" from="Panel/HBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Customize" to="." method="_on_Customize_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Store" to="." method="_on_Store_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Settings" to="." method="_on_Settings_pressed"]

@@ -254,7 +254,7 @@ shape = SubResource( 1 )
 
 [node name="3D Message" parent="." instance=ExtResource( 8 )]
 transform = Transform( 2.12132, 2.08909, 0.368363, 1.49186e-07, 0.520944, -2.95442, -2.12132, 2.08909, 0.368363, -2, 6, -8 )
-message = "Pieces with both bases can be moved and rotated."
+message = "LEVEL5_MESSAGE"
 width = 280.0
 height = 160.0
 

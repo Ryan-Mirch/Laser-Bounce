@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Panel
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if !Saving.showAds:
+		self.queue_free()
+
+
+func _on_Panel_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			print(\"remove ads\")
+			Global.iap.purchaseFullApp()
+"
+
+[node name="Remove Ads" type="CenterContainer"]
+margin_top = 794.0
+margin_right = 1380.0
+margin_bottom = 974.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 340.0
+margin_right = 1040.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 700, 180 )
+custom_styles/panel = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "REMOVE_ADS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_Panel_gui_input"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
 [ext_resource path="res://Icons/Hint Disabled.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/Transition.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Random Level Complete Message.gd" type="Script" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -54,18 +55,51 @@ func _process(_delta):
 	text = str(Saving.hintCount)
 "
 
+[sub_resource type="GDScript" id=17]
+script/source = "extends Panel
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0.560784 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 80
-use_filter = true
-font_data = ExtResource( 8 )
+[sub_resource type="StyleBoxFlat" id=7]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
-[sub_resource type="DynamicFont" id=8]
-size = 160
-use_filter = true
-font_data = ExtResource( 8 )
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 0.403922 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id=9]
 draw_center = false
@@ -79,32 +113,18 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 1, 1, 1, 0.403922 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+[sub_resource type="DynamicFont" id=10]
+size = 60
+use_filter = true
+font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-draw_center = false
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+[sub_resource type="DynamicFont" id=11]
+size = 80
+use_filter = true
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 60
+size = 160
 use_filter = true
 font_data = ExtResource( 8 )
 
@@ -200,7 +220,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Level Complete Panel/VBoxContainer/Buttons:modulate")
+tracks/3/path = NodePath("Level Complete Panel/Buttons:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -300,6 +320,7 @@ scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 11 )
 
 [node name="Hint Popup" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -442,9 +463,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel" type="Panel" parent="Hint"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 33.0
+margin_top = 7.0
+margin_right = 226.0
+margin_bottom = 204.0
+script = SubResource( 17 )
+
 [node name="Level Complete Panel" type="Panel" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0.2 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
@@ -453,26 +483,85 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Level Complete Panel"]
+[node name="Buttons" type="HBoxContainer" parent="Level Complete Panel"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -1117.0
-margin_top = -370.137
+margin_top = -422.0
 margin_right = 1117.0
-margin_bottom = 143.863
+margin_bottom = -272.0
+custom_constants/separation = 55
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="Level Complete Panel/Buttons"]
+margin_left = 808.0
+margin_right = 920.0
+margin_bottom = 150.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 11 )
+flat = true
+
+[node name="Continue" type="Button" parent="Level Complete Panel/Buttons"]
+margin_left = 975.0
+margin_right = 1425.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 450, 150 )
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Label" parent="Level Complete Panel/Buttons/Continue"]
+anchor_right = 1.0
+margin_left = 41.0673
+margin_top = 37.2454
+margin_right = -215.933
+margin_bottom = 110.245
+custom_fonts/font = SubResource( 10 )
+text = "CONTINUE"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Level Complete Panel/Buttons/Continue"]
+margin_left = 314.645
+margin_top = 29.9662
+margin_right = 414.645
+margin_bottom = 129.966
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level Complete Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -506.0
+margin_right = -30.0
+margin_bottom = 17.0
 custom_constants/separation = 37
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Level Complete Message" type="Label" parent="Level Complete Panel/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0.2 )
-margin_right = 2234.0
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1020.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 7 )
-text = "Level Complete"
+custom_fonts/font = SubResource( 11 )
+text = "LEVEL_COMPLETE"
 align = 1
 valign = 1
 autowrap = true
@@ -483,71 +572,18 @@ __meta__ = {
 [node name="Message" type="Label" parent="Level Complete Panel/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 134.0
-margin_right = 2234.0
+margin_right = 1020.0
 margin_bottom = 523.0
-custom_fonts/font = SubResource( 8 )
-text = "LEVEL_COMPLETE_MESSAGE_1"
+custom_fonts/font = SubResource( 12 )
+text = "Pick Random Message"
 align = 1
 valign = 1
 autowrap = true
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Buttons" type="HBoxContainer" parent="Level Complete Panel/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 560.0
-margin_right = 2234.0
-margin_bottom = 710.0
-custom_constants/separation = 55
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Retry" type="Button" parent="Level Complete Panel/VBoxContainer/Buttons"]
-margin_left = 808.0
-margin_right = 920.0
-margin_bottom = 150.0
-focus_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 11 )
-flat = true
-
-[node name="Continue" type="Button" parent="Level Complete Panel/VBoxContainer/Buttons"]
-margin_left = 975.0
-margin_right = 1425.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 450, 150 )
-focus_mode = 0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-enabled_focus_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Level Completed3" type="Label" parent="Level Complete Panel/VBoxContainer/Buttons/Continue"]
-anchor_right = 1.0
-margin_left = 41.0673
-margin_top = 37.2454
-margin_right = -215.933
-margin_bottom = 110.245
-custom_fonts/font = SubResource( 12 )
-text = "Continue"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Level Complete Panel/VBoxContainer/Buttons/Continue"]
-margin_left = 314.645
-margin_top = 29.9662
-margin_right = 414.645
-margin_bottom = 129.966
-texture = ExtResource( 3 )
+messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMPLETE_MESSAGE_3", "LEVEL_COMPLETE_MESSAGE_4" ]
 
 [node name="Vignette" type="Panel" parent="."]
 anchor_right = 1.0
@@ -559,6 +595,7 @@ __meta__ = {
 }
 
 [node name="Transition Effect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
@@ -580,6 +617,6 @@ anims/Fade = SubResource( 14 )
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
 [connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
-[connection signal="pressed" from="Hint/Button" to="Hint" method="_on_Button_pressed"]
-[connection signal="pressed" from="Level Complete Panel/VBoxContainer/Buttons/Retry" to="." method="_on_Retry_pressed"]
-[connection signal="pressed" from="Level Complete Panel/VBoxContainer/Buttons/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="gui_input" from="Hint/Panel" to="Hint" method="_on_Panel_gui_input"]
+[connection signal="pressed" from="Level Complete Panel/Buttons/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="Level Complete Panel/Buttons/Continue" to="." method="_on_Continue_pressed"]

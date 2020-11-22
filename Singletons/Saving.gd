@@ -3,9 +3,10 @@ extends Node
 var saveDataFile = "user://saveDataFile.save"
 
 var hintCount = 0
-var showAds = true
-var enableSound = true
-var enableMusic = true
+var showAds
+var enableSound
+var enableMusic
+var enableShadows
 var camera_sensitivity = 0.25
 
 var lasersEquipped = {}
@@ -36,6 +37,7 @@ func updateSaveData():
 	f.store_var(showAds)
 	f.store_var(enableSound)
 	f.store_var(enableMusic)
+	f.store_var(enableShadows)
 	f.store_var(camera_sensitivity)
 	f.store_var(levelCompleted)
 	f.store_var(lasersEquipped)
@@ -53,6 +55,7 @@ func loadData():
 		showAds = f.get_var()
 		enableSound = f.get_var()
 		enableMusic = f.get_var()
+		enableShadows = f.get_var()
 		camera_sensitivity = f.get_var()
 		levelCompleted = f.get_var()
 		lasersEquipped = f.get_var()
@@ -65,9 +68,10 @@ func loadData():
 	
 func initializeSaveData():
 	if !hintCount: hintCount = 0
-	if !showAds: showAds = true
-	if !enableSound: enableSound = true
-	if !enableMusic: enableMusic = true
+	if showAds == null: showAds = true
+	if enableSound == null: enableSound = true
+	if enableMusic == null: enableMusic = true
+	if enableShadows == null: enableShadows = true
 	if !camera_sensitivity: camera_sensitivity = 0.5
 	if !levelCompleted: levelCompleted = {}
 	if !lasersEquipped: lasersEquipped = {}
@@ -84,6 +88,7 @@ func resetSaveData():
 	showAds = true
 	enableSound = true
 	enableMusic = true
+	enableShadows = true
 	camera_sensitivity = 0.25
 	levelCompleted.clear()
 	lasersEquipped.clear()		

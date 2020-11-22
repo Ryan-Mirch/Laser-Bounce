@@ -128,7 +128,7 @@ shape = SubResource( 1 )
 
 [node name="Text Box" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1.72073, -2.42012, -0.426732, 1.49186e-07, 0.520944, -2.95442, 2.45746, 1.69459, 0.298801, 14, 3, -4 )
-message = "Pieces with no base at all can not be moved or rotated."
+message = "LEVEL4_MESSAGE"
 width = 280.0
 height = 160.0
 

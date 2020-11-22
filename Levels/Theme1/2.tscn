@@ -107,7 +107,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 1
 
 [node name="Text Box" parent="Objects" instance=ExtResource( 8 )]
 transform = Transform( 1.26607, 2.71407, 0.175759, 0.0332853, 0.178393, -2.99451, -2.71955, 1.26571, 0.0451736, 0, 4, -8 )
-message = "Pieces with a light grey base can be moved by dragging and dropping."
+message = "LEVEL2_MESSAGE"
 width = 280.0
 height = 160.0
 fontSize = 22.0

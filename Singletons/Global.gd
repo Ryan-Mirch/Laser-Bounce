@@ -74,7 +74,10 @@ func load_next_level(currentLevelPath, currentLevelName):
 		load_level(nextLevelPath)
 	
 	else:
+		#reloads current level then sends you to level select screen
+		load_level(currentLevelPath) 
 		tabs.set_current_tab(1)
+		
 		
 	
 	

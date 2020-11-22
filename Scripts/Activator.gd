@@ -11,6 +11,8 @@ var wires = []
 
 export var color = Color(255,255,255)
 export(Array, NodePath) var activatedObjects
+export (NodePath) var coloredObjectPath
+onready var coloredObject = get_node(coloredObjectPath)
 
 onready var wire = load("res://Assets/Wire.tscn")
 
@@ -29,6 +31,11 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		emit_signal("pressed")
 			
 func activated():
+	var material = SpatialMaterial.new()
+	material.albedo_color = color
+	#material.flags_unshaded = true
+	coloredObject.set_material_override(material)
+	
 	for w in wires:
 		w.activate()
 	
@@ -38,6 +45,11 @@ func activated():
 	
 	
 func deactivated():
+	var material = SpatialMaterial.new()
+	material.albedo_color = color.darkened(0.5)
+	#material.flags_unshaded = false
+	coloredObject.set_material_override(material)
+	
 	activatedCount = 0
 	if activatedObjects.size() > 0:
 		for w in wires:
@@ -98,19 +110,24 @@ func spawn_wires():
 			wires.append(newWire)
 
 func _on_Sphere_ready():
+	coloredObject = get_node(coloredObjectPath)
 	var material = SpatialMaterial.new()
-	material.albedo_color = color
+	material.albedo_color = color.darkened(0.5)
 	material.emission_enabled = false
-	$"Sphere".set_material_override(material)
+	coloredObject.set_material_override(material)
 
 
 func _on_Cube052_ready():
+	coloredObject = get_node(coloredObjectPath)
 	var material = SpatialMaterial.new()
-	material.albedo_color = color
-	$"Cube052".set_material_override(material)
+	material.albedo_color = color.darkened(0.5)
+	coloredObject.set_material_override(material)
 
 
 func _on_Cube075_ready():
+	coloredObject = get_node(coloredObjectPath)
 	var material = SpatialMaterial.new()
-	material.albedo_color = color
-	$"Cube074/Cube075".set_material_override(material)
+	material.albedo_color = color.darkened(0.5)
+	coloredObject.set_material_override(material)
+
+	

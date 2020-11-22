@@ -5,7 +5,6 @@
 [ext_resource path="res://Materials/Mirror_001.material" type="Material" id=3]
 [ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.074"
 surfaces/0 = {
@@ -50,6 +49,7 @@ data = PoolVector3Array( -1.5, 0, 0.5, -1.5, 6, -0.5, -1.5, 6, 0.5, -1.5, 0, 0.5
 ]]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 script = ExtResource( 1 )
+coloredObjectPath = NodePath("Cube074/Cube075")
 
 [node name="Cube074" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.24432 )

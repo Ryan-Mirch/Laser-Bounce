@@ -5,7 +5,7 @@
 [ext_resource path="res://Icons/LevelButton.png" type="Texture" id=3]
 [ext_resource path="res://Icons/CheckBox Checked.png" type="Texture" id=4]
 [ext_resource path="res://Icons/Grabber.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Remove Ads.png" type="Texture" id=6]
+[ext_resource path="res://UI/Remove Ads Button.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -27,6 +27,27 @@ func _ready():
 
 func setMarginTop(amount):
 	get_node(\"ColorRect/MarginContainer\").margin_top = amount
+
+
+
+func _on_Sound_CheckButton_toggled(button_pressed):
+	Sounds.play_sound_PickUp()	
+	Saving.enableSound = button_pressed
+	Saving.updateSaveData()
+
+func _on_Music_CheckButton_toggled(button_pressed):
+	Sounds.play_sound_PickUp()	
+	Saving.enableMusic = button_pressed
+	Saving.updateSaveData()
+	
+func _on_HSlider_value_changed(value):
+	Saving.camera_sensitivity = value
+	Saving.updateSaveData()
+	
+func _on_Shadows_CheckButton_toggled(button_pressed):
+	Sounds.play_sound_PickUp()	
+	Saving.enableShadows = button_pressed
+	Saving.updateSaveData()
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -51,14 +72,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Sound_CheckButton_toggled(button_pressed):
-	
-	Global.soundManager.play_sound_PickUp()
-	
-	Saving.enableSound = button_pressed
-	Saving.updateSaveData()
 "
 
 [sub_resource type="GDScript" id=4]
@@ -78,14 +91,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Music_CheckButton_toggled(button_pressed):
-	
-	Global.soundManager.play_sound_PickUp()
-	
-	Saving.enableMusic = button_pressed
-	Saving.updateSaveData()
 "
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -123,15 +128,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_HSlider_value_changed(value):
-	Saving.camera_sensitivity = value
-	Saving.updateSaveData()
 "
 
 [sub_resource type="GDScript" id=9]
-script/source = "extends Button
+script/source = "extends CheckButton
 
 
 # Declare member variables here. Examples:
@@ -141,19 +141,15 @@ script/source = "extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pressed = Saving.enableShadows
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Button_pressed():
-	Global.iap.purchaseFullApp()
 "
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Button
 
 
@@ -187,9 +183,11 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_right = 50.0
+margin_left = -552.0
+margin_right = 552.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -209,67 +207,77 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
-margin_right = 999.0
+margin_right = 1380.0
 margin_bottom = 1890.0
 custom_constants/separation = 42
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_right = 999.0
-margin_bottom = 548.0
+margin_right = 1380.0
+margin_bottom = 752.0
 custom_constants/separation = 87
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 512.0
-margin_bottom = 548.0
+[node name="Labels" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 893.0
+margin_bottom = 752.0
 custom_constants/separation = 100
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 512.0
+[node name="Sound Effects" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
+margin_right = 893.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
-text = "Sound Effects"
+text = "SETTINGS_SOUND_EFFECTS"
 align = 2
 valign = 2
 
-[node name="label3" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Music" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 margin_top = 210.0
-margin_right = 512.0
+margin_right = 893.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
-text = "Music"
+text = "SETTINGS_MUSIC"
 align = 2
 valign = 2
 
-[node name="label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Camera Sensitivity" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 margin_top = 420.0
-margin_right = 512.0
+margin_right = 893.0
 margin_bottom = 530.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
-text = "Camera Sensitivity"
+text = "SETTINGS_CAMERA_SENSITIVITY"
 align = 2
 valign = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 599.0
-margin_right = 999.0
-margin_bottom = 548.0
+[node name="Shadows" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
+margin_top = 630.0
+margin_right = 893.0
+margin_bottom = 740.0
+rect_min_size = Vector2( 0, 110 )
+custom_fonts/font = SubResource( 2 )
+text = "SETTINGS_SHADOWS"
+align = 2
+valign = 2
+
+[node name="Buttons" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 980.0
+margin_right = 1380.0
+margin_bottom = 752.0
 custom_constants/separation = 96
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound Effects" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Sound Effects" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_right = 400.0
 margin_bottom = 108.0
 
-[node name="Sound CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Sound Effects"]
+[node name="Sound CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects"]
 margin_right = 112.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 100, 100 )
@@ -283,12 +291,12 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Music" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Music" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 204.0
 margin_right = 400.0
 margin_bottom = 312.0
 
-[node name="Music CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Music"]
+[node name="Music CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music"]
 margin_right = 112.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 100, 100 )
@@ -302,13 +310,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Camera Sensitivity" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Camera Sensitivity" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 408.0
 margin_right = 400.0
 margin_bottom = 548.0
 custom_constants/separation = 23
 
-[node name="HSlider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Camera Sensitivity"]
+[node name="HSlider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity"]
 margin_right = 400.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 400, 140 )
@@ -324,37 +332,43 @@ step = 0.02
 value = 0.2
 script = SubResource( 8 )
 
-[node name="Remove Ads" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 590.0
-margin_right = 999.0
-margin_bottom = 796.0
+[node name="Shadows" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+margin_top = 644.0
+margin_right = 400.0
+margin_bottom = 752.0
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Remove Ads"]
-margin_left = 93.0
-margin_right = 905.0
-margin_bottom = 206.0
+[node name="Shadows CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows"]
+margin_right = 112.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 100, 100 )
 focus_mode = 0
+custom_icons/off = ExtResource( 3 )
+custom_icons/on = ExtResource( 4 )
+pressed = true
 enabled_focus_mode = 0
-icon = ExtResource( 6 )
-flat = true
 script = SubResource( 9 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Remove Ads" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
 
 [node name="Reset Save Data" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 838.0
-margin_right = 999.0
-margin_bottom = 941.0
+margin_top = 1016.0
+margin_right = 1380.0
+margin_bottom = 1119.0
 
 [node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Reset Save Data"]
-margin_left = 189.0
-margin_right = 810.0
+margin_left = 379.0
+margin_right = 1000.0
 margin_bottom = 103.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
-script = SubResource( 10 )
-[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Sound Effects/Sound CheckButton" to="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Sound Effects/Sound CheckButton" method="_on_Sound_CheckButton_toggled"]
-[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Music/Music CheckButton" to="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Music/Music CheckButton" method="_on_Music_CheckButton_toggled"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Camera Sensitivity/HSlider" to="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Camera Sensitivity/HSlider" method="_on_HSlider_value_changed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Remove Ads/Button" to="ColorRect/MarginContainer/VBoxContainer/Remove Ads/Button" method="_on_Button_pressed"]
+script = SubResource( 11 )
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows/Shadows CheckButton" to="." method="_on_Shadows_CheckButton_toggled"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" to="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" method="_on_Button_pressed"]
