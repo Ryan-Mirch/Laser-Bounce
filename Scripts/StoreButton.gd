@@ -76,7 +76,7 @@ func purchase():
 	Saving.updateCurrency(-purchasePrice)
 	purchased = true
 	labelPurchasePrice.visible = false
-	updateSaveData()
+	Saving.itemsPurchased[ID] = purchased
 	Saving.updateSaveData()
 	return true
 
