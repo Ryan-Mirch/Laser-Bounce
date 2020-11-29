@@ -5,6 +5,7 @@ extends Panel
 # var a = 2
 # var b = "text"
 export(String) var itemName
+export(String) var itemSKU
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +18,8 @@ func _ready():
 #	pass
 
 func pressed():
-	pass
+	
+	Global.iap.purchaseConsumable(itemSKU)
 
 func _on_Panel_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:

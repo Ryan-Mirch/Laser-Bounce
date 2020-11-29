@@ -3,6 +3,7 @@ extends Control
 const TEST_FULL_SKU = "full_version_test"
 const TEST_LASER1_SKU = "laser_1_test"
 const TEST_LASER2_SKU = "laser_2_test"
+const CURRENCY_1 = "currency_1"
 
 var payment
 
@@ -49,18 +50,22 @@ func _on_connected():
 	else:
 		print("Purchase query failed: %d" % query.status)
 		
-	payment.querySkuDetails([TEST_FULL_SKU], "inapp")
+	#payment.querySkuDetails([TEST_FULL_SKU,CURRENCY_1], "inapp")
+	payment.querySkuDetails([CURRENCY_1], "inapp")
+	consumeConsumables()
 
 
 func show_alert(_text):
 	pass
-	#alert_dialog_text.text = text
-	#alert_dialog.popup()
+	alert_dialog_text.text = _text
+	alert_dialog.popup()
 
 func _on_sku_details_query_completed(sku_details):
-	
+	var text = ""
 	for available_sku in sku_details:
-		show_alert(to_json(available_sku))
+		text = text + str(available_sku) + "\n"
+		
+	show_alert(text)
 
 
 func _on_purchases_updated(purchases):
@@ -82,6 +87,8 @@ func _on_purchase_acknowledged(purchase_token):
 
 func _on_purchase_consumed(purchase_token):
 	show_alert("Purchase consumed successfully: %s" % purchase_token)
+	Global.debugLabel.text = str(purchase_token) 
+	
 
 
 func _on_purchase_error(code, message):
@@ -111,4 +118,22 @@ func purchaseFullApp():
 		var response = payment.purchase(TEST_FULL_SKU)
 		if response.status != OK:
 			show_alert("Purchase error %s: %s" % [response.response_code, response.debug_message])
+
+func purchaseConsumable(currentSKU):
+	consumeConsumables()
+	if payment:		
+		var response = payment.purchase(currentSKU)
+		if response.status != OK:
+			show_alert("Purchase error %s: %s" % [response.response_code, response.debug_message])
+	consumeConsumables()
+			
+		
+func consumeConsumables():
+	if !payment: return
+	var query = payment.queryPurchases("inapp") # Or "subs" for subscriptions
+	if query.status == OK:
+		for purchase in query.purchases:
+			if purchase.sku == CURRENCY_1:
+				payment.consumePurchase(purchase.purchase_token)
+					
 

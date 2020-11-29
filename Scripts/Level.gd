@@ -13,10 +13,7 @@ onready var timer = get_node("Cycle Timer")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.currentScene = self
-	Edit()
-	
-	
-	
+	Edit()	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

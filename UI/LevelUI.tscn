@@ -55,7 +55,7 @@ func _process(_delta):
 	text = str(Saving.hintCount)
 "
 
-[sub_resource type="GDScript" id=17]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Panel
 
 
@@ -74,23 +74,11 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.560784 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-draw_center = false
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 1, 1, 1, 0.403922 )
+draw_center = false
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -102,6 +90,18 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 0.403922 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=10]
 draw_center = false
 border_width_left = 10
 border_width_top = 10
@@ -113,22 +113,22 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 60
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 80
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 160
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0, 0, 0, 1 )
 draw_center = false
 border_width_left = 350
@@ -149,8 +149,7 @@ shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 anti_aliasing_size = 5
 
-[sub_resource type="Animation" id=14]
-resource_name = "Fade"
+[sub_resource type="Animation" id=15]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -165,8 +164,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "Level Completed"
+[sub_resource type="Animation" id=16]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -181,7 +179,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Level Complete Panel:visible")
@@ -470,7 +468,7 @@ margin_left = 33.0
 margin_top = 7.0
 margin_right = 226.0
 margin_bottom = 204.0
-script = SubResource( 17 )
+script = SubResource( 6 )
 
 [node name="Level Complete Panel" type="Panel" parent="."]
 visible = false
@@ -478,7 +476,7 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -514,9 +512,9 @@ margin_right = 1425.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -528,7 +526,7 @@ margin_left = 41.0673
 margin_top = 37.2454
 margin_right = -215.933
 margin_bottom = 110.245
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "CONTINUE"
 align = 2
 valign = 1
@@ -560,7 +558,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1020.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "LEVEL_COMPLETE"
 align = 1
 valign = 1
@@ -574,7 +572,7 @@ modulate = Color( 1, 1, 1, 0 )
 margin_top = 134.0
 margin_right = 1020.0
 margin_bottom = 523.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 text = "Pick Random Message"
 align = 1
 valign = 1
@@ -589,13 +587,12 @@ messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMP
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Transition Effect" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
@@ -607,11 +604,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition Effect"]
-anims/Fade = SubResource( 14 )
-"anims/Level Completed" = SubResource( 15 )
+anims/Fade = SubResource( 15 )
+"anims/Level Completed" = SubResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Level Complete" = SubResource( 16 )
+"anims/Level Complete" = SubResource( 17 )
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]

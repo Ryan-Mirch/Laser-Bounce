@@ -4,6 +4,8 @@ var tabs
 var admob
 var iap
 var currentScene
+var currencyDisplay
+var debugLabel
 
 var pointerTranslation
 var debug = false

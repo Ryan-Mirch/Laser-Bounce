@@ -43,7 +43,7 @@ func updateSkin():
 				equippedItem = key
 				break
 		
-		$"CPUParticles".emitting = (equippedItem == "1")
+		$"CPUParticles".emitting = (equippedItem == "Laser 1")
 		
 
 func _physics_process(_delta):	

@@ -66,12 +66,15 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableSound
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func loadFromSaveData():
+	pressed = Saving.enableSound
 "
 
 [sub_resource type="GDScript" id=4]
@@ -85,12 +88,16 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableMusic
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func loadFromSaveData():
+	pressed = Saving.enableMusic
 "
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -123,11 +130,15 @@ script/source = "extends HSlider
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	value = Saving.camera_sensitivity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func loadFromSaveData():
+	value = Saving.camera_sensitivity
 "
 
 [sub_resource type="GDScript" id=9]
@@ -141,15 +152,19 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableShadows
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func loadFromSaveData():
+	pressed = Saving.enableShadows
 "
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=10]
 script/source = "extends Button
 
 
@@ -183,11 +198,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -552.0
-margin_right = 552.0
+margin_left = -10.0
+margin_right = 10.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -197,10 +211,9 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -499.5
-margin_top = 30.0
-margin_right = 499.5
-margin_bottom = 1920.0
+anchor_bottom = 1.0
+margin_left = -690.0
+margin_right = 690.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -208,7 +221,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 margin_right = 1380.0
-margin_bottom = 1890.0
+margin_bottom = 1920.0
 custom_constants/separation = 42
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
@@ -366,7 +379,7 @@ focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
-script = SubResource( 11 )
+script = SubResource( 10 )
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/HSlider" to="." method="_on_HSlider_value_changed"]

@@ -32,8 +32,8 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 			
 func activated():
 	var material = SpatialMaterial.new()
-	material.albedo_color = color
-	#material.flags_unshaded = true
+	material.albedo_color = color.darkened(0.3)
+	material.flags_unshaded = false
 	coloredObject.set_material_override(material)
 	
 	for w in wires:
@@ -47,7 +47,7 @@ func activated():
 func deactivated():
 	var material = SpatialMaterial.new()
 	material.albedo_color = color.darkened(0.5)
-	#material.flags_unshaded = false
+	material.flags_unshaded = false
 	coloredObject.set_material_override(material)
 	
 	activatedCount = 0

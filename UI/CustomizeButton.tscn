@@ -32,7 +32,9 @@ tracks/0/keys = {
 "values": [ Color( 0.45098, 0.45098, 0.45098, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Panel" type="Panel"]
+[node name="Panel" type="Panel" groups=[
+"Customize Button",
+]]
 margin_right = 330.0
 margin_bottom = 330.0
 rect_min_size = Vector2( 330, 330 )
@@ -43,7 +45,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Item Name" type="Label" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,6 +58,17 @@ text = "Item Name Item Name Item Name Item Name "
 align = 1
 valign = 2
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Purchase Price" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 4 )
+text = "Purchase Price"
+align = 1
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TouchToScroll.gd" type="Script" id=1]
 [ext_resource path="res://UI/CustomizeButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Themes/Invisible VScrollBar.tres" type="Theme" id=4]
+[ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scripts/Purchase Customization Popup.gd" type="Script" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -12,6 +14,8 @@ script/source = "extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = \"text\"
+
+onready var purchasePopup = $\"ColorRect/Purchase Popup\"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -145,6 +149,11 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
+[sub_resource type="DynamicFont" id=11]
+size = 65
+use_filter = true
+font_data = ExtResource( 5 )
+
 [node name="Customize" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -155,11 +164,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -552.0
-margin_right = 549.0
+margin_left = -10.0
+margin_right = 10.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -167,10 +175,11 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
+margin_left = -520.0
+margin_right = 520.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -219,7 +228,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 2 )
 itemName = "LASERS_DEFAULT"
-ID = "Default"
+ID = "Default Laser"
 buttonGroup = "Lasers"
 defaultOn = true
 
@@ -228,7 +237,8 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 3 )
 itemName = "LASERS_SPHERES"
-ID = "1"
+purchasePrice = 100
+ID = "Laser 1"
 buttonGroup = "Lasers"
 
 [node name="Laser Bounce Sounds" type="VBoxContainer" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -259,7 +269,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 4 )
 itemName = "SOUNDS_DEFAULT"
-ID = "Default"
+ID = "Default Sound"
 buttonGroup = "Laser Sounds"
 defaultOn = true
 
@@ -268,7 +278,8 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 5 )
 itemName = "SOUNDS_GLISTEN"
-ID = "1"
+purchasePrice = 200
+ID = "Sound 1"
 buttonGroup = "Laser Sounds"
 
 [node name="Backgrounds" type="VBoxContainer" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -299,7 +310,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 6 )
 itemName = "BACKGROUNDS_DEFAULT"
-ID = "Default"
+ID = "Default Background"
 buttonGroup = "Backgrounds"
 defaultOn = true
 
@@ -308,6 +319,7 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 7 )
 itemName = "BACKGROUNDS_SPACE"
+purchasePrice = 300
 ID = "Space"
 buttonGroup = "Backgrounds"
 
@@ -339,7 +351,7 @@ __meta__ = {
 [node name="Default" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 8 )
 itemName = "TILES_DEFAULT"
-ID = "Default"
+ID = "Default Tile"
 buttonGroup = "Tiles"
 defaultOn = true
 
@@ -348,6 +360,7 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 9 )
 itemName = "TILES_DARK"
+purchasePrice = 400
 ID = "Dark Mode"
 buttonGroup = "Tiles"
 
@@ -356,6 +369,7 @@ margin_left = 710.0
 margin_right = 1040.0
 custom_styles/panel = SubResource( 10 )
 itemName = "TILES_LIGHT"
+purchasePrice = 500
 ID = "Light Mode"
 buttonGroup = "Tiles"
 
@@ -365,3 +379,45 @@ margin_right = 1135.0
 margin_bottom = 2364.0
 rect_min_size = Vector2( 0, 100 )
 color = Color( 1, 1, 1, 0 )
+
+[node name="Purchase Popup" type="Popup" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 400.0
+margin_right = -200.0
+margin_bottom = -400.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/Purchase Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Purchase Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Purchase Popup/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 11 )
+text = "Need Currency?"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="ColorRect/Purchase Popup/VBoxContainer"]
+margin_top = 83.0
+margin_right = 700.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 11 )
+text = "Check out these deals"
+align = 1
+autowrap = true
+[connection signal="cantAfford" from="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer/Node2D" to="ColorRect/Purchase Popup" method="_on_Node2D_cantAfford"]
+[connection signal="cantAfford" from="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer/Node2D2" to="ColorRect/Purchase Popup" method="_on_Node2D2_cantAfford"]

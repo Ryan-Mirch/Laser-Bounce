@@ -49,7 +49,10 @@ func _ready():
 	distance = startDistance
 
 func _input(event):
-	if Global.get_current_tab() != 0: return
+	if Global.get_current_tab() != 0: 
+		_pressed = false
+		return
+		
 	if event.is_action_pressed("grab"):
 		if Camera_Pannable():			
 			_pressed = true

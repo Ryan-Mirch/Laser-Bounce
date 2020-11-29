@@ -71,7 +71,6 @@ corner_radius_bottom_left = 45
 [node name="Store" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -20.0
 mouse_filter = 2
 script = SubResource( 1 )
 __meta__ = {
@@ -79,27 +78,30 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_right = 10.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -555.0
-margin_right = 551.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
+margin_left = -520.0
+margin_right = 520.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer"]
-margin_right = 1066.0
-margin_bottom = 1900.0
+margin_right = 1040.0
+margin_bottom = 1920.0
 theme = ExtResource( 4 )
 scroll_horizontal_enabled = false
 script = ExtResource( 1 )
@@ -139,18 +141,21 @@ __meta__ = {
 
 [node name="Panel" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 2 )
+itemSKU = "currency_1"
 
 [node name="Panel2" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 3 )
 itemName = "1000 Currency"
+itemSKU = "currency_1"
 
 [node name="Panel3" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer" instance=ExtResource( 2 )]
 margin_left = 710.0
 margin_right = 1040.0
 custom_styles/panel = SubResource( 4 )
 itemName = "15000 Currency"
+itemSKU = "currency_1"
 
 [node name="Remove Ads" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
 margin_top = 563.0
