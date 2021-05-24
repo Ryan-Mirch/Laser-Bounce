@@ -63,4 +63,5 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Selected = SubResource( 2 )
+
 [connection signal="gui_input" from="." to="." method="_on_Panel_gui_input"]

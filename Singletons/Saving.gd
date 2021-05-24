@@ -8,13 +8,11 @@ var enableSound
 var enableMusic
 var enableShadows
 var camera_sensitivity = 0.25
-var currency
 
 var lasersEquipped = {}
 var laserSoundsEquipped = {}
 var backgroundsEquipped = {}
 var tilesEquipped = {}
-var itemsPurchased = {}
 
 var levelCompleted = {}
 
@@ -46,8 +44,6 @@ func updateSaveData():
 	f.store_var(laserSoundsEquipped)
 	f.store_var(backgroundsEquipped)
 	f.store_var(tilesEquipped)
-	f.store_var(itemsPurchased)
-	f.store_var(currency)
 	f.close()
 	emit_signal("saveDataUpdated")
 	
@@ -66,8 +62,6 @@ func loadData():
 		laserSoundsEquipped = f.get_var()
 		backgroundsEquipped = f.get_var()
 		tilesEquipped = f.get_var()
-		itemsPurchased = f.get_var()
-		currency = f.get_var()
 		f.close()
 	
 	emit_signal("dataLoaded")
@@ -78,14 +72,12 @@ func initializeSaveData():
 	if enableSound == null: enableSound = true
 	if enableMusic == null: enableMusic = true
 	if enableShadows == null: enableShadows = true
-	if currency == null: currency = 500
 	if !camera_sensitivity: camera_sensitivity = 0.5
 	if !levelCompleted: levelCompleted = {}
 	if !lasersEquipped: lasersEquipped = {}
 	if !laserSoundsEquipped: laserSoundsEquipped = {}
 	if !backgroundsEquipped: backgroundsEquipped = {}
 	if !tilesEquipped: tilesEquipped = {}
-	if !itemsPurchased: itemsPurchased = {}
 
 func updateLevelCompleted(levelID, b):
 	levelCompleted[levelID] = b	
@@ -98,13 +90,11 @@ func resetSaveData():
 	enableMusic = true
 	enableShadows = true
 	camera_sensitivity = 0.25
-	currency = 500
 	levelCompleted.clear()
 	lasersEquipped.clear()		
 	laserSoundsEquipped.clear()	
 	backgroundsEquipped.clear()	
 	tilesEquipped.clear()	
-	itemsPurchased.clear()
 	
 	var dir = Directory.new()
 	dir.remove(saveDataFile)
@@ -112,6 +102,11 @@ func resetSaveData():
 	updateSaveData()
 	emit_signal("saveDataReset")
 
-func updateCurrency(amount):
-	currency = currency + amount
-	updateSaveData()
+	
+func getLevelsCompleted():
+	var result = 0
+	
+	for i in levelCompleted:
+		if levelCompleted[i]:
+			result = result + 1
+	return result

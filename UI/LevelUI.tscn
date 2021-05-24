@@ -581,7 +581,7 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMPLETE_MESSAGE_3", "LEVEL_COMPLETE_MESSAGE_4" ]
+messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMPLETE_MESSAGE_3", "LEVEL_COMPLETE_MESSAGE_4", "LEVEL_COMPLETE_MESSAGE_5", "LEVEL_COMPLETE_MESSAGE_6" ]
 
 [node name="Vignette" type="Panel" parent="."]
 anchor_right = 1.0
@@ -609,6 +609,7 @@ anims/Fade = SubResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Level Complete" = SubResource( 17 )
+
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]

@@ -6,14 +6,12 @@ extends Control
 
 onready var settingsWindow= get_node("Settings")
 onready var levelSelectWindow = get_node("Level Select")
-onready var storeWindow = get_node("Store")
 onready var customizeWindow = get_node("Customize")
 onready var blockGameScreen = get_node("BlockGameScreen")
 
 onready var gameTab = get_node("Panel/HBoxContainer/Game")
 onready var levelSelectTab = get_node("Panel/HBoxContainer/Level Select")
 onready var customizeTab = get_node("Panel/HBoxContainer/Customize")
-onready var storeTab = get_node("Panel/HBoxContainer/Store")
 onready var settingsTab = get_node("Panel/HBoxContainer/Settings")
 
 
@@ -38,21 +36,18 @@ func make_room_for_Banner():
 	var h = pow(Global.admob.get_banner_dimension().y * ratio, 1.01)
 	settingsWindow.setMarginTop(h)
 	levelSelectWindow.setMarginTop(h)
-	storeWindow.setMarginTop(h)
 	customizeWindow.setMarginTop(h)
 		
 		
 func remove_room_for_Banner():
 	settingsWindow.setMarginTop(0)
 	levelSelectWindow.setMarginTop(0)
-	storeWindow.setMarginTop(0)
 	customizeWindow.setMarginTop(0)
 		
 func set_current_tab(tab):
 	if tab == 0: _on_Game_pressed()
 	if tab == 1: _on_Level_Select_pressed()
 	if tab == 2: _on_Customize_pressed()
-	if tab == 3: _on_Store_pressed()	
 	if tab == 4: _on_Settings_pressed()	
 	
 	
@@ -81,15 +76,7 @@ func _on_Customize_pressed():
 	check_if_tab_changed(2)
 	customizeWindow.visible = true
 	customizeTab.pressed = true
-	$AnimationPlayer.play("Grey")
-	
-func _on_Store_pressed():
-	close_all_tabs()
-	check_if_tab_changed(3)
-	storeWindow.visible = true
-	storeTab.pressed = true
-	$AnimationPlayer.play("Grey")
-	
+	$AnimationPlayer.play("Grey")	
 
 
 func _on_Settings_pressed():
@@ -112,12 +99,10 @@ func close_all_tabs():
 	
 	settingsWindow.visible = false
 	levelSelectWindow.visible = false
-	storeWindow.visible = false
 	customizeWindow.visible = false
 	
 	gameTab.pressed = false
 	levelSelectTab.pressed = false
-	storeTab.pressed = false
 	customizeTab.pressed = false
 	settingsTab.pressed = false
 	

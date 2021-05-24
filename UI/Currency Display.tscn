@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Icons/Gold Star Centered.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Currency Display.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 45
+resource_local_to_scene = true
+size = 60
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -18,43 +19,29 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = -249.0
-margin_top = 17.0
-margin_right = -17.0
-margin_bottom = 91.0
+visible = false
+margin_left = -185.972
+margin_top = 20.5676
+margin_right = -20.972
+margin_bottom = 94.5676
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
-custom_constants/separation = 9
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
+[node name="Gold Star Centered" type="Sprite" parent="."]
+position = Vector2( -160.912, 58.5401 )
+scale = Vector2( 0.209774, 0.209774 )
 texture = ExtResource( 2 )
-stretch_mode = 1
 
-[node name="Currency Amount" type="Label" parent="Panel/HBoxContainer"]
-margin_left = 73.0
-margin_top = 4.0
-margin_right = 225.0
-margin_bottom = 59.0
+[node name="Currency Amount" type="Label" parent="."]
+margin_left = -115.384
+margin_top = 22.4172
+margin_right = -7.38422
+margin_bottom = 95.4172
 custom_fonts/font = SubResource( 1 )
-text = "123456"
-align = 2
+text = "999"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "	"
 }
-[connection signal="gui_input" from="Panel" to="." method="_on_Panel_gui_input"]

@@ -16,7 +16,6 @@ export(String, "Lasers", "Laser Sounds", "Backgrounds", "Tiles") var buttonGroup
 export var defaultOn = false
 
 var selected = false
-var purchased = false
 
 signal cantAfford
 
@@ -53,33 +52,8 @@ func loadFromSaveData():
 	get_node("AnimationPlayer").play_backwards("Selected")	
 	
 	setSelected(selected)
-	
-	if Saving.itemsPurchased.has(ID):
-		purchased = Saving.itemsPurchased[ID]
-	
-	else:
-		purchased = defaultOn
-		
-	if purchasePrice == 0:
-		purchased = true	
-	
-	Saving.itemsPurchased[ID] = purchased
 	Saving.updateSaveData()
-		
-	labelPurchasePrice.visible = !purchased
 	
-func purchase():
-	if Saving.currency < purchasePrice:
-		emit_signal("cantAfford")
-		return false
-	
-	Saving.updateCurrency(-purchasePrice)
-	purchased = true
-	labelPurchasePrice.visible = false
-	Saving.itemsPurchased[ID] = purchased
-	Saving.updateSaveData()
-	return true
-
 func updateSaveData():
 	getSaveDictionary()[ID] = selected	
 	
@@ -98,12 +72,15 @@ func setSelected(b):
 func setLabelText():
 	labelItemName.text = itemName
 	labelPurchasePrice.text = str(purchasePrice)
+	if purchasePrice == 0:
+		labelPurchasePrice.visible = false
 
 func pressed():
 	if selected: return
-	if !purchased:		
-		var wasPurchased = purchase()	
-		if !wasPurchased: return
+	
+	if Saving.getLevelsCompleted() < purchasePrice:
+		emit_signal("cantAfford")
+		return false
 	
 	for b in get_tree().get_nodes_in_group(buttonGroup):
 		b.setSelected(false)
