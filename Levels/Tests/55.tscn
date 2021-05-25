@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Walls/Corner Wall.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Walls/Wall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Pieces/Laser Absorber.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Pieces/AMirror.tscn" type="PackedScene" id=16]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -342,6 +344,18 @@ shape = SubResource( 1 )
 transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, 150 )
 shape = SubResource( 1 )
 
+[node name="AMirror" parent="Objects" instance=ExtResource( 16 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1, 0, -1 )
+color = Color( 1, 1, 1, 1 )
+activatedObjects = [ NodePath("../Laser") ]
+
+[node name="Base5" parent="Objects" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1 )
+draggable = true
+rotationType = "45"
+
+[node name="Laser Absorber" parent="Objects/Base5" instance=ExtResource( 15 )]
+
 [node name="3D Message" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2.12132, -2.08909, -0.368363, 1.49186e-07, 0.520944, -2.95442, 2.12132, 2.08909, 0.368363, 13, 4, -11 )
 message = "Some pieces can be dragged and rotated"
@@ -350,6 +364,7 @@ message = "Some pieces can be dragged and rotated"
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

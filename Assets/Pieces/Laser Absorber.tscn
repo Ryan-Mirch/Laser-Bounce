@@ -105,6 +105,7 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cylinder/StaticBody"]
 shape = SubResource( 7 )
+
 [connection signal="input_event" from="Cylinder/Tip/StaticBody" to="." method="_on_StaticBody_input_event"]
 [connection signal="ready" from="Cylinder/Sphere" to="." method="_on_Sphere_ready"]
 [connection signal="input_event" from="Cylinder/Sphere/StaticBody" to="." method="_on_StaticBody_input_event"]

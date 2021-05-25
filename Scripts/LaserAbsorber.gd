@@ -70,7 +70,6 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		emit_signal("pressed")
 		
 func shoot():
-	print("shoot")
 	if !activated: return
 	if hasShot: return
 	play()
