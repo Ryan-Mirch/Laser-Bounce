@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/StoreButton.gd" type="Script" id=1]
+[ext_resource path="res://Icons/Gold Star Centered.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -15,6 +16,34 @@ corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
+
+[sub_resource type="Animation" id=3]
+resource_name = "Unlocked"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stars Required:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stars Required:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 93.815, 82.7906 ), Vector2( 262.079, -4.51646 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Selected"
@@ -62,18 +91,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Purchase Price" type="Label" parent="."]
-anchor_right = 1.0
-margin_bottom = 65.0
-custom_fonts/font = ExtResource( 4 )
-text = "Stars Required"
-align = 1
-valign = 2
+[node name="Unlock Animation" type="AnimationPlayer" parent="."]
+anims/Unlocked = SubResource( 3 )
+
+[node name="Select Animation" type="AnimationPlayer" parent="."]
+anims/Selected = SubResource( 2 )
+
+[node name="Stars Required" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.185
+margin_top = -82.2094
+margin_right = -8.18506
+margin_bottom = -16.2094
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Selected = SubResource( 2 )
+[node name="Gold Star Centered" type="Sprite" parent="Stars Required"]
+position = Vector2( 33.8114, 38.9541 )
+scale = Vector2( 0.284677, 0.284678 )
+texture = ExtResource( 2 )
+
+[node name="Purchase Price" type="Label" parent="Stars Required"]
+anchor_right = 1.0
+margin_left = 4.65161
+margin_top = 15.4169
+margin_right = 11.6516
+margin_bottom = 64.4169
+custom_fonts/font = ExtResource( 4 )
+text = "123"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="gui_input" from="." to="." method="_on_Panel_gui_input"]

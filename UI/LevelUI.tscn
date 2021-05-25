@@ -1,83 +1,18 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
 [ext_resource path="res://Icons/Continue.png" type="Texture" id=3]
 [ext_resource path="res://Icons/Stop.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Hint.gd" type="Script" id=5]
-[ext_resource path="res://Icons/Hint.png" type="Texture" id=6]
-[ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Fonts/tres/Noir Regular - 30.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Scripts/Hint Popup.gd" type="Script" id=10]
 [ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
-[ext_resource path="res://Icons/Hint Disabled.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/Transition.gd" type="Script" id=13]
 [ext_resource path="res://Scripts/Random Level Complete Message.gd" type="Script" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-
-[sub_resource type="DynamicFont" id=2]
-size = 80
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 60
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 60
-font_data = ExtResource( 8 )
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Label
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-onready var hint = get_node(\"..\")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	text = str(Saving.hintCount)
-"
-
-[sub_resource type="GDScript" id=6]
-script/source = "extends Panel
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.560784 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=2]
 draw_center = false
 border_width_left = 10
 border_width_top = 10
@@ -89,7 +24,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 0.403922 )
 border_width_left = 10
 border_width_top = 10
@@ -101,7 +36,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=4]
 draw_center = false
 border_width_left = 10
 border_width_top = 10
@@ -113,22 +48,22 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=5]
 size = 60
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=6]
 size = 80
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=7]
 size = 160
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 1 )
 draw_center = false
 border_width_left = 350
@@ -149,7 +84,7 @@ shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 anti_aliasing_size = 5
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=9]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -164,7 +99,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=10]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -179,7 +114,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=11]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Level Complete Panel:visible")
@@ -242,24 +177,12 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Hint:visible")
+tracks/5/path = NodePath("CenterContainer2/Retry:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("CenterContainer2/Retry:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -276,14 +199,14 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -59.5918
-margin_top = -397.83
-margin_right = 11.4082
-margin_bottom = -323.83
+margin_left = -174.499
+margin_top = -408.908
+margin_right = -103.499
+margin_bottom = -334.908
 rect_scale = Vector2( 3, 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -317,166 +240,13 @@ position = Vector2( 2.37842, 3.96404 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 11 )
 
-[node name="Hint Popup" type="Panel" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -520.0
-margin_top = -571.5
-margin_right = 520.0
-margin_bottom = 571.5
-custom_styles/panel = SubResource( 1 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Hint Popup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
-custom_constants/separation = 68
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label" type="Label" parent="Hint Popup/VBoxContainer"]
-margin_top = 138.0
-margin_right = 1000.0
-margin_bottom = 335.0
-custom_fonts/font = ExtResource( 7 )
-text = "Watch an ad to get a hint?"
-align = 1
-autowrap = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Hint Popup/VBoxContainer"]
-margin_top = 403.0
-margin_right = 1000.0
-margin_bottom = 553.0
-custom_constants/separation = 34
-alignment = 1
-
-[node name="Button Yes" type="Button" parent="Hint Popup/VBoxContainer/HBoxContainer"]
-margin_left = 33.0
-margin_right = 483.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 450, 150 )
-focus_mode = 0
-custom_fonts/font = SubResource( 2 )
-enabled_focus_mode = 0
-text = "Ok!"
-
-[node name="Button No" type="Button" parent="Hint Popup/VBoxContainer/HBoxContainer"]
-margin_left = 517.0
-margin_right = 967.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 450, 150 )
-focus_mode = 0
-custom_fonts/font = SubResource( 2 )
-enabled_focus_mode = 0
-text = "No Thanks"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Hint Popup/VBoxContainer"]
-margin_top = 621.0
-margin_right = 1000.0
-margin_bottom = 736.0
-alignment = 1
-
-[node name="Button 25" type="Button" parent="Hint Popup/VBoxContainer/HBoxContainer2"]
-margin_left = 175.0
-margin_right = 825.0
-margin_bottom = 115.0
-rect_min_size = Vector2( 650, 115 )
-focus_mode = 0
-custom_fonts/font = SubResource( 3 )
-enabled_focus_mode = 0
-text = "Buy 25 Hints ($0.99)"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Hint Popup/VBoxContainer"]
-margin_top = 804.0
-margin_right = 1000.0
-margin_bottom = 1004.0
-alignment = 1
-
-[node name="Button Full Version" type="Button" parent="Hint Popup/VBoxContainer/HBoxContainer3"]
-margin_left = 100.0
-margin_right = 900.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 800, 200 )
-focus_mode = 0
-custom_fonts/font = ExtResource( 9 )
-enabled_focus_mode = 0
-
-[node name="Label" type="Label" parent="Hint Popup/VBoxContainer/HBoxContainer3/Button Full Version"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-text = "Unlimited Hints and Remove All Ads ($5.99)"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Hint" type="Control" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -234.125
-margin_top = -398.983
-margin_right = 5.87488
-margin_bottom = -198.983
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Count" type="Label" parent="Hint"]
-margin_left = 43.4182
-margin_top = 102.643
-margin_right = 79.4182
-margin_bottom = 175.643
-custom_fonts/font = ExtResource( 7 )
-text = "3"
-script = SubResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="TextureButton" parent="Hint"]
-margin_left = 60.9512
-margin_top = 21.4268
-margin_right = 160.951
-margin_bottom = 121.427
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 6 )
-texture_disabled = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="Hint"]
-modulate = Color( 1, 1, 1, 0 )
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 33.0
-margin_top = 7.0
-margin_right = 226.0
-margin_bottom = 204.0
-script = SubResource( 6 )
-
 [node name="Level Complete Panel" type="Panel" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -512,9 +282,9 @@ margin_right = 1425.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -526,7 +296,7 @@ margin_left = 41.0673
 margin_top = 37.2454
 margin_right = -215.933
 margin_bottom = 110.245
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 5 )
 text = "CONTINUE"
 align = 2
 valign = 1
@@ -558,7 +328,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1020.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "LEVEL_COMPLETE"
 align = 1
 valign = 1
@@ -572,7 +342,7 @@ modulate = Color( 1, 1, 1, 0 )
 margin_top = 134.0
 margin_right = 1020.0
 margin_bottom = 523.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 7 )
 text = "Pick Random Message"
 align = 1
 valign = 1
@@ -587,7 +357,7 @@ messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMP
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -604,17 +374,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition Effect"]
-anims/Fade = SubResource( 15 )
-"anims/Level Completed" = SubResource( 16 )
+anims/Fade = SubResource( 9 )
+"anims/Level Completed" = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Level Complete" = SubResource( 17 )
+"anims/Level Complete" = SubResource( 11 )
 
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
-[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button Yes" to="Hint" method="_on_Button_Yes_pressed"]
-[connection signal="pressed" from="Hint Popup/VBoxContainer/HBoxContainer/Button No" to="Hint" method="_on_Button_No_pressed"]
-[connection signal="gui_input" from="Hint/Panel" to="Hint" method="_on_Panel_gui_input"]
 [connection signal="pressed" from="Level Complete Panel/Buttons/Retry" to="." method="_on_Retry_pressed"]
 [connection signal="pressed" from="Level Complete Panel/Buttons/Continue" to="." method="_on_Continue_pressed"]

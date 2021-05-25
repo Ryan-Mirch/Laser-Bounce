@@ -7,7 +7,6 @@ extends Control
 onready var play = get_node("CenterContainer/Play")
 onready var pause = get_node("CenterContainer/Pause")
 onready var levelCompleteAnimation = get_node("AnimationPlayer")
-onready var hintButton = get_node("Hint/Button")
 onready var retryButton = get_node("CenterContainer2/Retry")
 onready var transitionEffect = get_node("Transition Effect")
 
@@ -31,7 +30,6 @@ func tabChanged():
 		Level.play_pressed()
 		pause.visible = false
 		play.visible = true
-		hintButton.disabled = false
 
 func _on_Play_pressed():
 	if Global.get_current_tab() != 0: return
@@ -39,7 +37,6 @@ func _on_Play_pressed():
 	Level.play_pressed()
 	pause.visible = true
 	play.visible = false
-	hintButton.disabled = true
 	
 func _on_Pause_pressed():
 	if Global.get_current_tab() != 0: return
@@ -47,7 +44,6 @@ func _on_Pause_pressed():
 	Level.play_pressed()
 	pause.visible = false
 	play.visible = true
-	hintButton.disabled = false
 
 func _Level_Complete():
 	pause.visible = false

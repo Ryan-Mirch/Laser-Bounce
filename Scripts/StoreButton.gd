@@ -7,7 +7,11 @@ extends Panel
 
 onready var levelSelect = get_node("../..")
 onready var labelItemName = get_node("Item Name")
-onready var labelPurchasePrice = get_node("Purchase Price")
+onready var labelPurchasePrice = get_node("Stars Required/Purchase Price")
+onready var starsRequired = get_node("Stars Required")
+
+onready var unlockAnimation = get_node("Unlock Animation")
+onready var selectAnimation = get_node("Select Animation")
 
 export(String) var itemName = ""
 export(int) var purchasePrice = ""
@@ -16,12 +20,14 @@ export(String, "Lasers", "Laser Sounds", "Backgrounds", "Tiles") var buttonGroup
 export var defaultOn = false
 
 var selected = false
+var unlocked = false
 
 signal cantAfford
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Saving.connect("saveDataReset",self,"loadFromSaveData")
+	Saving.connect("saveDataUpdated",self,"unlock")
 	add_to_group(buttonGroup)
 	setLabelText()
 	loadFromSaveData()
@@ -49,7 +55,7 @@ func loadFromSaveData():
 		updateSaveData()
 		Saving.updateSaveData()
 		
-	get_node("AnimationPlayer").play_backwards("Selected")	
+	selectAnimation.play_backwards("Selected")	
 	
 	setSelected(selected)
 	Saving.updateSaveData()
@@ -57,14 +63,18 @@ func loadFromSaveData():
 func updateSaveData():
 	getSaveDictionary()[ID] = selected	
 	
+func unlock():
+	if Saving.getLevelsCompleted() >= purchasePrice and !unlocked:
+		unlocked = true
+		unlockAnimation.play("Unlocked")
 	
 func setSelected(b):
 	
 	if selected and !b:
-		get_node("AnimationPlayer").play_backwards("Selected")
+		selectAnimation.play_backwards("Selected")
 	
 	if b:
-		get_node("AnimationPlayer").play("Selected")
+		selectAnimation.play("Selected")
 		
 	selected = b
 
@@ -73,12 +83,12 @@ func setLabelText():
 	labelItemName.text = itemName
 	labelPurchasePrice.text = str(purchasePrice)
 	if purchasePrice == 0:
-		labelPurchasePrice.visible = false
+		starsRequired.visible = false
 
 func pressed():
 	if selected: return
 	
-	if Saving.getLevelsCompleted() < purchasePrice:
+	if !unlocked:
 		emit_signal("cantAfford")
 		return false
 	
