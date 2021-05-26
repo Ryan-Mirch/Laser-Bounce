@@ -28,9 +28,11 @@ func activated():
 	
 	
 func deactivated():
-	if beamSpawn != null: beamSpawn.queue_free()
-	activated = false
-	hasShot = false
+	if activated:
+		var beam = get_node_or_null("Beam")
+		if beam != null: beam.queue_free()		
+		activated = false
+		hasShot = false
 	
 func check_color(c): #check if the color is correct
 	if absorberColor == c: return true

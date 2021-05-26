@@ -29,8 +29,8 @@ func Play():
 	
 func Edit():
 	Sounds.play_sound_StopLevel()
-	get_tree().call_group("Beam", "queue_free")
 	get_tree().call_group("Laser","Stop")
+	get_tree().call_group("Laser Absorber", "deactivated")
 	Global.playing = false
 	timer.stop()
 	complete = false

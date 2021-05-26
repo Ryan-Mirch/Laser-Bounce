@@ -33,8 +33,11 @@ func Play():
 	
 	
 func Stop():
-	if beamSpawn: beamSpawn.queue_free()
-	activated = false
+	if activated:
+		var beam = get_node_or_null("Beam")
+		if beam != null: beam.queue_free()
+		
+		activated = false
 
 func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
