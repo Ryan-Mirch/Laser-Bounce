@@ -117,6 +117,14 @@ rotationType = "90"
 [node name="1SM2" parent="Objects/Base3" instance=ExtResource( 10 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
+[node name="Base6" parent="Objects" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3 )
+draggable = true
+
+[node name="AAbsorber" parent="Objects/Base6" instance=ExtResource( 12 )]
+color = Color( 0, 0, 0.862745, 1 )
+activatedObjects = [ NodePath("../../Door") ]
+
 [node name="Base4" parent="Objects" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
 draggable = true
@@ -124,11 +132,6 @@ rotationType = "90"
 
 [node name="1SM2" parent="Objects/Base4" instance=ExtResource( 10 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
-
-[node name="AAbsorber" parent="Objects" instance=ExtResource( 12 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7, 0, 3 )
-color = Color( 0, 0, 0.862745, 1 )
-activatedObjects = [ NodePath("../Door") ]
 
 [node name="Tiles" type="Spatial" parent="Objects"]
 
@@ -364,7 +367,6 @@ message = "Some pieces can be dragged and rotated"
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 
