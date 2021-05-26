@@ -15,14 +15,19 @@ var beamSpawn
 onready var beam = load("res://Assets/Beam.tscn")
 export var color = Color(1,1,1)
 
+export (NodePath) var coloredObjectPath
+onready var coloredObject = get_node(coloredObjectPath)
+onready var tip = get_node("Cylinder/Tip")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	SetDarkness(0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	if activated:
+		tip.rotate_y(delta * deg2rad(360))
+		
 func Play():
 	if !activated and activateCount >= activateTarget:		
 		activated = true
@@ -30,7 +35,7 @@ func Play():
 		beamSpawn.translation = Vector3(0,2.7,1.001)
 	
 		add_child(beamSpawn)
-	
+		SetDarkness(0)
 	
 func Stop():
 	if activated:
@@ -38,6 +43,13 @@ func Stop():
 		if beam != null: beam.queue_free()
 		
 		activated = false
+		SetDarkness(0.5)
+
+func SetDarkness(darkness):
+	var material = SpatialMaterial.new()
+	material.albedo_color = color.darkened(darkness)
+	material.flags_unshaded = false
+	coloredObject.set_material_override(material)
 
 func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:

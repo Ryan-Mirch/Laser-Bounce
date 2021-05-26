@@ -10,6 +10,12 @@ onready var beam = load("res://Assets/Beam.tscn")
 export var color = Color(1,1,1)
 export var absorberColor = Color(1,1,1)
 
+export (NodePath) var absorberObjectPath
+export (NodePath) var tipObjectPath
+
+onready var absorberObject = get_node(absorberObjectPath)
+onready var tipObject = get_node(tipObjectPath)
+
 var activatedCount = 0
 var beamSpawn
 var activated = false
@@ -17,15 +23,17 @@ var hasShot = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	SetTipDarkness(0.5)
+	SetAbsorberDarkness(0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if hasShot:
+		tipObject.rotate_y(delta * deg2rad(360))
 
 func activated():
 	activated = true
-	
+	SetAbsorberDarkness(0)
 	
 func deactivated():
 	if activated:
@@ -33,6 +41,9 @@ func deactivated():
 		if beam != null: beam.queue_free()		
 		activated = false
 		hasShot = false
+		SetTipDarkness(0.5)
+		SetAbsorberDarkness(0.5)
+		
 	
 func check_color(c): #check if the color is correct
 	if absorberColor == c: return true
@@ -65,6 +76,7 @@ func play():
 	
 	hasShot = true
 	
+	SetTipDarkness(0)
 
 
 func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
@@ -87,3 +99,15 @@ func _on_Sphere_ready():
 	var material = SpatialMaterial.new()
 	material.albedo_color = absorberColor
 	$"Cylinder/Sphere".set_material_override(material)
+	
+func SetTipDarkness(darkness):
+	var material = SpatialMaterial.new()
+	material.albedo_color = color.darkened(darkness)
+	material.flags_unshaded = false
+	tipObject.set_material_override(material)
+
+func SetAbsorberDarkness(darkness):
+	var material = SpatialMaterial.new()
+	material.albedo_color = color.darkened(darkness)
+	material.flags_unshaded = false
+	absorberObject.set_material_override(material)

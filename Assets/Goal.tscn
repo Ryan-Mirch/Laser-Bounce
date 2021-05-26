@@ -109,6 +109,7 @@ shape = SubResource( 7 )
 shape = SubResource( 8 )
 
 [node name="Close Closest Tile On Ready" parent="." instance=ExtResource( 4 )]
+
 [connection signal="ready" from="Cube033/Sphere001" to="." method="_on_Sphere001_ready"]
 [connection signal="body_entered" from="Cube033/Sphere001/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Cube033/Sphere001/Area" to="." method="_on_Area_body_exited"]
