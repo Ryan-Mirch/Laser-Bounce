@@ -63,10 +63,11 @@ func load_next_level(currentLevelPath, currentLevelName):
 	var nextLevelNum = int(currentLevelName.replace(".tscn",""))
 	nextLevelNum += 1
 	
+	
 	var nextLevelPath = currentLevelPath
 	nextLevelPath = nextLevelPath.replace(currentLevelName + ".tscn", "")
 	nextLevelPath = nextLevelPath + str(nextLevelNum) + ".tscn"
-	
+		
 	print ("nextLevelPath: " + nextLevelPath)
 	
 	var file2Check = File.new()

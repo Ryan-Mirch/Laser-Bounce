@@ -271,7 +271,7 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 5 )
 itemName = "SOUNDS_GLISTEN"
-purchasePrice = 2
+purchasePrice = 20
 ID = "Sound 1"
 buttonGroup = "Laser Sounds"
 

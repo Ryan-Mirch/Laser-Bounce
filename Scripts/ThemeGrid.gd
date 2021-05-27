@@ -18,14 +18,27 @@ func _ready():
 #func _process(delta):
 #	pass
 
+class MyCustomSorter:
+	static func sort_ascending(a, b):
+		if a < b:
+			return true
+		return false
+
 func createButtons():
 	var levelNames = list_files_in_directory(themePath)
+	var levelNamesAsInts = []
 	
 	for levelName in levelNames:
-		var levelPath = themePath + "/" + levelName
+		levelNamesAsInts.push_front(int(levelName))
+	
+	levelNamesAsInts.sort_custom(MyCustomSorter, "sort_ascending")
+	print(levelNamesAsInts)
+	
+	for levelName in levelNamesAsInts:
+		var levelPath = themePath + "/" + str(levelName) + ".tscn"
 		var buttonInstance = button.instance()
 		buttonInstance.levelPath = levelPath
-		buttonInstance.levelName = levelName.replace(".tscn", "")
+		buttonInstance.levelName = str(levelName).replace(".tscn", "")
 		
 		add_child(buttonInstance)
 
