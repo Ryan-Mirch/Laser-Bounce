@@ -254,6 +254,7 @@ shape = SubResource( 1 )
 
 [node name="3D Message" parent="." instance=ExtResource( 8 )]
 transform = Transform( 2.12132, 2.08909, 0.368363, 1.49186e-07, 0.520944, -2.95442, -2.12132, 2.08909, 0.368363, -2, 6, -8 )
+visible = false
 message = "LEVEL5_MESSAGE"
 width = 280.0
 height = 160.0
@@ -262,6 +263,7 @@ height = 160.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 7 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

@@ -145,16 +145,12 @@ rotationType = "90"
 [node name="1SM" parent="Objects/Base" instance=ExtResource( 10 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
-[node name="Base2" parent="Objects" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5 )
-draggable = true
-rotationType = "90"
-
-[node name="1SM" parent="Objects/Base2" instance=ExtResource( 10 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0 )
+[node name="1SM" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5, 0, 5 )
 
 [node name="3D Message" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 2.59808, 1.5, -6.55671e-08, 0, -1.31134e-07, -3, -1.5, 2.59808, -1.13566e-07, 3, 5, -3 )
+visible = false
 message = "LEVEL8_MESSAGE"
 height = 175.0
 
@@ -162,6 +158,7 @@ height = 175.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

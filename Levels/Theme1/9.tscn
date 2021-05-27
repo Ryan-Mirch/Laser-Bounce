@@ -123,28 +123,24 @@ transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 13, 0, 1 
 [node name="Door" parent="Objects" instance=ExtResource( 7 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5, 0, 1 )
 
-[node name="Base" parent="Objects" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3 )
-draggable = true
-rotationType = "90"
+[node name="1SM" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 13, 0, 5 )
 
-[node name="1SM" parent="Objects/Base" instance=ExtResource( 10 )]
-transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0, 0 )
+[node name="1SM2" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5, 0, 5 )
 
 [node name="Base2" parent="Objects" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3 )
 draggable = true
 rotationType = "90"
 
-[node name="1SM" parent="Objects/Base2" instance=ExtResource( 10 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0 )
-
-[node name="AGate" parent="Objects" instance=ExtResource( 9 )]
-transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 9, 0, 5 )
-activatedObjects = [ NodePath("../Door") ]
+[node name="AGate" parent="Objects/Base2" instance=ExtResource( 9 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0 )
+activatedObjects = [ NodePath("../../Door") ]
 
 [node name="3D Message" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( 2.59808, 1.5, -6.55671e-08, 0, -1.31134e-07, -3, -1.5, 2.59808, -1.13566e-07, 3, 5, -3 )
+visible = false
 message = "LEVEL9_MESSAGE"
 height = 175.0
 
@@ -152,6 +148,7 @@ height = 175.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

@@ -128,6 +128,7 @@ shape = SubResource( 1 )
 
 [node name="Text Box" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1.72073, -2.42012, -0.426732, 1.49186e-07, 0.520944, -2.95442, 2.45746, 1.69459, 0.298801, 14, 3, -4 )
+visible = false
 message = "LEVEL4_MESSAGE"
 width = 280.0
 height = 160.0
@@ -136,6 +137,7 @@ height = 160.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 12 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

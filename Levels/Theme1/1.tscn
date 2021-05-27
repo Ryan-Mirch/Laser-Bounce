@@ -86,6 +86,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, -
 
 [node name="Text Box" parent="Objects" instance=ExtResource( 6 )]
 transform = Transform( 2.81826, 1.02415, 0.0923379, 0.0332853, 0.178393, -2.99451, -1.02776, 2.81413, 0.156223, 4, 4, -6 )
+visible = false
 message = "LEVEL1_MESSAGE"
 width = 280.0
 height = 180.0
@@ -105,6 +106,7 @@ min_distance = 4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01302, -1, -9.10161 )
 
 [node name="LevelUI" parent="." instance=ExtResource( 8 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 
