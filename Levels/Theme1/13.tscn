@@ -16,7 +16,7 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
-levelID = "12"
+levelID = "13"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -128,7 +128,12 @@ color = Color( 1, 0, 0, 1 )
 
 [node name="Laser4" parent="Objects" instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13, 0, 7 )
-color = Color( 0, 0, 1, 1 )
+
+[node name="Door" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9, 0, 1 )
+
+[node name="Door2" parent="Objects" instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9, 0, 2 )
 
 [node name="Base2" parent="Objects" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 5, 0, 1 )
@@ -145,14 +150,8 @@ draggable = true
 
 [node name="AAbsorber2" parent="Objects/Base5" instance=ExtResource( 9 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
-color = Color( 1, 0, 0, 1 )
+color = Color( 1, 1, 1, 1 )
 activatedObjects = [ NodePath("../../Door") ]
-
-[node name="Door" parent="Objects" instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9, 0, 1 )
-
-[node name="Door2" parent="Objects" instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9, 0, 2 )
 
 [node name="3D Message" parent="Objects" instance=ExtResource( 7 )]
 transform = Transform( 2.89778, 0.776457, -3.394e-08, 0, -1.31134e-07, -3, -0.776457, 2.89778, -1.26666e-07, 5, 6, -3 )
