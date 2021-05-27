@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Camera/Camera Related.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/3D Message.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Pieces/AGate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Pieces/AMirror.tscn" type="PackedScene" id=13]
 
@@ -171,6 +172,11 @@ rotationType = "90"
 
 [node name="1SM" parent="Objects/Base2" instance=ExtResource( 10 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="3D Message" parent="Objects" instance=ExtResource( 11 )]
+transform = Transform( 2.59808, -1.5, 6.55671e-08, 0, -1.31134e-07, -3, 1.5, 2.59808, -1.13566e-07, 15, 6, -1 )
+message = "LEVEL11_MESSAGE"
+height = 225.0
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4

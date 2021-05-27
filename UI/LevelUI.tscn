@@ -379,7 +379,6 @@ anims/Fade = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Level Complete" = SubResource( 11 )
-
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
