@@ -33,7 +33,7 @@ func cycleCount():
 	if activated:
 		cyclesAfterHit += 1
 
-func activated():
+func activate():
 	activated = true
 	
 
@@ -48,7 +48,7 @@ func _on_Area_body_entered(body):
 		activatedCount += 1
 		
 		if activatedCount == 1:
-			activated()
+			activate()
 
 
 func _on_Area_body_exited(body):

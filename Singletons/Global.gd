@@ -22,8 +22,9 @@ signal tabChanged
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect("saveDataUpdated",self,"hideAds")
-	Saving.connect("dataLoaded",self,"hideAds")
+	emit_signal("tabChanged")
+	var _x = Saving.connect("saveDataUpdated",self,"hideAds")
+	var _y = Saving.connect("dataLoaded",self,"hideAds")
 	
 	pointerTranslation = Vector3(0,0,0)
 	loadAds()

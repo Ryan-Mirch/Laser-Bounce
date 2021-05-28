@@ -66,7 +66,7 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
+	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableSound
 
 
@@ -88,7 +88,7 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
+	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableMusic
 
 
@@ -130,7 +130,7 @@ script/source = "extends HSlider
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
+	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	value = Saving.camera_sensitivity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -152,7 +152,7 @@ script/source = "extends CheckButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
+	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
 	pressed = Saving.enableShadows
 
 
@@ -381,7 +381,6 @@ custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
 script = SubResource( 10 )
-
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/HSlider" to="." method="_on_HSlider_value_changed"]

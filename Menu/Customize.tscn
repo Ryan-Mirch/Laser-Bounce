@@ -13,8 +13,6 @@ script/source = "extends Control
 # var a = 2
 # var b = \"text\"
 
-onready var purchasePopup = $\"ColorRect/Purchase Popup\"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

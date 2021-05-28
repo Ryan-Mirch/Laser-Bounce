@@ -30,7 +30,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if !Saving.showAds:
 		self.queue_free()
 
@@ -68,5 +68,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="gui_input" from="Panel" to="Panel" method="_on_Panel_gui_input"]

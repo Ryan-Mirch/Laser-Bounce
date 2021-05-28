@@ -39,8 +39,8 @@ func Play():
 	
 func Stop():
 	if activated:
-		var beam = get_node_or_null("Beam")
-		if beam != null: beam.queue_free()
+		var beamChild = get_node_or_null("Beam")
+		if beamChild != null: beamChild.queue_free()
 		
 		activated = false
 		SetDarkness(0.5)
@@ -58,7 +58,7 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 
 
 func _on_Tip_ready():
-	var tip = get_node("Cylinder/Tip")
+	tip = get_node("Cylinder/Tip")
 	var material = SpatialMaterial.new()
 	material.albedo_color = color
 	tip.set_material_override(material)

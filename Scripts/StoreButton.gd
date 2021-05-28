@@ -26,8 +26,8 @@ signal cantAfford
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect("saveDataReset",self,"loadFromSaveData")
-	Saving.connect("saveDataUpdated",self,"unlock")
+	var _x = Saving.connect("saveDataReset",self,"loadFromSaveData")
+	var _y = Saving.connect("saveDataUpdated",self,"unlock")
 	add_to_group(buttonGroup)
 	setLabelText()
 	loadFromSaveData()

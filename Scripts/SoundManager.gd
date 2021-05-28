@@ -14,7 +14,7 @@ onready var Rotate = get_node("Rotate")
 onready var Win = get_node("Win")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saving.connect("saveDataUpdated", self, "updateLaserSounds")
+	var _x = Saving.connect("saveDataUpdated", self, "updateLaserSounds")
 	updateLaserSounds()
 	
 

@@ -11,7 +11,7 @@ var startingY = 0
 func _ready():
 	startingY = $Panel.rect_position.y
 	Global.currencyDisplay = self
-	Saving.connect("saveDataUpdated",self,"updateCurrency")
+	var _x = Saving.connect("saveDataUpdated",self,"updateCurrency")
 	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
 	updateCurrency()
 
