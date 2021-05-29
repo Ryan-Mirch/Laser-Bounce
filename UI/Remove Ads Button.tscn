@@ -39,7 +39,7 @@ func _on_Panel_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			print(\"remove ads\")
-			Global.iap.purchaseFullApp()
+			#Global.iap.purchaseFullApp()
 "
 
 [node name="Remove Ads" type="CenterContainer"]

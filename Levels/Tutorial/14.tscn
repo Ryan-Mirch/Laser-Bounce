@@ -170,7 +170,6 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9, 0, 1 )
 
 [node name="Base5" parent="Objects" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 9 )
-draggable = true
 
 [node name="AAbsorber2" parent="Objects/Base5" instance=ExtResource( 9 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
@@ -194,7 +193,6 @@ message = "LEVEL12_MESSAGE"
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

@@ -12,6 +12,8 @@ onready var levelCompletedIcon = get_node("LevelCompletedIcon")
 export (String, FILE) var levelPath
 export (String) var levelName
 
+var completed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	var _x = Saving.connect("saveDataUpdated",self,"updateCompletedIcon")
@@ -31,6 +33,7 @@ func initializeSaveData():
 func updateCompletedIcon():
 	initializeSaveData()
 	levelCompletedIcon.visible = Saving.levelCompleted[levelName]
+	
 
 
 func setLabelText():
@@ -39,5 +42,7 @@ func setLabelText():
 
 func _on_TextureButton_pressed():
 	Global.load_level(levelPath)
-
+	
+func getLevelName():
+	return levelName
 

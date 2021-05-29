@@ -82,8 +82,8 @@ func setSelected(b):
 func setLabelText():
 	labelItemName.text = itemName
 	labelPurchasePrice.text = str(purchasePrice)
-	if purchasePrice == 0:
-		starsRequired.visible = false
+	if purchasePrice > 0:
+		starsRequired.visible = true
 
 func pressed():
 	if selected: return

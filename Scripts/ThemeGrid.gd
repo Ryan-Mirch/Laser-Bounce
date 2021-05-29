@@ -6,13 +6,19 @@ extends GridContainer
 # var b = "text"
 
 onready var button = load("res://UI/LevelButton.tscn")
+onready var percentageLabel = get_node("../ThemeName/Percentage Completed")
+onready var root = get_node("..")
 
-export(String, DIR) var themePath
-
+var themePath
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	themePath = root.getThemePath()
 	createButtons()
+	var _x = Saving.connect("saveDataUpdated",self,"updatePercentageLabel")
+	updatePercentageLabel()
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -59,3 +65,17 @@ func list_files_in_directory(_path):
 
 	print(files)
 	return files
+	
+func updatePercentageLabel():
+	var totalLevels = get_child_count()
+	var completedLevels = 0
+	var percentage = 0.0
+	
+	for level in get_children():
+		if Saving.levelCompleted[level.getLevelName()]: completedLevels += 1
+		
+	percentage = (float(completedLevels) / totalLevels) * 100
+	percentage = round(percentage)
+	
+	percentageLabel.text = str(percentage) + "%"
+

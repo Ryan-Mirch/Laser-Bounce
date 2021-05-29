@@ -219,6 +219,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Lasers/GridContainer" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 2 )
 itemName = "LASERS_DEFAULT"
+purchasePrice = -1
 ID = "Default Laser"
 buttonGroup = "Lasers"
 defaultOn = true
@@ -260,6 +261,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 4 )
 itemName = "SOUNDS_DEFAULT"
+purchasePrice = -1
 ID = "Default Sound"
 buttonGroup = "Laser Sounds"
 defaultOn = true
@@ -301,6 +303,7 @@ __meta__ = {
 [node name="Node2D" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 6 )
 itemName = "BACKGROUNDS_DEFAULT"
+purchasePrice = -1
 ID = "Default Background"
 buttonGroup = "Backgrounds"
 defaultOn = true
@@ -342,6 +345,7 @@ __meta__ = {
 [node name="Default" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 custom_styles/panel = SubResource( 8 )
 itemName = "TILES_DEFAULT"
+purchasePrice = -1
 ID = "Default Tile"
 buttonGroup = "Tiles"
 defaultOn = true

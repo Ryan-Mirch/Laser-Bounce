@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/ThemeGrid.gd" type="Script" id=2]
+[ext_resource path="res://Icons/Play.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Theme.gd" type="Script" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+onready var expandArrow = get_node(\"expand arrow\")
+onready var collapseArrow = get_node(\"collapse arrow\")
+
+var themeGrid
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	for n in get_parent().get_parent().get_children():
+		if n is GridContainer:
+			themeGrid = n
+			
+	setState(false)
+		
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_ThemeName_gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		themeGrid.visible = !themeGrid.visible
+		setState(themeGrid.visible)
+
+func setState(isVisible):
+	themeGrid.visible = isVisible
+	expandArrow.visible = !isVisible
+	collapseArrow.visible = isVisible
+"
+
+[node name="Easy" type="VBoxContainer"]
+margin_top = 105.0
+margin_right = 1080.0
+margin_bottom = 206.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeName" type="HBoxContainer" parent="."]
+margin_right = 1080.0
+margin_bottom = 97.0
+mouse_filter = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Percentage Completed" type="Label" parent="ThemeName"]
+margin_right = 200.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 200, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "0%"
+valign = 1
+
+[node name="Label" type="Label" parent="ThemeName"]
+margin_left = 204.0
+margin_right = 595.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 200, 40 )
+custom_fonts/font = ExtResource( 1 )
+text = "SET_NAME"
+valign = 1
+
+[node name="dropdown arrows" type="Control" parent="ThemeName"]
+margin_left = 599.0
+margin_right = 599.0
+margin_bottom = 97.0
+mouse_filter = 2
+script = SubResource( 1 )
+
+[node name="expand arrow" type="TextureRect" parent="ThemeName/dropdown arrows"]
+margin_left = 93.2405
+margin_top = 22.9702
+margin_right = 193.241
+margin_bottom = 122.97
+rect_rotation = 90.0
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="collapse arrow" type="TextureRect" parent="ThemeName/dropdown arrows"]
+margin_left = 43.0359
+margin_top = 74.589
+margin_right = 143.036
+margin_bottom = 174.589
+rect_rotation = -90.0
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeGrid" type="GridContainer" parent="."]
+margin_top = 101.0
+margin_right = 1080.0
+margin_bottom = 101.0
+custom_constants/vseparation = 15
+custom_constants/hseparation = 9
+columns = 5
+script = ExtResource( 2 )
+[connection signal="gui_input" from="ThemeName" to="ThemeName/dropdown arrows" method="_on_ThemeName_gui_input"]
