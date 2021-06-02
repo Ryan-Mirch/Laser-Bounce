@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=10]
 
+
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 

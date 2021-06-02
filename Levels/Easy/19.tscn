@@ -287,12 +287,12 @@ rotationType = "45"
 transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, 0, 0 )
 
 [node name="Base9" parent="Objects" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -5 )
 draggable = true
 rotationType = "45"
 
 [node name="2SM" parent="Objects/Base9" instance=ExtResource( 4 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0 )
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0, 0 )
 
 [node name="Goal Laser" parent="Objects" instance=ExtResource( 9 )]
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 7, 0, -3 )

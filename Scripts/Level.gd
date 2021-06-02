@@ -13,6 +13,8 @@ onready var timer = get_node("Cycle Timer")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.currentScene = self
+	var _x = Saving.connect("saveDataUpdated",self,"set_cycle_duration")
+	set_cycle_duration()
 	Edit()	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,3 +61,7 @@ func play_pressed():
 		state = 0
 		Edit()
 		print("edit")
+
+func set_cycle_duration():
+	var timer = get_node("Cycle Timer")
+	timer.wait_time = Saving.bounce_speed

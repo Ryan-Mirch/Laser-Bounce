@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=2]
@@ -48,6 +48,12 @@ func _on_Shadows_CheckButton_toggled(button_pressed):
 	Sounds.play_sound_PickUp()	
 	Saving.enableShadows = button_pressed
 	Saving.updateSaveData()
+
+
+func _on_BS_Slider_value_changed(value):
+	Saving.bounce_speed = value
+	Saving.updateSaveData()
+	print(value)
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -164,6 +170,28 @@ func loadFromSaveData():
 	pressed = Saving.enableShadows
 "
 
+[sub_resource type="GDScript" id=11]
+script/source = "extends HSlider
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
+	value = Saving.camera_sensitivity
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+func loadFromSaveData():
+	value = Saving.camera_sensitivity
+"
+
 [sub_resource type="GDScript" id=10]
 script/source = "extends Button
 
@@ -227,13 +255,14 @@ custom_constants/separation = 42
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_right = 1380.0
-margin_bottom = 752.0
+margin_bottom = 988.0
 custom_constants/separation = 87
 alignment = 1
 
 [node name="Labels" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 893.0
-margin_bottom = 752.0
+margin_left = 50.0
+margin_right = 943.0
+margin_bottom = 988.0
 custom_constants/separation = 100
 __meta__ = {
 "_edit_use_anchors_": false
@@ -278,17 +307,27 @@ text = "SETTINGS_SHADOWS"
 align = 2
 valign = 2
 
+[node name="Bounce Speed" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
+margin_top = 840.0
+margin_right = 893.0
+margin_bottom = 950.0
+rect_min_size = Vector2( 0, 110 )
+custom_fonts/font = SubResource( 2 )
+text = "SETTINGS_BOUNCE_SPEED"
+align = 2
+valign = 2
+
 [node name="Buttons" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 980.0
-margin_right = 1380.0
-margin_bottom = 752.0
+margin_left = 1030.0
+margin_right = 1330.0
+margin_bottom = 988.0
 custom_constants/separation = 96
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sound Effects" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
-margin_right = 400.0
+margin_right = 300.0
 margin_bottom = 108.0
 
 [node name="Sound CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects"]
@@ -307,7 +346,7 @@ __meta__ = {
 
 [node name="Music" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 204.0
-margin_right = 400.0
+margin_right = 300.0
 margin_bottom = 312.0
 
 [node name="Music CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music"]
@@ -326,14 +365,14 @@ __meta__ = {
 
 [node name="Camera Sensitivity" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 408.0
-margin_right = 400.0
+margin_right = 300.0
 margin_bottom = 548.0
 custom_constants/separation = 23
 
-[node name="HSlider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity"]
-margin_right = 400.0
+[node name="CS Slider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity"]
+margin_right = 300.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 400, 140 )
+rect_min_size = Vector2( 300, 140 )
 focus_mode = 0
 custom_icons/grabber_highlight = ExtResource( 5 )
 custom_icons/grabber = ExtResource( 5 )
@@ -348,7 +387,7 @@ script = SubResource( 8 )
 
 [node name="Shadows" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 644.0
-margin_right = 400.0
+margin_right = 300.0
 margin_bottom = 752.0
 
 [node name="Shadows CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows"]
@@ -365,12 +404,36 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Bounce Speed" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+margin_top = 848.0
+margin_right = 300.0
+margin_bottom = 988.0
+custom_constants/separation = 23
+
+[node name="BS Slider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Bounce Speed"]
+margin_right = 300.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 300, 140 )
+focus_mode = 0
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 5 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area_highlight = SubResource( 6 )
+custom_styles/grabber_area = SubResource( 7 )
+min_value = 0.1
+max_value = 1.0
+step = 0.05
+value = 0.4
+script = SubResource( 11 )
+
 [node name="Remove Ads" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 1030.0
+margin_bottom = 1210.0
 
 [node name="Reset Save Data" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 1016.0
+margin_top = 1252.0
 margin_right = 1380.0
-margin_bottom = 1119.0
+margin_bottom = 1355.0
 
 [node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Reset Save Data"]
 margin_left = 379.0
@@ -381,8 +444,10 @@ custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
 script = SubResource( 10 )
+
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/CS Slider" to="." method="_on_HSlider_value_changed"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows/Shadows CheckButton" to="." method="_on_Shadows_CheckButton_toggled"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Bounce Speed/BS Slider" to="." method="_on_BS_Slider_value_changed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" to="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" method="_on_Button_pressed"]

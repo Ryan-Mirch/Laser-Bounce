@@ -8,12 +8,11 @@ var enableSound
 var enableMusic
 var enableShadows
 var camera_sensitivity = 0.25
-
+var bounce_speed = 0.4
 var lasersEquipped = {}
 var laserSoundsEquipped = {}
 var backgroundsEquipped = {}
 var tilesEquipped = {}
-
 var levelCompleted = {}
 
 
@@ -25,6 +24,7 @@ func _ready():
 	loadData()
 	initializeSaveData()
 	updateSaveData()
+	
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -39,11 +39,13 @@ func updateSaveData():
 	f.store_var(enableMusic)
 	f.store_var(enableShadows)
 	f.store_var(camera_sensitivity)
+	f.store_var(bounce_speed)
 	f.store_var(levelCompleted)
 	f.store_var(lasersEquipped)
 	f.store_var(laserSoundsEquipped)
 	f.store_var(backgroundsEquipped)
 	f.store_var(tilesEquipped)
+	
 	f.close()
 	emit_signal("saveDataUpdated")
 	
@@ -57,6 +59,7 @@ func loadData():
 		enableMusic = f.get_var()
 		enableShadows = f.get_var()
 		camera_sensitivity = f.get_var()
+		bounce_speed = f.get_var()
 		levelCompleted = f.get_var()
 		lasersEquipped = f.get_var()
 		laserSoundsEquipped = f.get_var()
@@ -73,6 +76,7 @@ func initializeSaveData():
 	if enableMusic == null: enableMusic = true
 	if enableShadows == null: enableShadows = true
 	if !camera_sensitivity: camera_sensitivity = 0.5
+	if !bounce_speed: bounce_speed = 0.4
 	if !levelCompleted: levelCompleted = {}
 	if !lasersEquipped: lasersEquipped = {}
 	if !laserSoundsEquipped: laserSoundsEquipped = {}
@@ -90,6 +94,7 @@ func resetSaveData():
 	enableMusic = true
 	enableShadows = true
 	camera_sensitivity = 0.25
+	bounce_speed = 0.4
 	levelCompleted.clear()
 	lasersEquipped.clear()		
 	laserSoundsEquipped.clear()	
