@@ -17,6 +17,8 @@ onready var absorberObject = get_node(absorberObjectPath)
 onready var tipObject = get_node(tipObjectPath)
 
 var activatedCount = 0
+var wrongColorCount = 0
+
 var beamSpawn
 var activated = false
 var hasShot = false
@@ -32,8 +34,9 @@ func _process(delta):
 		tipObject.rotate_y(delta * deg2rad(360))
 
 func activated():
-	activated = true
-	SetAbsorberDarkness(0)
+	if !activated:
+		activated = true
+		SetAbsorberDarkness(0)
 	
 func deactivated():
 	if activated:
@@ -56,8 +59,14 @@ func _on_Area_body_entered(body):
 	if check_color(sensedColor): 
 		activatedCount += 1
 		
-		if activatedCount == 1:
-			activated()
+	else:
+		wrongColorCount += 1		
+		
+	if activatedCount > 0 && wrongColorCount == 0:
+		activated()
+	else:
+		deactivated()
+	
 
 func _on_Area_body_exited(body):
 	var sensedColor = body.get_parent().color
@@ -65,8 +74,13 @@ func _on_Area_body_exited(body):
 		activatedCount -= 1
 		activatedCount = clamp(activatedCount, 0, 100)
 		
-		if activatedCount == 0:
-			deactivated()
+	else: 
+		wrongColorCount -= 1
+			
+	if activatedCount > 0 && wrongColorCount == 0:
+		activated()
+	else:
+		deactivated()
 
 func play():
 	beamSpawn = beam.instance()

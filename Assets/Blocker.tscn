@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/Door.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Blocker.gd" type="Script" id=1]
 [ext_resource path="res://Materials/Door_002.material" type="Material" id=2]
 [ext_resource path="res://Helpers/Close Closest Tile On Ready.tscn" type="PackedScene" id=3]
 
@@ -44,6 +44,9 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+
 [sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -1.5, -2, 0.25, -1.5, 1, -0.25, -1.5, 1, 0.25, -1.5, -2, 0.25, -1.5, -2, -0.25, -1.5, 1, -0.25, -1.5, -2, -0.25, 1.5, 1, -0.25, -1.5, 1, -0.25, -1.5, -2, -0.25, 1.5, -2, -0.25, 1.5, 1, -0.25, 1.5, -2, -0.25, 1.5, 1, 0.25, 1.5, 1, -0.25, 1.5, -2, -0.25, 1.5, -2, 0.25, 1.5, 1, 0.25, 1.5, -2, 0.25, -1.5, 1, 0.25, 1.5, 1, 0.25, 1.5, -2, 0.25, -1.5, -2, 0.25, -1.5, 1, 0.25, -1.5, -2, -0.25, 1.5, -2, 0.25, 1.5, -2, -0.25, -1.5, -2, -0.25, -1.5, -2, 0.25, 1.5, -2, 0.25, 1.5, 1, -0.25, -1.5, 1, 0.25, -1.5, 1, -0.25, 1.5, 1, -0.25, 1.5, 1, 0.25, -1.5, 1, 0.25 )
 
@@ -60,7 +63,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 0, 4.9794, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1.99047, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[node name="Door" type="Spatial" groups=[
+[node name="Blocker" type="Spatial" groups=[
 "Activatable",
 ]]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
@@ -72,9 +75,9 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Cube032" type="MeshInstance" parent="Cube031"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9794, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99047, 0 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = SubResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube031/Cube032"]
 

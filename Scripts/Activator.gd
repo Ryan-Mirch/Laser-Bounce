@@ -6,7 +6,10 @@ extends Spatial
 
 signal pressed
 
+
+var active = false
 var activatedCount = 0
+var wrongColorCount = 0
 var wires = []
 
 export var color = Color(255,255,255)
@@ -31,6 +34,10 @@ func _on_StaticBody_input_event(_camera, event, _click_position, _click_normal, 
 		emit_signal("pressed")
 			
 func activated():
+	if active: return
+	
+	active = true
+	
 	var material = SpatialMaterial.new()
 	material.albedo_color = color.darkened(0.3)
 	material.flags_unshaded = false
@@ -45,12 +52,15 @@ func activated():
 	
 	
 func deactivated():
+	if !active: return
+	
+	active = false
+	
 	var material = SpatialMaterial.new()
 	material.albedo_color = color.darkened(0.5)
 	material.flags_unshaded = false
 	coloredObject.set_material_override(material)
 	
-	activatedCount = 0
 	if activatedObjects.size() > 0:
 		for w in wires:
 			w.deactivate()
@@ -63,14 +73,13 @@ func _on_Area_body_entered(body):
 	if check_color(sensedColor): 
 		activatedCount += 1
 		
-		if activatedCount == 1:
-			activated()
 	else:
-		activatedCount -= 1
+		wrongColorCount += 1		
 		
-		if activatedCount < 1:
-			deactivated()
-		
+	if activatedCount > 0 && wrongColorCount == 0:
+		activated()
+	else:
+		deactivated()
 	
 
 func _on_Area_body_exited(body):
@@ -79,13 +88,13 @@ func _on_Area_body_exited(body):
 		activatedCount -= 1
 		activatedCount = clamp(activatedCount, 0, 100)
 		
-		if activatedCount < 1:
-			deactivated()
 	else: 
-		activatedCount += 1
-		
-		if activatedCount == 1:
-			activated()
+		wrongColorCount -= 1
+			
+	if activatedCount > 0 && wrongColorCount == 0:
+		activated()
+	else:
+		deactivated()
 
 
 func check_color(c): #check if the color is correct

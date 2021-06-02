@@ -39,10 +39,7 @@ func _on_Music_CheckButton_toggled(button_pressed):
 	Sounds.play_sound_PickUp()	
 	Saving.enableMusic = button_pressed
 	Saving.updateSaveData()
-	
-func _on_HSlider_value_changed(value):
-	Saving.camera_sensitivity = value
-	Saving.updateSaveData()
+
 	
 func _on_Shadows_CheckButton_toggled(button_pressed):
 	Sounds.play_sound_PickUp()	
@@ -53,7 +50,11 @@ func _on_Shadows_CheckButton_toggled(button_pressed):
 func _on_BS_Slider_value_changed(value):
 	Saving.bounce_speed = value
 	Saving.updateSaveData()
-	print(value)
+
+
+func _on_CS_Slider_value_changed(value):
+	Saving.camera_sensitivity = value
+	Saving.updateSaveData()
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -137,14 +138,14 @@ script/source = "extends HSlider
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
-	value = Saving.camera_sensitivity
+	set_value(Saving.camera_sensitivity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 func loadFromSaveData():
-	value = Saving.camera_sensitivity
+	set_value(Saving.camera_sensitivity)
 "
 
 [sub_resource type="GDScript" id=9]
@@ -182,14 +183,14 @@ script/source = "extends HSlider
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _x = Saving.connect(\"saveDataReset\",self,\"loadFromSaveData\")
-	value = Saving.camera_sensitivity
+	set_value(Saving.bounce_speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 func loadFromSaveData():
-	value = Saving.camera_sensitivity
+	set_value(Saving.bounce_speed)
 "
 
 [sub_resource type="GDScript" id=10]
@@ -447,7 +448,7 @@ script = SubResource( 10 )
 
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/CS Slider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity/CS Slider" to="." method="_on_CS_Slider_value_changed"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows/Shadows CheckButton" to="." method="_on_Shadows_CheckButton_toggled"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Bounce Speed/BS Slider" to="." method="_on_BS_Slider_value_changed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" to="ColorRect/MarginContainer/VBoxContainer/Reset Save Data/Button" method="_on_Button_pressed"]
