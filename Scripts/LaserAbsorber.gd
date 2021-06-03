@@ -122,6 +122,6 @@ func SetTipDarkness(darkness):
 
 func SetAbsorberDarkness(darkness):
 	var material = SpatialMaterial.new()
-	material.albedo_color = color.darkened(darkness)
+	material.albedo_color = absorberColor.darkened(darkness)
 	material.flags_unshaded = false
 	absorberObject.set_material_override(material)
