@@ -8,7 +8,7 @@ var enableSound
 var enableMusic
 var enableShadows
 var camera_sensitivity = 0.25
-var bounce_speed = 0.5
+var bounce_speed = 0.35
 var lasersEquipped = {}
 var laserSoundsEquipped = {}
 var backgroundsEquipped = {}
@@ -94,7 +94,7 @@ func resetSaveData():
 	enableMusic = true
 	enableShadows = true
 	camera_sensitivity = 0.25
-	bounce_speed = 0.5
+	bounce_speed = 0.35
 	levelCompleted.clear()
 	lasersEquipped.clear()		
 	laserSoundsEquipped.clear()	
