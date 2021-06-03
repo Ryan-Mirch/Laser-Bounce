@@ -15,7 +15,8 @@ var themePath
 func _ready():
 	themePath = root.getThemePath()
 	createButtons()
-	var _x = Saving.connect("LevelComplete",self,"updatePercentageLabel")
+	
+	var _x = Global.connect("tabChanged",self,"updatePercentageLabel")
 	updatePercentageLabel()
 	
 	

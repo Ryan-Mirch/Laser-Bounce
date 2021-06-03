@@ -27,7 +27,7 @@ func activate():
 	
 	if activateCount == activateTarget:
 		Sounds.play_sound_DoorOpen()
-		$AP.play_backwards("Open")
+		$AP.play("Open")
 		activated = true
 	
 func deactivate():
@@ -35,5 +35,5 @@ func deactivate():
 	activateCount = clamp(activateCount, 0, 100)
 	if activateCount != activateTarget and activated == true:
 		Sounds.play_sound_DoorClose()
-		$AP.play("Open")
+		$AP.play_backwards("Open")
 		activated = false

@@ -19,7 +19,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	connectedPosition = connectedObject.translation
+	connectedPosition = connectedObject.global_transform.origin
 	connectedPosition.y += 1	
 	
 	set_length()

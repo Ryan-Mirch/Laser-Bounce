@@ -87,7 +87,7 @@ shape = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="AP" type="AnimationPlayer" parent="."]
-playback_speed = 10.0
+playback_speed = 20.0
 anims/Open = SubResource( 6 )
 
 [node name="Close Closest Tile On Ready" parent="." instance=ExtResource( 3 )]

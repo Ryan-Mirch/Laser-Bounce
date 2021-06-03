@@ -50,6 +50,7 @@ func _on_Shadows_CheckButton_toggled(button_pressed):
 func _on_BS_Slider_value_changed(value):
 	Saving.bounce_speed = value
 	Saving.updateSaveData()
+	print(value)
 
 
 func _on_CS_Slider_value_changed(value):
@@ -171,7 +172,7 @@ func loadFromSaveData():
 	pressed = Saving.enableShadows
 "
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=10]
 script/source = "extends HSlider
 
 
@@ -193,7 +194,7 @@ func loadFromSaveData():
 	set_value(Saving.bounce_speed)
 "
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Button
 
 
@@ -421,11 +422,11 @@ custom_icons/grabber = ExtResource( 5 )
 custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 7 )
-min_value = 0.1
+min_value = 0.15
 max_value = 1.0
 step = 0.05
 value = 0.4
-script = SubResource( 11 )
+script = SubResource( 10 )
 
 [node name="Remove Ads" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 1030.0
@@ -444,7 +445,7 @@ focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
-script = SubResource( 10 )
+script = SubResource( 11 )
 
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
