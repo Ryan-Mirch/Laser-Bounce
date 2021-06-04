@@ -57,27 +57,18 @@ func load_level(levelPath):
 	currentScene = levelInstance
 	
 	
-func load_next_level(currentLevelPath, currentLevelName):
-	print ("currentLevelPath: " + currentLevelPath)
-	print ("currentLevelName: " + currentLevelName)
+func load_next_level(currentLevelPath):	
 	
-	var nextLevelNum = int(currentLevelName.replace(".tscn",""))
-	nextLevelNum += 1
-	
-	
-	var nextLevelPath = currentLevelPath
-	nextLevelPath = nextLevelPath.replace(currentLevelName + ".tscn", "")
-	nextLevelPath = nextLevelPath + str(nextLevelNum) + ".tscn"
+	var nextLevelPath = currentScene.nextLevelPath
 		
 	print ("nextLevelPath: " + nextLevelPath)
 	
-	var file2Check = File.new()
-	var doesFileExist = file2Check.file_exists(nextLevelPath)
-	
-	if doesFileExist:
+	if nextLevelPath != "":
+		print("loading next level")
 		load_level(nextLevelPath)
 	
 	else:
+		print("loading current level")
 		#reloads current level then sends you to level select screen
 		load_level(currentLevelPath) 
 		tabs.set_current_tab(1)

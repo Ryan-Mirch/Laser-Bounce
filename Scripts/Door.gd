@@ -8,6 +8,7 @@ signal pressed
 var activateCount = 0
 var activateTarget = 0
 var activated = false
+var wireOffset = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

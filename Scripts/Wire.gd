@@ -20,7 +20,7 @@ func _ready():
 func _process(_delta):
 	
 	connectedPosition = connectedObject.global_transform.origin
-	connectedPosition.y += 1	
+	connectedPosition.y += connectedObject.wireOffset	
 	
 	set_length()
 	set_orientation()

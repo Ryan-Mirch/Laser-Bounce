@@ -58,7 +58,7 @@ func _on_Continue_pressed():
 	
 	transitionEffect.transition()
 	yield(transitionEffect.ap, "animation_finished")
-	Global.load_next_level(get_parent().get_filename(), get_parent().levelID)
+	Global.load_next_level(get_parent().get_filename())
 
 
 func _on_Retry_pressed():

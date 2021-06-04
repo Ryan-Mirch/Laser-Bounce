@@ -15,7 +15,8 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
-levelID = "6"
+levelID = "tutorial6"
+nextLevelPath = "res://Levels/Tutorial/7.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -132,7 +133,6 @@ message = "LEVEL6_MESSAGE"
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

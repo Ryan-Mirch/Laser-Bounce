@@ -12,13 +12,13 @@
 [ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/3D Message.tscn" type="PackedScene" id=11]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
-levelID = "10"
+levelID = "tutorial10"
+nextLevelPath = "res://Levels/Tutorial/11.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -146,7 +146,6 @@ height = 175.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

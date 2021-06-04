@@ -5,7 +5,7 @@ extends Spatial
 # var b = "text"
 var state = 0 # 0 = edit 1 = play
 var complete = false
-export(String) var levelID = "0"
+export(String, FILE, "*.tscn,*.scn") var nextLevelPath
 
 onready var levelUI = get_node("LevelUI")
 onready var timer = get_node("Cycle Timer")
@@ -49,7 +49,7 @@ func _on_Goal_LevelComplete():
 	Sounds.play_sound_Win()
 	complete = true
 	levelUI._Level_Complete()
-	Saving.updateLevelCompleted(levelID, true)
+	Saving.updateLevelCompleted(getLevelID(), true)
 	
 
 func play_pressed():
@@ -65,3 +65,10 @@ func play_pressed():
 func set_cycle_duration():
 	var timer = get_node("Cycle Timer")
 	timer.wait_time = Saving.bounce_speed
+	
+func getLevelID():
+	var result = get_filename()
+	print(result)
+	
+	return result
+

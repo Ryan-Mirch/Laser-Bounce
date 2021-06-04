@@ -12,7 +12,7 @@ var activatedCount = 0
 var wrongColorCount = 0
 var wires = []
 
-export var color = Color(255,255,255)
+export var color = Color(1,1,1)
 export(Array, NodePath) var activatedObjects
 export (NodePath) var coloredObjectPath
 onready var coloredObject = get_node(coloredObjectPath)
@@ -37,16 +37,13 @@ func activated():
 	if active: return
 	
 	active = true
+	setShade(0.3)
 	
-	var material = SpatialMaterial.new()
-	material.albedo_color = color.darkened(0.3)
-	material.flags_unshaded = false
-	coloredObject.set_material_override(material)
-	
-	for w in wires:
-		w.activate()
 	
 	if activatedObjects.size() > 0:
+		for w in wires:
+			w.activate()
+		
 		for path in activatedObjects:
 			get_node(path).activate()
 	
@@ -55,11 +52,8 @@ func deactivated():
 	if !active: return
 	
 	active = false
+	setShade(0.5)
 	
-	var material = SpatialMaterial.new()
-	material.albedo_color = color.darkened(0.5)
-	material.flags_unshaded = false
-	coloredObject.set_material_override(material)
 	
 	if activatedObjects.size() > 0:
 		for w in wires:
@@ -67,6 +61,12 @@ func deactivated():
 		
 		for path in activatedObjects:
 			get_node(path).deactivate()
+
+func setShade(value):
+	var material = SpatialMaterial.new()
+	material.albedo_color = color.darkened(value)
+	material.flags_unshaded = false
+	coloredObject.set_material_override(material)
 
 func _on_Area_body_entered(body):
 	var sensedColor = body.get_parent().color

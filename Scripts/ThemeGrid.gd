@@ -45,6 +45,7 @@ func createButtons():
 		var levelPath = themePath + "/" + str(levelName) + ".tscn"
 		var buttonInstance = button.instance()
 		buttonInstance.levelPath = levelPath
+		buttonInstance.levelID = levelPath
 		buttonInstance.levelName = str(levelName).replace(".tscn", "")
 		
 		add_child(buttonInstance)
@@ -73,7 +74,7 @@ func updatePercentageLabel():
 	var percentage = 0.0
 	
 	for level in get_children():
-		if Saving.levelCompleted[level.getLevelName()]: completedLevels += 1
+		if Saving.levelCompleted[level.levelPath]: completedLevels += 1
 		
 	percentage = (float(completedLevels) / totalLevels) * 100
 	percentage = round(percentage)

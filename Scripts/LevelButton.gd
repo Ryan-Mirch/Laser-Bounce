@@ -11,6 +11,7 @@ onready var levelCompletedIcon = get_node("LevelCompletedIcon")
 
 export (String, FILE) var levelPath
 export (String) var levelName
+export (String) var levelID
 
 var completed = false
 
@@ -25,14 +26,14 @@ func _ready():
 #func _process(delta):
 #	
 func initializeSaveData():	
-	if !Saving.levelCompleted.has(levelName):
-		Saving.levelCompleted[levelName] = false	
+	if !Saving.levelCompleted.has(levelPath):
+		Saving.levelCompleted[levelPath] = false	
 		Saving.updateSaveData()
 	
 
 func updateCompletedIcon():
 	initializeSaveData()
-	levelCompletedIcon.visible = Saving.levelCompleted[levelName]
+	levelCompletedIcon.visible = Saving.levelCompleted[levelPath]
 	
 
 
@@ -43,6 +44,4 @@ func setLabelText():
 func _on_TextureButton_pressed():
 	Global.load_level(levelPath)
 	
-func getLevelName():
-	return levelName
 

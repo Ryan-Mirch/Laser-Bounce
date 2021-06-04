@@ -14,13 +14,13 @@
 [ext_resource path="res://Assets/Pieces/AGate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Pieces/AMirror.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
-levelID = "11"
+levelID = "tutorial11"
+nextLevelPath = "res://Levels/Tutorial/12.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -178,7 +178,6 @@ height = 225.0
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

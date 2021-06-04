@@ -9,7 +9,7 @@ signal pressed
 var activateCount = 0
 var activateTarget = 0
 var activated = false
-
+var wireOffset = 1
 var beamSpawn
 
 onready var beam = load("res://Assets/Beam.tscn")
