@@ -18,6 +18,7 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
+nextLevelPath = "res://Levels/New/6.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -311,6 +312,7 @@ transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 
