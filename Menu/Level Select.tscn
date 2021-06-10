@@ -55,14 +55,15 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -512.0
-margin_right = 516.0
+margin_right = 568.0
+margin_bottom = -200.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
 margin_right = 1080.0
-margin_bottom = 1920.0
+margin_bottom = 1720.0
 mouse_filter = 2
 theme = ExtResource( 3 )
 scroll_horizontal_enabled = false
