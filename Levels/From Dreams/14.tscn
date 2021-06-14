@@ -173,7 +173,7 @@ transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31
 shape = SubResource( 1 )
 
 [node name="Base8" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 19 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, 17 )
 draggable = true
 rotationType = "90"
 
@@ -181,7 +181,7 @@ rotationType = "90"
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
 [node name="Base9" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 17 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 0, 17 )
 draggable = true
 rotationType = "90"
 
@@ -189,7 +189,7 @@ rotationType = "90"
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
 [node name="Base10" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 13 )
 draggable = true
 rotationType = "90"
 
@@ -197,7 +197,7 @@ rotationType = "90"
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
 [node name="Base11" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 13 )
 draggable = true
 rotationType = "90"
 
@@ -205,7 +205,7 @@ rotationType = "90"
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0 )
 
 [node name="Base12" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 17 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 15 )
 draggable = true
 rotationType = "90"
 
@@ -248,6 +248,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 1, 
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 5 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

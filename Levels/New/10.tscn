@@ -16,6 +16,7 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
+nextLevelPath = "res://Levels/New/11.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
@@ -255,7 +256,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base10" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base20" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 17 )
@@ -271,7 +271,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base11" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base12" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 11 )
@@ -279,7 +278,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base12" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base13" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23, 0, 23 )
@@ -287,7 +285,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base13" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base14" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 21, 0, 23 )
@@ -295,7 +292,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base14" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base15" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19, 0, 23 )
@@ -303,7 +299,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base15" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base19" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 17 )
@@ -311,7 +306,6 @@ draggable = true
 rotationType = "90"
 
 [node name="1SM" parent="Objects/Base19" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Base8" parent="Objects" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 17 )
