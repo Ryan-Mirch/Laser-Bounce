@@ -18,7 +18,7 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:custom_styles/panel:border_color")
@@ -80,7 +80,7 @@ __meta__ = {
 }
 
 [node name="Select Animation" type="AnimationPlayer" parent="."]
-anims/Selected = SubResource( 3 )
+anims/Selected = SubResource( 2 )
 
 [node name="Stars Required" type="Control" parent="."]
 anchor_left = 0.5
@@ -114,5 +114,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="gui_input" from="." to="." method="_on_Panel_gui_input"]

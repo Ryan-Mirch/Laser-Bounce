@@ -27,7 +27,6 @@ func _ready():
 func updateLaserSounds():
 	if !Saving.laserSoundsEquipped: return
 	
-	sounds = list_files_in_directory($Laser.getSoundsPath())
 	
 	var keys = Saving.laserSoundsEquipped.keys()
 	if keys.size() > 0:
@@ -40,6 +39,8 @@ func updateLaserSounds():
 		
 		$Laser.loadSounds("res://Sounds/Lasers/" + equippedItem)
 		
+	sounds = list_files_in_directory($Laser.getSoundsPath())
+	print(sounds)
 
 
 func play_sound_Laser():

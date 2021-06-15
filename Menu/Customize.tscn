@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/TouchToScroll.gd" type="Script" id=1]
 [ext_resource path="res://UI/CustomizeButton.tscn" type="PackedScene" id=2]
@@ -91,32 +91,6 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=20]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=21]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
 [sub_resource type="StyleBoxFlat" id=6]
 resource_local_to_scene = true
 draw_center = false
@@ -124,26 +98,13 @@ border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=18]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
 border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=7]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -163,26 +124,13 @@ border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=11]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=9]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -202,13 +150,26 @@ border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=11]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=12]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -221,20 +182,7 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=7]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=13]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -254,7 +202,7 @@ border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
 corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
@@ -280,13 +228,78 @@ border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+border_color = Color( 1, 1, 1, 1 )
 corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
 [sub_resource type="StyleBoxFlat" id=17]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=18]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=19]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=20]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=21]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=22]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -434,11 +447,7 @@ buttonGroup = "Laser Sounds"
 [node name="Panel" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 margin_left = 710.0
 margin_right = 1040.0
-custom_styles/panel = SubResource( 11 )
-itemName = "SOUNDS_MEOW"
-purchasePrice = 10
-ID = "Meow"
-custom_styles/panel = SubResource( 20 )
+custom_styles/panel = SubResource( 6 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_CHIP"
 purchasePrice = 1
@@ -448,11 +457,23 @@ buttonGroup = "Laser Sounds"
 [node name="Panel2" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 margin_top = 355.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 21 )
+custom_styles/panel = SubResource( 7 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_PSYKICK"
 purchasePrice = 1
 ID = "Psykick"
+buttonGroup = "Laser Sounds"
+
+[node name="Panel3" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
+margin_left = 355.0
+margin_top = 355.0
+margin_right = 685.0
+margin_bottom = 685.0
+custom_styles/panel = SubResource( 8 )
+iconTexture = ExtResource( 15 )
+itemName = "SOUNDS_MEOW"
+purchasePrice = 5
+ID = "Meow"
 buttonGroup = "Laser Sounds"
 
 [node name="Backgrounds" type="VBoxContainer" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -481,7 +502,7 @@ __meta__ = {
 }
 
 [node name="Turqoise" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 9 )
 iconTexture = ExtResource( 14 )
 itemName = "BACKGROUNDS_TURQOISE"
 purchasePrice = -1
@@ -492,7 +513,7 @@ defaultOn = true
 [node name="Orange" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 10 )
 iconTexture = ExtResource( 13 )
 itemName = "BACKGROUNDS_ORANGE"
 purchasePrice = -1
@@ -502,7 +523,7 @@ buttonGroup = "Backgrounds"
 [node name="Purple" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 710.0
 margin_right = 1040.0
-custom_styles/panel = SubResource( 19 )
+custom_styles/panel = SubResource( 11 )
 iconTexture = ExtResource( 12 )
 itemName = "BACKGROUNDS_PURPLE"
 purchasePrice = -1
@@ -512,7 +533,7 @@ buttonGroup = "Backgrounds"
 [node name="Clear Blue" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_top = 355.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 12 )
 itemName = "BACKGROUNDS_CLEARBLUE"
 purchasePrice = 4
 ID = "Clear Blue"
@@ -523,7 +544,7 @@ margin_left = 355.0
 margin_top = 355.0
 margin_right = 685.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = SubResource( 13 )
 iconTexture = ExtResource( 7 )
 itemName = "BACKGROUNDS_CARTOONNIGHT"
 purchasePrice = 8
@@ -535,7 +556,7 @@ margin_left = 710.0
 margin_top = 355.0
 margin_right = 1040.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 12 )
+custom_styles/panel = SubResource( 14 )
 iconTexture = ExtResource( 8 )
 itemName = "BACKGROUNDS_OVERCAST"
 purchasePrice = 12
@@ -545,7 +566,7 @@ buttonGroup = "Backgrounds"
 [node name="Blue Sunset" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_top = 710.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 15 )
 iconTexture = ExtResource( 9 )
 itemName = "BACKGROUNDS_BLUESUNSET"
 purchasePrice = 16
@@ -557,7 +578,7 @@ margin_left = 355.0
 margin_top = 710.0
 margin_right = 685.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 16 )
 iconTexture = ExtResource( 10 )
 itemName = "BACKGROUNDS_DEEPDUSK"
 purchasePrice = 20
@@ -569,7 +590,7 @@ margin_left = 710.0
 margin_top = 710.0
 margin_right = 1040.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 17 )
 iconTexture = ExtResource( 6 )
 itemName = "BACKGROUNDS_SPACE"
 purchasePrice = 24
@@ -579,7 +600,7 @@ buttonGroup = "Backgrounds"
 [node name="Another Planet" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Backgrounds/GridContainer3" instance=ExtResource( 2 )]
 margin_top = 1065.0
 margin_bottom = 1395.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 18 )
 iconTexture = ExtResource( 5 )
 itemName = "BACKGROUNDS_ANOTHERPLANET"
 purchasePrice = 28
@@ -591,7 +612,7 @@ margin_left = 355.0
 margin_top = 1065.0
 margin_right = 685.0
 margin_bottom = 1395.0
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 19 )
 iconTexture = ExtResource( 11 )
 itemName = "BACKGROUNDS_GAIA"
 purchasePrice = 32
@@ -624,7 +645,7 @@ __meta__ = {
 }
 
 [node name="Default" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
-custom_styles/panel = SubResource( 15 )
+custom_styles/panel = SubResource( 20 )
 itemName = "TILES_DEFAULT"
 purchasePrice = -1
 ID = "Default Tile"
@@ -634,7 +655,7 @@ defaultOn = true
 [node name="Dark Mode" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 355.0
 margin_right = 685.0
-custom_styles/panel = SubResource( 16 )
+custom_styles/panel = SubResource( 21 )
 itemName = "TILES_DARK"
 purchasePrice = 4
 ID = "Dark Mode"
@@ -643,7 +664,7 @@ buttonGroup = "Tiles"
 [node name="Light Mode" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_left = 710.0
 margin_right = 1040.0
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 22 )
 itemName = "TILES_LIGHT"
 purchasePrice = 5
 ID = "Light Mode"
