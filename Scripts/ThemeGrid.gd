@@ -53,7 +53,7 @@ func createButtons():
 func list_files_in_directory(_path):
 	var files = []
 	var dir = Directory.new()
-	dir.open(themePath)
+	dir.open(_path)
 	dir.list_dir_begin()
 
 	while true:

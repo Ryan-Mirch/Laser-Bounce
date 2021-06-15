@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Chip1.wav-bd28c65b3f84e484fd8e8f23ef31280d.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Chip/Chip1.wav"
+dest_files=[ "res://.import/Chip1.wav-bd28c65b3f84e484fd8e8f23ef31280d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
