@@ -9,10 +9,11 @@ onready var levelSelect = get_node("../..")
 onready var labelItemName = get_node("Item Name")
 onready var labelPurchasePrice = get_node("Stars Required/Purchase Price")
 onready var starsRequired = get_node("Stars Required")
+onready var iconTextureRect = get_node("TextureRect")
 
-onready var unlockAnimation = get_node("Unlock Animation")
 onready var selectAnimation = get_node("Select Animation")
 
+export(Texture) var iconTexture
 export(String) var itemName = ""
 export(int) var purchasePrice = ""
 export(String) var ID = ""
@@ -31,11 +32,16 @@ func _ready():
 	add_to_group(buttonGroup)
 	setLabelText()
 	loadFromSaveData()
+	setIconTexture()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 	
+	
+func setIconTexture():
+	iconTextureRect.texture = iconTexture
+
 func getSaveDictionary():
 	if buttonGroup == "Lasers":
 		return Saving.lasersEquipped
@@ -66,7 +72,7 @@ func updateSaveData():
 func unlock():
 	if Saving.getLevelsCompleted() >= purchasePrice and !unlocked:
 		unlocked = true
-		unlockAnimation.play("Unlocked")
+		starsRequired.visible = false
 	
 func setSelected(b):
 	
