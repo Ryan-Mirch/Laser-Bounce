@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/meow4.wav-6c3a82669fd4fbba18f206b3cf290e5e.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Meow/meow4.wav"
+dest_files=[ "res://.import/meow4.wav-6c3a82669fd4fbba18f206b3cf290e5e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
