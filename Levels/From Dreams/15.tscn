@@ -19,11 +19,12 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
+nextLevelPath = "res://Levels/From Dreams/16.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera Rotation Point" parent="Camera Related" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.013, -1, 15.8984 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.013, -1, 13.8984 )
 
 [node name="Objects" type="Spatial" parent="."]
 

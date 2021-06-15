@@ -62,8 +62,8 @@ func _physics_process(_delta):
 			readyToBounce = true
 		if hasBounced and !ray.get_collider().is_in_group("Reflect"):
 			unBounce()
-			
-
+	
+	
 func fix_position():
 	if get_parent().name != "Beam": return
 	
@@ -101,8 +101,7 @@ func unBounce():
 func bounce():
 	if !readyToBounce: return
 		
-	hasBounced = true
-	readyToBounce = false
+	
 	
 	
 	var normal = ray.get_collision_normal()
@@ -114,8 +113,11 @@ func bounce():
 	
 	var angle = d2.angle_to(r2)
 	
-	if abs(angle) > 3:		
+	if abs(angle) > 3:
 		return
+		
+	hasBounced = true
+	readyToBounce = false
 		
 	var beamSpawn = beam.instance()
 	
