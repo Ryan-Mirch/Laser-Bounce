@@ -39,32 +39,14 @@ func updateLaserSounds():
 		
 		$Laser.loadSounds("res://Sounds/Lasers/" + equippedItem)
 		
-	sounds = list_files_in_directory($Laser.getSoundsPath())
-	print(sounds)
 
 
 func play_sound_Laser():
 	if !Saving.enableSound: return	
-	var randomizePitch = sounds.size() == 1
 	
 	if Laser:
-		Laser.playSound(randomizePitch)
+		Laser.playSound(true)
 
-func list_files_in_directory(_path):
-	var files = []
-	var dir = Directory.new()
-	dir.open(_path)
-	dir.list_dir_begin()
-
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with(".") and not file.ends_with(".import"):
-			files.append(file)
-
-	dir.list_dir_end()
-	return files
 
 func play_sound_DoorOpen():
 	if !Saving.enableSound: return

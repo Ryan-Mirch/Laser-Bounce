@@ -440,7 +440,7 @@ margin_right = 685.0
 custom_styles/panel = SubResource( 5 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_GLISTEN"
-purchasePrice = 20
+purchasePrice = 1
 ID = "Sound 1"
 buttonGroup = "Laser Sounds"
 
@@ -472,7 +472,7 @@ margin_bottom = 685.0
 custom_styles/panel = SubResource( 8 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_MEOW"
-purchasePrice = 5
+purchasePrice = 1
 ID = "Meow"
 buttonGroup = "Laser Sounds"
 
@@ -535,7 +535,7 @@ margin_top = 355.0
 margin_bottom = 685.0
 custom_styles/panel = SubResource( 12 )
 itemName = "BACKGROUNDS_CLEARBLUE"
-purchasePrice = 4
+purchasePrice = 1
 ID = "Clear Blue"
 buttonGroup = "Backgrounds"
 
@@ -547,7 +547,7 @@ margin_bottom = 685.0
 custom_styles/panel = SubResource( 13 )
 iconTexture = ExtResource( 7 )
 itemName = "BACKGROUNDS_CARTOONNIGHT"
-purchasePrice = 8
+purchasePrice = 1
 ID = "Cartoon Night"
 buttonGroup = "Backgrounds"
 
@@ -559,7 +559,7 @@ margin_bottom = 685.0
 custom_styles/panel = SubResource( 14 )
 iconTexture = ExtResource( 8 )
 itemName = "BACKGROUNDS_OVERCAST"
-purchasePrice = 12
+purchasePrice = 1
 ID = "Overcast"
 buttonGroup = "Backgrounds"
 
@@ -569,7 +569,7 @@ margin_bottom = 1040.0
 custom_styles/panel = SubResource( 15 )
 iconTexture = ExtResource( 9 )
 itemName = "BACKGROUNDS_BLUESUNSET"
-purchasePrice = 16
+purchasePrice = 1
 ID = "Blue Sunset"
 buttonGroup = "Backgrounds"
 
@@ -581,7 +581,7 @@ margin_bottom = 1040.0
 custom_styles/panel = SubResource( 16 )
 iconTexture = ExtResource( 10 )
 itemName = "BACKGROUNDS_DEEPDUSK"
-purchasePrice = 20
+purchasePrice = 1
 ID = "Deep Dusk"
 buttonGroup = "Backgrounds"
 
@@ -593,7 +593,7 @@ margin_bottom = 1040.0
 custom_styles/panel = SubResource( 17 )
 iconTexture = ExtResource( 6 )
 itemName = "BACKGROUNDS_SPACE"
-purchasePrice = 24
+purchasePrice = 1
 ID = "Space"
 buttonGroup = "Backgrounds"
 
@@ -603,7 +603,7 @@ margin_bottom = 1395.0
 custom_styles/panel = SubResource( 18 )
 iconTexture = ExtResource( 5 )
 itemName = "BACKGROUNDS_ANOTHERPLANET"
-purchasePrice = 28
+purchasePrice = 1
 ID = "Another Planet"
 buttonGroup = "Backgrounds"
 
@@ -615,7 +615,7 @@ margin_bottom = 1395.0
 custom_styles/panel = SubResource( 19 )
 iconTexture = ExtResource( 11 )
 itemName = "BACKGROUNDS_GAIA"
-purchasePrice = 32
+purchasePrice = 1
 ID = "Gaia"
 buttonGroup = "Backgrounds"
 
@@ -657,7 +657,7 @@ margin_left = 355.0
 margin_right = 685.0
 custom_styles/panel = SubResource( 21 )
 itemName = "TILES_DARK"
-purchasePrice = 4
+purchasePrice = 1
 ID = "Dark Mode"
 buttonGroup = "Tiles"
 
@@ -666,7 +666,7 @@ margin_left = 710.0
 margin_right = 1040.0
 custom_styles/panel = SubResource( 22 )
 itemName = "TILES_LIGHT"
-purchasePrice = 5
+purchasePrice = 1
 ID = "Light Mode"
 buttonGroup = "Tiles"
 
