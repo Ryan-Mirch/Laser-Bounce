@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/LevelUI.gd" type="Script" id=1]
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
@@ -188,6 +188,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+
+[sub_resource type="DynamicFont" id=12]
+size = 75
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 135
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="LevelUI" type="Control"]
 anchor_right = 1.0
@@ -379,6 +393,30 @@ anims/Fade = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Level Complete" = SubResource( 11 )
+
+[node name="Theme Name" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 7.0
+margin_right = 736.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 12 )
+text = "Theme Name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level Name" type="Label" parent="."]
+margin_left = 27.0
+margin_top = 98.6216
+margin_right = 412.0
+margin_bottom = 261.622
+custom_fonts/font = SubResource( 13 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]

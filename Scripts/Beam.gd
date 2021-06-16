@@ -43,8 +43,6 @@ func updateSkin():
 				equippedItem = key
 				break
 		
-		$"CPUParticles".emitting = (equippedItem == "Laser 1")
-		
 
 func _physics_process(_delta):	
 	if ray.is_colliding():
@@ -75,10 +73,7 @@ func fix_position():
 	
 	
 
-func set_length(length):
-	
-	$"CPUParticles".setProperties(length)
-	
+func set_length(length):	
 	targetScaleY = length
 	#scaleY = targetScaleY
 	#scaleY = lerp(scaleY, targetScaleY, .8)
@@ -138,8 +133,6 @@ func set_color():
 	material.albedo_color = color
 	material.flags_unshaded = true
 	mesh.set_material_override(material)
-	
-	$"CPUParticles".mesh.material = material
 	
 func _get_closest_tile(state): 
 	var tiles =  get_tree().get_nodes_in_group("Tile")

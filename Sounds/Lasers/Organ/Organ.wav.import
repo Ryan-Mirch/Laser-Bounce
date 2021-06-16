@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Organ.wav-d966994a85eaf99e5cbed7e3c8d458ad.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Organ/Organ.wav"
+dest_files=[ "res://.import/Organ.wav-d966994a85eaf99e5cbed7e3c8d458ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -9,6 +9,8 @@ onready var pause = get_node("CenterContainer/Pause")
 onready var levelCompleteAnimation = get_node("AnimationPlayer")
 onready var retryButton = get_node("CenterContainer2/Retry")
 onready var transitionEffect = get_node("Transition Effect")
+onready var themeName = get_node("Theme Name")
+onready var levelName = get_node("Level Name")
 
 var levelComplete = false
 var retryDisabled = true
@@ -16,6 +18,20 @@ var retryDisabled = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _err = Global.connect("tabChanged", self, "tabChanged")
+	var fullPath = get_parent().getLevelID()
+	var sceneName = fullPath
+	sceneName = sceneName.replace(sceneName.get_base_dir(),"") 
+	sceneName = sceneName.replace("/","") 
+	sceneName = sceneName.replace(".tscn","") 
+	levelName.text = sceneName
+	
+	var sceneTheme = fullPath
+	sceneTheme = sceneTheme.replace(sceneTheme.get_base_dir().get_base_dir(), "")
+	sceneTheme = sceneTheme.replace(sceneName, "")
+	sceneTheme = sceneTheme.replace("tscn", "")
+	sceneTheme = sceneTheme.replace("/", "")
+	sceneTheme = sceneTheme.replace(".", "")
+	themeName.text = sceneTheme
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
