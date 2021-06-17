@@ -85,21 +85,21 @@ __meta__ = {
 [node name="Tutorial" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 0.0
 margin_bottom = 101.0
-themeName = "SET_1"
+themeName = "SET_TUTORIAL"
 themePath = "res://Levels/Tutorial"
 
-[node name="From Dreams" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
-themeName = "From Dreams"
-themePath = "res://Levels/From Dreams"
+[node name="Beginner" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+themeName = "SET_BEGINNER"
+themePath = "res://Levels/Beginner"
 
-[node name="New" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+[node name="Intermediate" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 210.0
 margin_bottom = 311.0
-themeName = "New"
-themePath = "res://Levels/New"
+themeName = "SET_INTERMEDIATE"
+themePath = "res://Levels/Intermediate"
 
-[node name="Tests" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+[node name="Expert" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 315.0
 margin_bottom = 416.0
-themeName = "SET_99"
-themePath = "res://Levels/Tests"
+themeName = "SET_EXPERT"
+themePath = "res://Levels/Expert"

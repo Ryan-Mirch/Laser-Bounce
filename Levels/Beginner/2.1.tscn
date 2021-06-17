@@ -16,7 +16,6 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 10 )
-levelID = "new2"
 nextLevelPath = "res://Levels/New/3.tscn"
 
 [node name="Objects" type="Spatial" parent="."]
@@ -354,6 +353,7 @@ min_distance = 4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.013, 1, -1.10161 )
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 
