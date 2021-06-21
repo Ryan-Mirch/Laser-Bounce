@@ -12,17 +12,22 @@ onready var PickUp = get_node("Pick Up")
 onready var PutDown = get_node("Put Down")
 onready var Rotate = get_node("Rotate")
 onready var Win = get_node("Win")
+onready var MusicPlayer = get_node("Music")
 
 var sounds
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _x = Saving.connect("saveDataUpdated", self, "updateLaserSounds")
+	var _y = Saving.connect("saveDataUpdated", self, "updateMusic")
 	updateLaserSounds()
-	
+	updateMusic()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func updateMusic():
+	MusicPlayer.stream_paused = !Saving.enableMusic
 
 func updateLaserSounds():
 	if !Saving.laserSoundsEquipped: return

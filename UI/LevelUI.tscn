@@ -365,7 +365,7 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-messages = [ "LEVEL_COMPLETE_MESSAGE_1", "LEVEL_COMPLETE_MESSAGE_2", "LEVEL_COMPLETE_MESSAGE_3", "LEVEL_COMPLETE_MESSAGE_4", "LEVEL_COMPLETE_MESSAGE_5", "LEVEL_COMPLETE_MESSAGE_6" ]
+messages = [ "MESSAGE_0", "MESSAGE_1", "MESSAGE_2", "MESSAGE_3", "MESSAGE_4", "MESSAGE_5", "MESSAGE_6", "MESSAGE_7", "MESSAGE_8", "MESSAGE_9" ]
 
 [node name="Vignette" type="Panel" parent="."]
 anchor_right = 1.0

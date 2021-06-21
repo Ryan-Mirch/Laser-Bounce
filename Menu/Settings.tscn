@@ -276,7 +276,6 @@ margin_bottom = 110.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS_SOUND_EFFECTS"
-align = 2
 valign = 2
 
 [node name="Music" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
@@ -286,7 +285,6 @@ margin_bottom = 320.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS_MUSIC"
-align = 2
 valign = 2
 
 [node name="Camera Sensitivity" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
@@ -296,7 +294,6 @@ margin_bottom = 530.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS_CAMERA_SENSITIVITY"
-align = 2
 valign = 2
 
 [node name="Shadows" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
@@ -306,7 +303,6 @@ margin_bottom = 740.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS_SHADOWS"
-align = 2
 valign = 2
 
 [node name="Bounce Speed" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
@@ -316,7 +312,6 @@ margin_bottom = 950.0
 rect_min_size = Vector2( 0, 110 )
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS_BOUNCE_SPEED"
-align = 2
 valign = 2
 
 [node name="Buttons" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -331,9 +326,11 @@ __meta__ = {
 [node name="Sound Effects" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_right = 300.0
 margin_bottom = 108.0
+alignment = 2
 
 [node name="Sound CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects"]
-margin_right = 112.0
+margin_left = 188.0
+margin_right = 300.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 100, 100 )
 focus_mode = 0
@@ -350,9 +347,11 @@ __meta__ = {
 margin_top = 204.0
 margin_right = 300.0
 margin_bottom = 312.0
+alignment = 2
 
 [node name="Music CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music"]
-margin_right = 112.0
+margin_left = 188.0
+margin_right = 300.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 100, 100 )
 focus_mode = 0
@@ -370,6 +369,7 @@ margin_top = 408.0
 margin_right = 300.0
 margin_bottom = 548.0
 custom_constants/separation = 23
+alignment = 2
 
 [node name="CS Slider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Camera Sensitivity"]
 margin_right = 300.0
@@ -391,9 +391,11 @@ script = SubResource( 8 )
 margin_top = 644.0
 margin_right = 300.0
 margin_bottom = 752.0
+alignment = 2
 
 [node name="Shadows CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows"]
-margin_right = 112.0
+margin_left = 188.0
+margin_right = 300.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 100, 100 )
 focus_mode = 0
@@ -411,6 +413,7 @@ margin_top = 848.0
 margin_right = 300.0
 margin_bottom = 988.0
 custom_constants/separation = 23
+alignment = 2
 
 [node name="BS Slider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Bounce Speed"]
 margin_right = 300.0

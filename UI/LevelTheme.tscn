@@ -41,6 +41,8 @@ func _on_ThemeName_gui_input(event):
 		setState(themeGrid.visible)
 
 func setState(isVisible):
+	if(isVisible):Sounds.play_sound_PickUp()
+	if(!isVisible):Sounds.play_sound_PutDown()
 	themeGrid.visible = isVisible
 	expandArrow.visible = !isVisible
 	collapseArrow.visible = isVisible
