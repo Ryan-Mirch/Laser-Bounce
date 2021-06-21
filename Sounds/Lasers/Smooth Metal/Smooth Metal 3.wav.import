@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Smooth Metal 3.wav-d82aa687a25bf2684bad611ac4b66ddd.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Smooth Metal/Smooth Metal 3.wav"
+dest_files=[ "res://.import/Smooth Metal 3.wav-d82aa687a25bf2684bad611ac4b66ddd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

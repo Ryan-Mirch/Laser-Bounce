@@ -1,114 +1,120 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera/Camera Related.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Pieces/Laser Absorber.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/Pieces/AGate.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Pieces/1SM.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
-script = ExtResource( 1 )
-nextLevelPath = "res://Levels/From Dreams/5.tscn"
+script = ExtResource( 9 )
+nextLevelPath = "res://Levels/New/9.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera Rotation Point" parent="Camera Related" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.013, -1, 15.8984 )
-
-[node name="Cursor" parent="Camera Related" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.013, -1, 18.8984 )
 
 [node name="Objects" type="Spatial" parent="."]
 
-[node name="Goal" parent="Objects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 10 )
+[node name="Goal" parent="Objects" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 31 )
 
 [node name="Tiles" type="Spatial" parent="Objects"]
 
-[node name="Tile159" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 10 )
+[node name="Tile159" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 31 )
 
-[node name="Tile169" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile199" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 27 )
+
+[node name="Tile167" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 8 )
+
+[node name="Tile168" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 8 )
+
+[node name="Tile169" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 10 )
 
-[node name="Tile170" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10 )
+[node name="Tile179" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 8 )
 
-[node name="Tile194" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 10 )
-
-[node name="Tile174" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 10 )
-
-[node name="Tile175" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile180" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 10 )
 
-[node name="Tile176" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 12 )
+[node name="Tile170" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10 )
 
-[node name="Tile177" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 12 )
-
-[node name="Tile178" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 14 )
-
-[node name="Tile184" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 14 )
-
-[node name="Tile185" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 12 )
-
-[node name="Tile186" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 10 )
-
-[node name="Tile179" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 14 )
-
-[node name="Tile180" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile181" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 12 )
 
-[node name="Tile181" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile182" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 12 )
 
-[node name="Tile182" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile183" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 14 )
 
-[node name="Tile183" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile184" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 12 )
+
+[node name="Tile185" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 14 )
+
+[node name="Tile186" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 14 )
 
-[node name="Tile201" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 14 )
+[node name="Tile187" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 16 )
 
-[node name="Tile193" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 16 )
+[node name="Tile188" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16 )
 
-[node name="Tile195" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile189" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 18 )
+
+[node name="Tile190" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 16 )
+
+[node name="Tile191" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 18 )
+
+[node name="Tile192" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 18 )
 
-[node name="Tile196" parent="Objects/Tiles" instance=ExtResource( 4 )]
+[node name="Tile193" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20 )
 
-[node name="Tile197" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 18 )
+[node name="Tile194" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 20 )
 
-[node name="Tile198" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 20 )
+[node name="Tile195" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 22 )
 
-[node name="Tile199" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 22 )
+[node name="Tile196" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 20 )
 
-[node name="Tile200" parent="Objects/Tiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 24 )
+[node name="Tile197" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 22 )
+
+[node name="Tile198" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 22 )
+
+[node name="Tile201" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 24 )
+
+[node name="Tile203" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 24 )
+
+[node name="Tile204" parent="Objects/Tiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 24 )
 
 [node name="Plane" type="StaticBody" parent="Objects" groups=[
 "Drag To Rotate Camera",
@@ -157,84 +163,88 @@ shape = SubResource( 1 )
 transform = Transform( 2.8, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31, 150 )
 shape = SubResource( 1 )
 
-[node name="Base9" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 22 )
-
-[node name="AAbsorber" parent="Objects/Base9" instance=ExtResource( 16 )]
-color = Color( 0, 1, 0, 1 )
-activatedObjects = [ NodePath("../../Door2") ]
-
-[node name="AGate" parent="Objects" instance=ExtResource( 17 )]
-transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 19, 0, 14 )
-color = Color( 0, 0, 1, 1 )
-activatedObjects = [ NodePath("../Door3"), NodePath("../Door4") ]
-
-[node name="1SM" parent="Objects" instance=ExtResource( 9 )]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 0, 10 )
-
-[node name="Base13" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 0, 14 )
+[node name="Base11" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 16 )
 draggable = true
-rotationType = "90"
+rotationType = "45"
 
-[node name="1SM" parent="Objects/Base13" instance=ExtResource( 9 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+[node name="1SM" parent="Objects/Base11" instance=ExtResource( 6 )]
 
-[node name="Base14" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 0, 12 )
+[node name="Base12" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16 )
 draggable = true
-rotationType = "90"
+rotationType = "45"
 
-[node name="1SM" parent="Objects/Base14" instance=ExtResource( 9 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+[node name="1SM" parent="Objects/Base12" instance=ExtResource( 6 )]
 
-[node name="Base15" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 0, 10 )
+[node name="Base13" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 16 )
 draggable = true
-rotationType = "90"
+rotationType = "45"
 
-[node name="1SM" parent="Objects/Base15" instance=ExtResource( 9 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+[node name="1SM" parent="Objects/Base13" instance=ExtResource( 6 )]
 
-[node name="Laser" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 0, 16 )
-
-[node name="Laser2" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15, 0, 20 )
-color = Color( 0, 0, 1, 1 )
-
-[node name="Laser3" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 23, 0, 18 )
-color = Color( 1, 0, 0, 1 )
-
-[node name="Laser4" parent="Objects" instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 23, 0, 24 )
-color = Color( 0, 1, 0, 1 )
-
-[node name="Base8" parent="Objects" instance=ExtResource( 18 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 10 )
+[node name="Base14" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 18 )
 draggable = true
-rotationType = "90"
+rotationType = "45"
 
-[node name="Laser Absorber" parent="Objects/Base8" instance=ExtResource( 10 )]
-color = Color( 0, 0, 1, 1 )
-absorberColor = Color( 0, 0, 1, 1 )
+[node name="1SM" parent="Objects/Base14" instance=ExtResource( 6 )]
 
-[node name="Door2" parent="Objects" instance=ExtResource( 7 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15, 0, 18 )
+[node name="Base15" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 18 )
+draggable = true
+rotationType = "45"
 
-[node name="Door4" parent="Objects" instance=ExtResource( 7 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11, 0, 14 )
+[node name="1SM" parent="Objects/Base15" instance=ExtResource( 6 )]
 
-[node name="Door3" parent="Objects" instance=ExtResource( 7 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23, 0, 20 )
+[node name="Base16" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 18 )
+draggable = true
+rotationType = "45"
+
+[node name="1SM" parent="Objects/Base16" instance=ExtResource( 6 )]
+
+[node name="Base8" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 8 )
+rotationType = "45"
+
+[node name="Laser" parent="Objects/Base8" instance=ExtResource( 1 )]
+
+[node name="Base9" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 8 )
+rotationType = "45"
+
+[node name="Laser" parent="Objects/Base9" instance=ExtResource( 1 )]
+
+[node name="Base10" parent="Objects" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 8 )
+rotationType = "45"
+
+[node name="Laser" parent="Objects/Base10" instance=ExtResource( 1 )]
+
+[node name="AAbsorber2" parent="Objects" instance=ExtResource( 7 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15, 0, 24 )
+activatedObjects = [ NodePath("../Goal Laser") ]
+
+[node name="AAbsorber3" parent="Objects" instance=ExtResource( 7 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, 0, 24 )
+activatedObjects = [ NodePath("../Goal Laser") ]
+
+[node name="AAbsorber4" parent="Objects" instance=ExtResource( 7 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19, 0, 24 )
+activatedObjects = [ NodePath("../Goal Laser") ]
+
+[node name="Goal Laser" parent="Objects" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 17, 0, 27 )
 
 [node name="Walls" type="Spatial" parent="Objects"]
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
 
-[node name="LevelUI" parent="." instance=ExtResource( 5 )]
+[node name="LevelUI" parent="." instance=ExtResource( 4 )]
+
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 
