@@ -12,6 +12,9 @@ var debug = false
 var playing = false
 var complete = false
 
+var interTime = 0
+var interTargetTime = 300
+
 
 var settings = load("res://Menu/Settings.tscn")
 var levelSelect = load("res://Menu/Level Select.tscn")
@@ -28,16 +31,22 @@ func _ready():
 	
 	pointerTranslation = Vector3(0,0,0)
 	loadAds()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _process(delta):
+	interTime = interTime + delta
 	
 func loadAds() -> void:
 	yield(get_tree(), "idle_frame")
 	admob.load_banner()
-	#admob.load_interstitial()
-	admob.load_rewarded_video()
+	admob.load_interstitial()
+	
+func showInterstitial():
+	if interTime >= interTargetTime:
+		print("Interstitial Shown")
+		interTime = 0
+		admob.show_interstitial()
 
 func hideAds():
 	if !Saving.showAds:
@@ -48,13 +57,15 @@ func _input(event):
 		debug = !debug
 			
 func load_level(levelPath):
-	tabs.set_current_tab(0)
+	tabs.set_current_tab(0)	
 	var level = load(levelPath)
 	print("Loading level: " + levelPath)
 	var levelInstance = level.instance()
 	currentScene.queue_free()
 	get_parent().add_child(levelInstance)
 	currentScene = levelInstance
+	
+	showInterstitial()
 	
 	
 func load_next_level(currentLevelPath):	
