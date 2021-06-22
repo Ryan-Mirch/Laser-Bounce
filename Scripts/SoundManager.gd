@@ -93,3 +93,7 @@ func play_sound_Win():
 	if Win:
 		Win.playSound(false)
 
+
+
+func _on_Music_finished():
+	MusicPlayer.play()

@@ -76,9 +76,9 @@ func fix_position():
 func set_length(length):	
 	targetScaleY = length
 	#scaleY = targetScaleY
-	#scaleY = lerp(scaleY, targetScaleY, .8)
+	scaleY = lerp(scaleY, targetScaleY, .8)
 	#scaleY = clamp(scaleY + lengthMultiplier,0.1,targetScaleY)
-	scaleY = clamp(scaleY*lengthMultiplier,0.1,targetScaleY)
+	#scaleY = clamp(scaleY*lengthMultiplier,0.1,targetScaleY)
 	#scaleY = clamp(scaleY * 2,0.1,targetScaleY)
 	
 	body.scale.y = scaleY + .1

@@ -19,6 +19,10 @@ onready var collapseArrow = get_node(\"collapse arrow\")
 
 var themeGrid
 
+var isPressed = false
+var posOfClickStart
+var deadZone = 20
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -36,9 +40,18 @@ func _ready():
 
 
 func _on_ThemeName_gui_input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		themeGrid.visible = !themeGrid.visible
-		setState(themeGrid.visible)
+	if event.is_action_released(\"grab\") and isPressed:
+		isPressed = false
+		
+		if posOfClickStart.distance_to(get_viewport().get_mouse_position()) <= deadZone:
+			themeGrid.visible = !themeGrid.visible
+			setState(themeGrid.visible)	
+			
+	if event.is_action_pressed(\"grab\") and !isPressed:
+		posOfClickStart = get_viewport().get_mouse_position()
+		isPressed = true	
+		
+	
 
 func setState(isVisible):
 	if(isVisible):Sounds.play_sound_PickUp()

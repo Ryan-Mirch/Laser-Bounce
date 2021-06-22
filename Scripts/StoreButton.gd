@@ -23,6 +23,10 @@ export var defaultOn = false
 var selected = false
 var unlocked = false
 
+var posOfClickStart
+var isPressed = false
+var deadZone = 20
+
 signal cantAfford
 
 # Called when the node enters the scene tree for the first time.
@@ -108,5 +112,12 @@ func pressed():
 	Saving.updateSaveData()
 
 func _on_Panel_gui_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-	   pressed()
+	if event.is_action_released("grab") and isPressed:
+		isPressed = false
+		
+		if posOfClickStart.distance_to(get_viewport().get_mouse_position()) <= deadZone:
+			pressed()
+			
+	if event.is_action_pressed("grab") and !isPressed:
+		posOfClickStart = get_viewport().get_mouse_position()
+		isPressed = true	

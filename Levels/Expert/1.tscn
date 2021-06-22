@@ -17,7 +17,7 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 9 )
-nextLevelPath = "res://Levels/New/4.tscn"
+nextLevelPath = "res://Levels/Expert/2.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
 

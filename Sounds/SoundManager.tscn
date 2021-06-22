@@ -43,3 +43,5 @@ soundDirectory = "res://Sounds/win"
 stream = ExtResource( 3 )
 volume_db = -20.0
 autoplay = true
+
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

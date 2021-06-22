@@ -70,4 +70,4 @@ mouse_filter = 2
 texture = ExtResource( 5 )
 expand = true
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="gui_input" from="TextureButton" to="." method="_on_TextureButton_gui_input"]

@@ -14,6 +14,9 @@ export (String) var levelName
 export (String) var levelID
 
 var completed = false
+var isPressed = false
+var deadZone = 20
+var posOfClickStart
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
@@ -41,7 +44,14 @@ func setLabelText():
 	label.text = levelName
 
 
-func _on_TextureButton_pressed():
-	Global.load_level(levelPath)
+func _on_TextureButton_gui_input(event):
+	if event.is_action_released("grab") and isPressed:
+		isPressed = false
+		
+		if posOfClickStart.distance_to(get_viewport().get_mouse_position()) <= deadZone:
+			Global.load_level(levelPath)
+			
+	if event.is_action_pressed("grab") and !isPressed:
+		posOfClickStart = get_viewport().get_mouse_position()
+		isPressed = true	
 	
-
