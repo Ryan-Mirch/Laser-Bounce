@@ -89,15 +89,19 @@ func _dragStart():
 	
 func _input(event):		
 	
-	if event.is_action_released("grab") and dragging:		
-		dragging = false
+	if event.is_action_released("grab"):	
+		endDragging()
 		
-		var tile = _get_closest_tile("Open")
-		if tile != null: tile.setOpen(false)
-		drop_point = tile.translation
+func endDragging():
+	if dragging == false: return
+	
+	dragging = false
+	var tile = _get_closest_tile("Open")
+	if tile != null: tile.setOpen(false)
+	drop_point = tile.translation
 		
-		remove_from_group("Dragging")
-		Sounds.play_sound_PutDown()
+	remove_from_group("Dragging")
+	Sounds.play_sound_PutDown()
 		
 func _get_closest_tile(state): 
 	var tiles =  get_tree().get_nodes_in_group("Tile")

@@ -27,6 +27,7 @@ func _physics_process(_delta):
 func Play():
 	Sounds.play_sound_PlayLevel()	
 	Global.playing = true
+	get_tree().call_group("Base","endDragging")
 	timer.start()
 	
 func Edit():
