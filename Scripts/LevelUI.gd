@@ -9,8 +9,9 @@ onready var pause = get_node("CenterContainer/Pause")
 onready var levelCompleteAnimation = get_node("AnimationPlayer")
 onready var retryButton = get_node("CenterContainer2/Retry")
 onready var transitionEffect = get_node("Transition Effect")
-onready var themeName = get_node("Theme Name")
-onready var levelName = get_node("Level Name")
+onready var themeName = get_node("Theme and Level/Theme Name")
+onready var levelName = get_node("Theme and Level/Level Name")
+onready var themeAndLevel = get_node("Theme and Level")
 
 var levelComplete = false
 var retryDisabled = true
@@ -18,6 +19,7 @@ var retryDisabled = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _err = Global.connect("tabChanged", self, "tabChanged")
+	
 	var fullPath = get_parent().getLevelID()
 	var sceneName = fullPath
 	sceneName = sceneName.replace(sceneName.get_base_dir(),"") 
@@ -32,6 +34,8 @@ func _ready():
 	sceneTheme = sceneTheme.replace("/", "")
 	sceneTheme = sceneTheme.replace(".", "")
 	themeName.text = sceneTheme
+	
+	setMarginTop(Global.admob.get_banner_offset())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -82,4 +86,8 @@ func _on_Continue_pressed():
 func _on_Retry_pressed():
 	if transitionEffect.ap.current_animation != "Fade":
 		Global.load_level(get_parent().get_filename())
+	
+	
+func setMarginTop(amount):
+	themeAndLevel.margin_top = amount
 

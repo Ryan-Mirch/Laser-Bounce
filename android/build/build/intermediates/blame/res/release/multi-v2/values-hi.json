@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Godot\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-hi\\values-hi.xml",
+            "outputFile": "D:\\Godot Projects\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-hi\\values-hi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\2f29423de5771cd0c2f475b364e10860\\godot-lib.release\\res\\values-hi\\values-hi.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "989",
+                        "endColumns": "100",
+                        "endOffsets": "1085"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\2f29423de5771cd0c2f475b364e10860\\godot-lib.release\\res\\values-hi\\values-hi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\d7cf74a80cb27cfd4b2a095d76a45192\\jetified-play-services-ads-19.3.0\\res\\values-hi\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "199,269,395,464,532,609,703",
-                        "endColumns": "69,125,68,67,76,93,70",
-                        "endOffsets": "268,394,463,531,608,702,773"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "386,460,590,663,735,816,914",
-                        "endColumns": "73,129,72,71,80,97,74",
-                        "endOffsets": "455,585,658,730,811,909,984"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\4c010e4c66b5c2fa76cc68c92219aedb\\jetified-play-services-basement-17.0.0\\res\\values-hi\\values.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\80ca5c0dd1bca1b41180f470e053ab8f\\jetified-play-services-basement-17.0.0\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,20 +55,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-hi\\values-hi.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\47a85fd968e1b4a1001f5a359f930306\\jetified-play-services-ads-19.3.0\\res\\values-hi\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "199,269,395,464,532,609,703",
+                        "endColumns": "69,125,68,67,76,93,70",
+                        "endOffsets": "268,394,463,531,608,702,773"
                     },
                     "to": {
-                        "startLines": "11",
-                        "startColumns": "4",
-                        "startOffsets": "989",
-                        "endColumns": "100",
-                        "endOffsets": "1085"
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "386,460,590,663,735,816,914",
+                        "endColumns": "73,129,72,71,80,97,74",
+                        "endOffsets": "455,585,658,730,811,909,984"
                     }
                 }
             ]

@@ -26,7 +26,7 @@ func _ready():
 #	pass
 
 func setMarginTop(amount):
-	get_node(\"ColorRect/MarginContainer\").margin_top = amount
+	get_node(\"ColorRect/MarginContainer\").margin_top = 100 + amount
 
 
 
@@ -218,7 +218,9 @@ func _on_Button_pressed():
 	
 "
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" groups=[
+"offsetForBanner",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -450,7 +452,6 @@ custom_fonts/font = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Reset Save Data"
 script = SubResource( 11 )
-
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Sound Effects/Sound CheckButton" to="." method="_on_Sound_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Music/Music CheckButton" to="." method="_on_Music_CheckButton_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Buttons/Shadows/Shadows CheckButton" to="." method="_on_Shadows_CheckButton_toggled"]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Godot\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "D:\\Godot Projects\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\4078a0b16d2c56e4a80978d5ef960a67\\godot-lib.debug\\res\\values-en\\values-en.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\4078a0b16d2c56e4a80978d5ef960a67\\godot-lib.debug\\res\\values-en\\values-en.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

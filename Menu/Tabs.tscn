@@ -148,7 +148,6 @@ enabled_focus_mode = 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Grey = SubResource( 3 )
 "anims/See Through Black" = SubResource( 4 )
-
 [connection signal="pressed" from="Panel/HBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Customize" to="." method="_on_Customize_pressed"]

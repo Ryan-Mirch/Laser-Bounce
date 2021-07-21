@@ -31,6 +31,7 @@ func _ready():
 	
 	pointerTranslation = Vector3(0,0,0)
 	loadAds()
+	showAds()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +42,10 @@ func loadAds() -> void:
 	yield(get_tree(), "idle_frame")
 	admob.load_banner()
 	admob.load_interstitial()
+	
+func showAds():
+	yield(get_tree(), "idle_frame")
+	admob.show_banner()
 	
 func showInterstitial():
 	if interTime >= interTargetTime:

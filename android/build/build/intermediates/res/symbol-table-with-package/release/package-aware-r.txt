@@ -1,4 +1,4 @@
-org.godotengine.laserbounce
+com.aecertgaming.laserbounce
 attr adSize
 attr adSizes
 attr adUnitId

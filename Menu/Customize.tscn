@@ -284,19 +284,6 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=23]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
 [sub_resource type="StyleBoxFlat" id=20]
 resource_local_to_scene = true
 draw_center = false
@@ -324,6 +311,19 @@ corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
 [sub_resource type="StyleBoxFlat" id=22]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id=23]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -375,19 +375,6 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=29]
-resource_local_to_scene = true
-draw_center = false
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
-
 [sub_resource type="StyleBoxFlat" id=27]
 resource_local_to_scene = true
 draw_center = false
@@ -414,6 +401,19 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
+[sub_resource type="StyleBoxFlat" id=29]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
 [sub_resource type="StyleBoxFlat" id=30]
 resource_local_to_scene = true
 draw_center = false
@@ -427,7 +427,9 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[node name="Customize" type="Control"]
+[node name="Customize" type="Control" groups=[
+"offsetForBanner",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -719,7 +721,7 @@ buttonGroup = "Tiles"
 [node name="Grid" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_top = 710.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 23 )
+custom_styles/panel = SubResource( 20 )
 iconTexture = ExtResource( 26 )
 itemName = "TILES_GRID"
 purchasePrice = 17
@@ -731,7 +733,7 @@ margin_left = 355.0
 margin_top = 710.0
 margin_right = 685.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 20 )
+custom_styles/panel = SubResource( 21 )
 iconTexture = ExtResource( 21 )
 itemName = "TILES_GROOVY"
 purchasePrice = 28
@@ -743,7 +745,7 @@ margin_left = 710.0
 margin_top = 710.0
 margin_right = 1040.0
 margin_bottom = 1040.0
-custom_styles/panel = SubResource( 21 )
+custom_styles/panel = SubResource( 22 )
 iconTexture = ExtResource( 22 )
 itemName = "TILES_HOLOGRAM"
 purchasePrice = 28
@@ -753,7 +755,7 @@ buttonGroup = "Tiles"
 [node name="Bubble" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Tiles/GridContainer3" instance=ExtResource( 2 )]
 margin_top = 1065.0
 margin_bottom = 1395.0
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 23 )
 iconTexture = ExtResource( 25 )
 itemName = "TILES_BUBBLE"
 purchasePrice = 28
@@ -818,7 +820,7 @@ buttonGroup = "Laser Sounds"
 [node name="Panel4" parent="ColorRect/MarginContainer/ScrollContainer/VBoxContainer/Laser Bounce Sounds/GridContainer2" instance=ExtResource( 2 )]
 margin_top = 355.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 29 )
+custom_styles/panel = SubResource( 27 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_ORGAN"
 purchasePrice = 17
@@ -830,7 +832,7 @@ margin_left = 355.0
 margin_top = 355.0
 margin_right = 685.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 27 )
+custom_styles/panel = SubResource( 28 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_SCIFISPARKLE"
 purchasePrice = 17
@@ -842,7 +844,7 @@ margin_left = 710.0
 margin_top = 355.0
 margin_right = 1040.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 29 )
 iconTexture = ExtResource( 15 )
 itemName = "SOUNDS_MEOW"
 purchasePrice = 28

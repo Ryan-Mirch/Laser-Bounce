@@ -31,7 +31,9 @@ func setMarginTop(amount):
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
 
-[node name="Level Select" type="Control"]
+[node name="Level Select" type="Control" groups=[
+"offsetForBanner",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

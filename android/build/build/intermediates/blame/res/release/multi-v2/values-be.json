@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Godot\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-be\\values-be.xml",
+            "outputFile": "D:\\Godot Projects\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-be\\values-be.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\d7cf74a80cb27cfd4b2a095d76a45192\\jetified-play-services-ads-19.3.0\\res\\values-be\\values.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\47a85fd968e1b4a1001f5a359f930306\\jetified-play-services-ads-19.3.0\\res\\values-be\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\4c010e4c66b5c2fa76cc68c92219aedb\\jetified-play-services-basement-17.0.0\\res\\values-be\\values.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\80ca5c0dd1bca1b41180f470e053ab8f\\jetified-play-services-basement-17.0.0\\res\\values-be\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

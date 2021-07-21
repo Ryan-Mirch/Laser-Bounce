@@ -1,44 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Projects\\Godot\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "D:\\Godot Projects\\Laser-Bounce\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\4078a0b16d2c56e4a80978d5ef960a67\\godot-lib.debug\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\80ca5c0dd1bca1b41180f470e053ab8f\\jetified-play-services-basement-17.0.0\\res\\values-zh-rCN\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "157",
+                        "endOffsets": "408"
                     },
                     "to": {
-                        "startLines": "3",
+                        "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "263",
-                        "endColumns": "75",
-                        "endOffsets": "334"
+                        "startOffsets": "105",
+                        "endColumns": "157",
+                        "endOffsets": "258"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "11",
-                        "startColumns": "4",
-                        "startOffsets": "817",
-                        "endColumns": "100",
-                        "endOffsets": "913"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\d7cf74a80cb27cfd4b2a095d76a45192\\jetified-play-services-ads-19.3.0\\res\\values-zh-rCN\\values.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\47a85fd968e1b4a1001f5a359f930306\\jetified-play-services-ads-19.3.0\\res\\values-zh-rCN\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -55,20 +38,37 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ryan\\.gradle\\caches\\transforms-2\\files-2.1\\4c010e4c66b5c2fa76cc68c92219aedb\\jetified-play-services-basement-17.0.0\\res\\values-zh-rCN\\values.xml",
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\947833f03979c6d84fcd9a8feba7ce42\\core-1.0.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "157",
-                        "endOffsets": "408"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "105",
-                        "endColumns": "157",
-                        "endOffsets": "258"
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "817",
+                        "endColumns": "100",
+                        "endOffsets": "913"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\rwmir\\.gradle\\caches\\transforms-2\\files-2.1\\4078a0b16d2c56e4a80978d5ef960a67\\godot-lib.debug\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "263",
+                        "endColumns": "75",
+                        "endOffsets": "334"
                     }
                 }
             ]

@@ -158,6 +158,12 @@ func get_banner_dimension() -> Vector2:
 		return Vector2(_admob_singleton.getBannerWidth(), _admob_singleton.getBannerHeight())
 	return Vector2()
 
+func get_banner_offset() -> float:
+	var ratio = get_viewport().get_visible_rect().size.y / get_viewport().get_visible_rect().size.x
+	ratio = clamp(ratio, 1, 100)
+	var h = pow(Global.admob.get_banner_dimension().y * ratio, 1.005)
+	return h
+
 # callbacks
 func _on_admob_ad_loaded() -> void:
 	emit_signal("banner_loaded")

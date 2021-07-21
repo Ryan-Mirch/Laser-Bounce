@@ -136,5 +136,4 @@ custom_constants/vseparation = 15
 custom_constants/hseparation = 9
 columns = 5
 script = ExtResource( 2 )
-
 [connection signal="gui_input" from="ThemeName" to="ThemeName/dropdown arrows" method="_on_ThemeName_gui_input"]

@@ -24,19 +24,14 @@ func _ready():
 	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
 	$AnimationPlayer.play("See Through Black")
 	
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 		
-func make_room_for_Banner():	
-	var ratio = get_viewport().get_visible_rect().size.y / get_viewport().get_visible_rect().size.x
-	ratio = clamp(ratio, 1, 100)
-	var h = pow(Global.admob.get_banner_dimension().y * ratio, 1.01)
-	settingsWindow.setMarginTop(h)
-	levelSelectWindow.setMarginTop(h)
-	customizeWindow.setMarginTop(h)
+func make_room_for_Banner():
+	var h = Global.admob.get_banner_offset()
+	get_tree().call_group("offsetForBanner","setMarginTop", h)
 		
 		
 func remove_room_for_Banner():

@@ -12,7 +12,6 @@ func _ready():
 	startingY = $Panel.rect_position.y
 	Global.currencyDisplay = self
 	var _x = Saving.connect("saveDataUpdated",self,"updateCurrency")
-	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
 	updateCurrency()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +24,7 @@ func updateCurrency():
 	currencyAmountLabel.text = str(Saving.getLevelsCompleted())
 
 		
-func make_room_for_Banner():
-	$Panel.rect_position.y = startingY + Global.admob.get_banner_dimension().y
+func setMarginTop(amount):
+	margin_top = amount
 	
 	
