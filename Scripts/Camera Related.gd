@@ -5,6 +5,7 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
+onready var CameraRotationPoint = $"Camera Rotation Point"
 onready var DirectionalLight = $"DirectionalLight"
 
 # Called when the node enters the scene tree for the first time.
@@ -13,11 +14,16 @@ func _ready():
 	var _y = Saving.connect("saveDataUpdated", self, "updateShadows")
 	updateSkin()
 	updateShadows()
+	updateCameraRotationPoint()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	#pass
+
+func updateCameraRotationPoint():
+	if !Global.adfree:
+		CameraRotationPoint.translation.y = 3
 
 func updateSkin():
 	if !Saving.backgroundsEquipped: return

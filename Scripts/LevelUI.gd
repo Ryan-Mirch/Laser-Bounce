@@ -19,7 +19,6 @@ var retryDisabled = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _err = Global.connect("tabChanged", self, "tabChanged")
-	
 	var fullPath = get_parent().getLevelID()
 	var sceneName = fullPath
 	sceneName = sceneName.replace(sceneName.get_base_dir(),"") 

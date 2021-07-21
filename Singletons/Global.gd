@@ -14,6 +14,7 @@ var complete = false
 
 var interTime = 0
 var interTargetTime = 300
+var adfree = false
 
 
 var settings = load("res://Menu/Settings.tscn")
@@ -29,9 +30,15 @@ func _ready():
 	var _x = Saving.connect("saveDataUpdated",self,"hideAds")
 	var _y = Saving.connect("dataLoaded",self,"hideAds")
 	
+	
+	
 	pointerTranslation = Vector3(0,0,0)
-	loadAds()
-	showAds()
+	if adfree == false:
+		loadAds()
+		showAds()
+	
+	yield(get_tree(), "idle_frame")
+	load_level("res://Levels/Tutorial/1.tscn")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,7 +69,7 @@ func _input(event):
 		debug = !debug
 			
 func load_level(levelPath):
-	tabs.set_current_tab(0)	
+	tabs.set_current_tab(0)		
 	var level = load(levelPath)
 	print("Loading level: " + levelPath)
 	var levelInstance = level.instance()

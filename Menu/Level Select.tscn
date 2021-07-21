@@ -26,6 +26,7 @@ func _process(_delta):
 
 func setMarginTop(amount):
 	get_node(\"Panel/MarginContainer\").margin_top = amount
+	get_node(\"Panel/MarginContainer/ScrollContainer\").scroll_vertical = 0
 "
 
 [sub_resource type="StyleBoxFlat" id=2]
