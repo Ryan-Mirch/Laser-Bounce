@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Hint Disabled.png-cea29dcebe723a00244d58d857192680.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

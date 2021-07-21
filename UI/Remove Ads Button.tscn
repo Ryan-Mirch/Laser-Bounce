@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/tres/Noir Regular - 80.tres" type="DynamicFont" id=1]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
 draw_center = false
 border_width_left = 10
@@ -31,8 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !Saving.showAds:
-		self.queue_free()
+	pass
 
 
 func _on_Panel_gui_input(event):
@@ -40,6 +39,8 @@ func _on_Panel_gui_input(event):
 		if event.pressed:
 			print(\"remove ads\")
 			OS.shell_open(\"www.google.com\")
+			Saving.showAds = !Saving.showAds
+			Saving.updateSaveData()
 "
 
 [node name="Remove Ads" type="CenterContainer"]
@@ -55,7 +56,7 @@ margin_left = 340.0
 margin_right = 1040.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 700, 180 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Panel"]
@@ -68,5 +69,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="gui_input" from="Panel" to="Panel" method="_on_Panel_gui_input"]

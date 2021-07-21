@@ -10,20 +10,24 @@ onready var DirectionalLight = $"DirectionalLight"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var _x = Saving.connect("saveDataUpdated", self, "updateSkin")
-	var _y = Saving.connect("saveDataUpdated", self, "updateShadows")
-	updateSkin()
-	updateShadows()
-	updateCameraRotationPoint()
+	var _x = Saving.connect("saveDataUpdated", self, "update")
+	update()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	#pass
+	
+func update():
+	updateSkin()
+	updateShadows()
+	updateCameraRotationPoint()
 
 func updateCameraRotationPoint():
-	if !Global.adfree:
+	if Saving.showAds:
 		CameraRotationPoint.translation.y = 3
+	else:
+		CameraRotationPoint.translation.y = 0
 
 func updateSkin():
 	if !Saving.backgroundsEquipped: return

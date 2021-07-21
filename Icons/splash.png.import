@@ -14,7 +14,7 @@ dest_files=[ "res://.import/splash.png-ce2ed5f45c7600aa6d03c4508b90dd57.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

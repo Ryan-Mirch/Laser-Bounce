@@ -14,7 +14,7 @@ dest_files=[ "res://.import/FeatureGraphic.png-4d370779f9ab13ff62a8bd97ba8dfed6.
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

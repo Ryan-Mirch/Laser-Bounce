@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Hologram Icon.png-651646a598c31ed6e1cba8c516e50ce0.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

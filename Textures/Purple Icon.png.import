@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Purple Icon.png-c06fb4a316e5122000f4de186c3b760f.ste
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

@@ -45,7 +45,7 @@ upper_pitch_limit = 40
 lower_pitch_limit = 40
 
 [node name="Camera Rotation Point" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01302, -1, -2.10161 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.013, 0, -2.102 )
 
 [node name="Cursor" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 13 )

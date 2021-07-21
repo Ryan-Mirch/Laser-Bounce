@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Another Planet Icon.png-0b1501fb16809a8eb843f11ee555
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

@@ -20,18 +20,12 @@ var currentTab = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	Global.tabs = self
-	yield(get_tree(), "idle_frame")
-	Global.admob.connect("banner_loaded", self, "make_room_for_Banner")
 	$AnimationPlayer.play("See Through Black")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-		
-func make_room_for_Banner():
-	var h = Global.admob.get_banner_offset()
-	get_tree().call_group("offsetForBanner","setMarginTop", h)
 		
 		
 func remove_room_for_Banner():

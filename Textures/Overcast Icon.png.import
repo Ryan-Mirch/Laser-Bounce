@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Overcast Icon.png-246ffe7c2ea1618641634a1e5508a802.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

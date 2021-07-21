@@ -34,7 +34,8 @@ func _ready():
 	sceneTheme = sceneTheme.replace(".", "")
 	themeName.text = sceneTheme
 	
-	setMarginTop(Global.admob.get_banner_offset())
+	if Saving.showAds:
+		setMarginTop(Global.admob.get_banner_offset())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

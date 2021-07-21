@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Blue Sunset.png-699907726a2fea7f467e952d4ac5bfdc.ste
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

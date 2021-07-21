@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Settings Unselected.png-a9b7ff5af3e1f3a62a06a55f5b67
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

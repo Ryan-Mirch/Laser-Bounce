@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Game Selected.png-40a4e17fa611d9d8df14092f423bd409.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

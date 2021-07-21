@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Level Button Pressed.png-53cc7dfdfb8e14192d33570a4a7
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

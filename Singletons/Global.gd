@@ -14,7 +14,6 @@ var complete = false
 
 var interTime = 0
 var interTargetTime = 300
-var adfree = false
 
 
 var settings = load("res://Menu/Settings.tscn")
@@ -27,19 +26,25 @@ signal tabChanged
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	emit_signal("tabChanged")
-	var _x = Saving.connect("saveDataUpdated",self,"hideAds")
-	var _y = Saving.connect("dataLoaded",self,"hideAds")
-	
-	
-	
+	var _x = Saving.connect("saveDataUpdated",self,"manageAds")
+	var _y = Saving.connect("dataLoaded",self,"manageAds")
+		
 	pointerTranslation = Vector3(0,0,0)
-	if adfree == false:
-		loadAds()
-		showAds()
+	loadAds()
 	
 	yield(get_tree(), "idle_frame")
-	load_level("res://Levels/Tutorial/1.tscn")
+	manageAds()
 	
+	load_level("res://Levels/Tutorial/1.tscn")
+	admob.connect("banner_loaded", self, "make_room_for_Banner")
+	
+func make_room_for_Banner():
+	if Saving.showAds:
+		setBannerOffset(Global.admob.get_banner_offset())
+	
+
+func setBannerOffset(h):
+	get_tree().call_group("offsetForBanner","setMarginTop", h)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,14 +60,19 @@ func showAds():
 	admob.show_banner()
 	
 func showInterstitial():
+	if !Saving.showAds: return
 	if interTime >= interTargetTime:
 		print("Interstitial Shown")
 		interTime = 0
 		admob.show_interstitial()
 
-func hideAds():
+func manageAds():
 	if !Saving.showAds:
 		admob.hide_banner()
+		setBannerOffset(0)
+	else:
+		admob.show_banner()
+		setBannerOffset(Global.admob.get_banner_offset())
 
 func _input(event):
 	if event.is_action_pressed("debug"):

@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Stained Glass Icon.png-30d3bded1f8f34c0a2e1ca76f291d
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

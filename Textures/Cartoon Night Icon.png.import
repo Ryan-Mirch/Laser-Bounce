@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Cartoon Night Icon.png-0add287ae3655fcfad2530279b8c5
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

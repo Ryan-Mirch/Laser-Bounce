@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Sound Icon.png-e8c35ee96831f72e6f4613bef2a7643f.stex
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
