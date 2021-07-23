@@ -18,7 +18,7 @@ bg_color = Color( 0, 0, 0, 1 )
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.545098, 0.670588, 0.827451, 1 )
+bg_color = Color( 1, 1, 1, 0.160784 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Grey"
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.0392157 ) ]
+"values": [ Color( 1, 1, 1, 0.0980392 ) ]
 }
 
 [node name="Tabs" type="Control"]
