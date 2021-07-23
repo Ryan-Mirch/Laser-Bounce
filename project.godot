@@ -23,7 +23,7 @@ _global_script_class_icons={
 config/name="Laser Bounce"
 run/main_scene="res://Main/Main.tscn"
 boot_splash/image="res://Icons/splash.png"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+boot_splash/bg_color=Color( 0.0666667, 0.0705882, 0.0862745, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -73,6 +73,7 @@ pointing/emulate_touch_from_mouse=true
 [locale]
 
 translations=PoolStringArray( "res://Strings/strings - Sheet1.de.translation", "res://Strings/strings - Sheet1.en.translation", "res://Strings/strings - Sheet1.es.translation", "res://Strings/strings - Sheet1.fr.translation", "res://Strings/strings - Sheet1.ja.translation", "res://Strings/strings - Sheet1.zh.translation" )
+locale_filter=[ 1, [ "cmn_TW", "de", "en", "es", "fr", "ja" ] ]
 
 [rendering]
 

@@ -31,7 +31,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" /> <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
     <!-- CHUNK_USER_PERMISSIONS_BEGIN -->
     <!-- CHUNK_USER_PERMISSIONS_END -->
     <!-- Any tag in this line after android:icon will be erased when doing custom builds. -->
@@ -92,7 +93,10 @@
 
         <meta-data
             android:name="org.godotengine.plugin.v1.GodotAdMob"
-            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" />
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotGooglePlayBilling"
+            android:value="org.godotengine.godot.plugin.googleplaybilling.GodotGooglePlayBilling" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
@@ -108,6 +112,14 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="3.0.0" />
+
+        <activity
+            android:name="com.android.billingclient.api.ProxyBillingActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 
 </manifest>

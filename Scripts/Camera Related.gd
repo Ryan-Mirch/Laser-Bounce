@@ -24,7 +24,7 @@ func update():
 	updateCameraRotationPoint()
 
 func updateCameraRotationPoint():
-	if Saving.showAds:
+	if Global.admob.get_banner_offset() > 0:
 		CameraRotationPoint.translation.y = 3
 	else:
 		CameraRotationPoint.translation.y = 0

@@ -159,7 +159,7 @@ func get_banner_dimension() -> Vector2:
 	return Vector2()
 
 func get_banner_offset() -> float:
-	var h = Global.admob.get_banner_dimension().y + 1
+	var h = Global.admob.get_banner_dimension().y
 	return h
 
 # callbacks

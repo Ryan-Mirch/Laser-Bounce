@@ -6,6 +6,7 @@ INJECTED from D:\Godot Projects\Laser-Bounce\android\build\AndroidManifest.xml:2
 INJECTED from D:\Godot Projects\Laser-Bounce\android\build\AndroidManifest.xml:2:1-76:12
 MERGED from [godot-lib.debug.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4078a0b16d2c56e4a80978d5ef960a67\godot-lib.debug\AndroidManifest.xml:2:1-22:12
 MERGED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:2:1-19:12
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\47a85fd968e1b4a1001f5a359f930306\jetified-play-services-ads-19.3.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-gass:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3bbcb2390d38093b48641650d999cbb9\play-services-gass-19.3.0\AndroidManifest.xml:2:1-9:12
@@ -19,6 +20,7 @@ MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\rwmir\.gradle\caches\tra
 MERGED from [androidx.browser:browser:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\e1d06ce896d58ef6767a231783b4fc04\browser-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3a2f8d614676183a411d5d0a5ccffd59\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\1d849761628829d2295b320ffc5152e0\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\fa1cda0d762347a9cb7d79eaeeb289e8\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -84,6 +86,8 @@ MERGED from [godot-lib.debug.aar] C:\Users\rwmir\.gradle\caches\transforms-2\fil
 MERGED from [godot-lib.debug.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4078a0b16d2c56e4a80978d5ef960a67\godot-lib.debug\AndroidManifest.xml:18:5-20:19
 MERGED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:13:5-17:19
 MERGED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:13:5-17:19
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:11:5-15:19
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:11:5-15:19
 MERGED from [com.google.android.gms:play-services-gass:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3bbcb2390d38093b48641650d999cbb9\play-services-gass-19.3.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-gass:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3bbcb2390d38093b48641650d999cbb9\play-services-gass-19.3.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\7fa98867dbf75f0f768906f4f757f898\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
@@ -96,6 +100,8 @@ MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-base:17.1.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\2e3518f4df43ed5bd605240a6345c299\play-services-measurement-base-17.1.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\80ca5c0dd1bca1b41180f470e053ab8f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\80ca5c0dd1bca1b41180f470e053ab8f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:12:5-21:19
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:12:5-21:19
 MERGED from [androidx.core:core:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\947833f03979c6d84fcd9a8feba7ce42\core-1.0.0\AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\947833f03979c6d84fcd9a8feba7ce42\core-1.0.0\AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\619de63d53cf935c91c581371b6a6faa\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
@@ -174,6 +180,8 @@ MERGED from [godot-lib.debug.aar] C:\Users\rwmir\.gradle\caches\transforms-2\fil
 MERGED from [godot-lib.debug.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4078a0b16d2c56e4a80978d5ef960a67\godot-lib.debug\AndroidManifest.xml:7:5-9:41
 MERGED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:7:5-9:41
 MERGED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:7:5-9:41
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:7:5-9:41
+MERGED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\47a85fd968e1b4a1001f5a359f930306\jetified-play-services-ads-19.3.0\AndroidManifest.xml:21:5-23:52
@@ -200,6 +208,8 @@ MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\rwmir\.gradl
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3a2f8d614676183a411d5d0a5ccffd59\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\1d849761628829d2295b320ffc5152e0\media-1.0.0\AndroidManifest.xml:20:5-44
@@ -284,6 +294,12 @@ ADDED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transfor
 		ADDED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:16:13-79
 	android:name
 		ADDED from [GodotAdMob.4.1.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\4fc5d2b0f3ff8e8616573f1f42dccc48\GodotAdMob.4.1.1.release\AndroidManifest.xml:15:13-64
+meta-data#org.godotengine.plugin.v1.GodotGooglePlayBilling
+ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:12:9-14:101
+	android:value
+		ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:14:13-98
+	android:name
+		ADDED from [GodotGooglePlayBilling.1.0.1.release.aar] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\9ea1633d6170d03c99b12236eaeb1a43\GodotGooglePlayBilling.1.0.1.release\AndroidManifest.xml:13:13-76
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-ads-lite:19.3.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\d92a04b3463e4fa1d7d09fa4a789e569\play-services-ads-lite-19.3.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.1.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\97fe7eae467b7c543274f9b2f42d765e\play-services-measurement-sdk-api-17.1.0\AndroidManifest.xml:24:5-79
@@ -320,3 +336,21 @@ ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\rwmir
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\80ca5c0dd1bca1b41180f470e053ab8f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\80ca5c0dd1bca1b41180f470e053ab8f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+uses-permission#com.android.vending.BILLING
+ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:10:22-64
+meta-data#com.google.android.play.billingclient.version
+ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:13:9-15:37
+	android:value
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:15:13-34
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:14:13-73
+activity#com.android.billingclient.api.ProxyBillingActivity
+ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:17:9-20:75
+	android:configChanges
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:19:13-96
+	android:theme
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:20:13-72
+	android:name
+		ADDED from [com.android.billingclient:billing:3.0.0] C:\Users\rwmir\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:18:13-78

@@ -4,66 +4,15 @@
 [ext_resource path="res://Icons/Play.png" type="Texture" id=2]
 [ext_resource path="res://Icons/Continue.png" type="Texture" id=3]
 [ext_resource path="res://Icons/Stop.png" type="Texture" id=4]
+[ext_resource path="res://UI/Remove Ads Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/ContinuePanelNormal.tres" type="StyleBox" id=6]
+[ext_resource path="res://UI/ContinuePanelPressed.tres" type="StyleBox" id=7]
 [ext_resource path="res://Fonts/otfs/NoirPro-Regular.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Icons/Retry.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Transition.gd" type="Script" id=13]
 [ext_resource path="res://Scripts/Random Level Complete Message.gd" type="Script" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.560784 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-draw_center = false
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 0.403922 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id=4]
-draw_center = false
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="DynamicFont" id=5]
-size = 60
-use_filter = true
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 80
-use_filter = true
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 160
-use_filter = true
-font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 1 )
 draw_center = false
 border_width_left = 350
@@ -84,37 +33,39 @@ shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 anti_aliasing_size = 5
 
-[sub_resource type="Animation" id=9]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
-}
+[sub_resource type="DynamicFont" id=2]
+size = 75
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=10]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
-}
+[sub_resource type="DynamicFont" id=3]
+size = 135
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.560784 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 80
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 160
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=8]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Level Complete Panel:visible")
@@ -188,20 +139,48 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Level Complete Panel/Remove Ads:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
-[sub_resource type="DynamicFont" id=12]
-size = 75
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 8 )
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
-[sub_resource type="DynamicFont" id=13]
-size = 135
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 8 )
+[sub_resource type="Animation" id=10]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.32549 ) ]
+}
 
 [node name="LevelUI" type="Control" groups=[
 "offsetForBanner",
@@ -212,6 +191,44 @@ mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="Vignette" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Theme and Level" type="Control" parent="."]
+show_behind_parent = true
+margin_left = 27.0
+margin_right = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Theme Name" type="Label" parent="Theme and Level"]
+margin_right = 711.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 2 )
+text = "Theme Name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level Name" type="Label" parent="Theme and Level"]
+margin_left = 2.0
+margin_top = 91.6216
+margin_right = 387.0
+margin_bottom = 254.622
+custom_fonts/font = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -262,7 +279,7 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -200.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -298,9 +315,9 @@ margin_right = 1425.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -367,16 +384,23 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-messages = [ "MESSAGE_0", "MESSAGE_1", "MESSAGE_2", "MESSAGE_3", "MESSAGE_4", "MESSAGE_5", "MESSAGE_6", "MESSAGE_7", "MESSAGE_8", "MESSAGE_9" ]
+messages = [ "MESSAGE_0", "MESSAGE_1", "MESSAGE_2", "MESSAGE_3", "MESSAGE_4", "MESSAGE_5", "MESSAGE_6", "MESSAGE_7", "MESSAGE_8", "MESSAGE_9", "MESSAGE_10", "MESSAGE_11", "MESSAGE_12" ]
 
-[node name="Vignette" type="Panel" parent="."]
-anchor_right = 1.0
+[node name="Remove Ads" parent="Level Complete Panel" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -180.486
+margin_top = -187.258
+margin_right = 619.514
+margin_bottom = -7.25781
+rect_min_size = Vector2( 700, 180 )
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Level Complete" = SubResource( 8 )
 
 [node name="Transition Effect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -392,36 +416,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition Effect"]
 anims/Fade = SubResource( 9 )
 "anims/Level Completed" = SubResource( 10 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Level Complete" = SubResource( 11 )
-
-[node name="Theme and Level" type="Control" parent="."]
-margin_left = 27.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Theme Name" type="Label" parent="Theme and Level"]
-margin_right = 711.0
-margin_bottom = 128.0
-custom_fonts/font = SubResource( 12 )
-text = "Theme Name"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Level Name" type="Label" parent="Theme and Level"]
-margin_left = 2.0
-margin_top = 91.6216
-margin_right = 387.0
-margin_bottom = 254.622
-custom_fonts/font = SubResource( 13 )
-text = "1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="CenterContainer2/Retry" to="." method="_on_Retry_pressed"]
