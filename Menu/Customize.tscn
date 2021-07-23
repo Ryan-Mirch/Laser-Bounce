@@ -105,7 +105,7 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=6]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -118,7 +118,7 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 resource_local_to_scene = true
 draw_center = false
 border_width_left = 15
@@ -586,7 +586,7 @@ margin_left = 355.0
 margin_top = 355.0
 margin_right = 685.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 6 )
 iconTexture = ExtResource( 12 )
 itemName = "BACKGROUNDS_PURPLE"
 purchasePrice = -1
@@ -598,7 +598,7 @@ margin_left = 710.0
 margin_top = 355.0
 margin_right = 1040.0
 margin_bottom = 685.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 7 )
 iconTexture = ExtResource( 13 )
 itemName = "BACKGROUNDS_ORANGE"
 purchasePrice = -1

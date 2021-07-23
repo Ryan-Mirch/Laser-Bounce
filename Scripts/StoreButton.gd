@@ -107,9 +107,13 @@ func pressed():
 		b.updateSaveData()
 	
 	setSelected(true)
-	Sounds.play_sound_PickUp()
 	updateSaveData()
 	Saving.updateSaveData()
+	
+	if buttonGroup == "Laser Sounds":
+		Sounds.play_sound_Laser()
+	else:
+		Sounds.play_sound_PickUp()
 
 func _on_Panel_gui_input(event):
 	if event.is_action_released("grab") and isPressed:
