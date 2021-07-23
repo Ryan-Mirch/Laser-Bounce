@@ -18,8 +18,8 @@ func _ready():
 "
 
 [sub_resource type="CylinderMesh" id=2]
-top_radius = 0.13
-bottom_radius = 0.13
+top_radius = 0.175
+bottom_radius = 0.025
 height = 1.0
 
 [sub_resource type="SpatialMaterial" id=3]
