@@ -238,7 +238,6 @@ activatedObjects = [ NodePath("../Laser") ]
 wait_time = 0.4
 
 [node name="LevelUI" parent="." instance=ExtResource( 7 )]
-
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
 

@@ -385,7 +385,7 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-messages = [ "MESSAGE_0", "MESSAGE_1", "MESSAGE_2", "MESSAGE_3", "MESSAGE_4", "MESSAGE_5", "MESSAGE_6", "MESSAGE_7", "MESSAGE_8", "MESSAGE_9", "MESSAGE_10", "MESSAGE_11", "MESSAGE_12" ]
+messages = [ "MESSAGE_0", "MESSAGE_1", "MESSAGE_2", "MESSAGE_3", "MESSAGE_4", "MESSAGE_5", "MESSAGE_6", "MESSAGE_7", "MESSAGE_8", "MESSAGE_9", "MESSAGE_10", "MESSAGE_11", "MESSAGE_12", "MESSAGE_13", "MESSAGE_14", "MESSAGE_15", "MESSAGE_16" ]
 
 [node name="Remove Ads" parent="Level Complete Panel" instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0 )

@@ -17,12 +17,12 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=4]
 top_radius = 0.175
 bottom_radius = 0.025
 height = 1.0
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 
 [node name="Wire" type="Spatial"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -36,5 +36,5 @@ script = SubResource( 1 )
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 0.6, 0, 0, 0, -8.74228e-09, -0.6, 0, 0.2, -2.62268e-08, 9.25625e-31, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
