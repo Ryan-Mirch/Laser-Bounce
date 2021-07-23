@@ -140,6 +140,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01302, -3, -9.10161 )
 [node name="LevelUI" parent="." instance=ExtResource( 8 )]
 
 [node name="Control" type="CenterContainer" parent="."]
+show_behind_parent = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -157,8 +158,11 @@ __meta__ = {
 position = Vector2( -30.1646, -232.111 )
 rotation = -0.187695
 scale = Vector2( 0.554851, 0.554851 )
+z_index = -1
+z_as_relative = false
 frames = SubResource( 2 )
 animation = "Press"
+frame = 1
 speed_scale = 0.75
 playing = true
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]

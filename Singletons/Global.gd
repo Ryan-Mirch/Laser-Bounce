@@ -35,7 +35,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	manageAds()
 	
-	load_level("res://Levels/Tutorial/1.tscn")
+	load_level(Saving.mostRecentLevelPath)
 	admob.connect("banner_loaded", self, "make_room_for_Banner")
 	
 func make_room_for_Banner():
@@ -79,13 +79,16 @@ func _input(event):
 		debug = !debug
 			
 func load_level(levelPath):
-	tabs.set_current_tab(0)		
+	tabs.set_current_tab(0)
 	var level = load(levelPath)
 	print("Loading level: " + levelPath)
 	var levelInstance = level.instance()
 	currentScene.queue_free()
 	get_parent().add_child(levelInstance)
 	currentScene = levelInstance
+	
+	Saving.mostRecentLevelPath = levelPath
+	Saving.updateSaveData()
 	
 	showInterstitial()
 	

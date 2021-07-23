@@ -14,6 +14,7 @@ var laserSoundsEquipped = {}
 var backgroundsEquipped = {}
 var tilesEquipped = {}
 var levelCompleted = {}
+var mostRecentLevelPath = "res://Levels/Tutorial/1.tscn"
 
 
 signal saveDataUpdated
@@ -45,6 +46,7 @@ func updateSaveData():
 	f.store_var(laserSoundsEquipped)
 	f.store_var(backgroundsEquipped)
 	f.store_var(tilesEquipped)
+	f.store_var(mostRecentLevelPath)
 	
 	f.close()
 	emit_signal("saveDataUpdated")
@@ -65,6 +67,7 @@ func loadData():
 		laserSoundsEquipped = f.get_var()
 		backgroundsEquipped = f.get_var()
 		tilesEquipped = f.get_var()
+		mostRecentLevelPath = f.get_var()
 		f.close()
 	
 	emit_signal("dataLoaded")
@@ -82,6 +85,7 @@ func initializeSaveData():
 	if !laserSoundsEquipped: laserSoundsEquipped = {}
 	if !backgroundsEquipped: backgroundsEquipped = {}
 	if !tilesEquipped: tilesEquipped = {}
+	if !mostRecentLevelPath: mostRecentLevelPath = "res://Levels/Tutorial/1.tscn"
 
 func updateLevelCompleted(levelID, b):
 	levelCompleted[levelID] = b	
@@ -96,17 +100,18 @@ func resetSaveData():
 	camera_sensitivity = 0.25
 	bounce_speed = 0.35
 	levelCompleted.clear()
-	lasersEquipped.clear()		
-	laserSoundsEquipped.clear()	
-	backgroundsEquipped.clear()	
-	tilesEquipped.clear()	
+	lasersEquipped.clear()
+	laserSoundsEquipped.clear()
+	backgroundsEquipped.clear()
+	tilesEquipped.clear()
+	mostRecentLevelPath.clear()
 	
 	var dir = Directory.new()
 	dir.remove(saveDataFile)
 	initializeSaveData()
 	updateSaveData()
 	emit_signal("saveDataReset")
-
+	
 	
 func getLevelsCompleted():
 	var result = 0
