@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Icons/Press 2.png" type="Texture" id=1]
-[ext_resource path="res://Icons/Press 3.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Pieces/Laser.tscn" type="PackedScene" id=5]
@@ -10,7 +9,6 @@
 [ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
 [ext_resource path="res://Icons/Press 1.png" type="Texture" id=10]
-[ext_resource path="res://Icons/Press 4.png" type="Texture" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -37,7 +35,7 @@ func _process(delta):
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 1 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Press",
 "speed": 5.0
@@ -163,7 +161,7 @@ z_as_relative = false
 frames = SubResource( 2 )
 animation = "Press"
 frame = 1
-speed_scale = 0.75
+speed_scale = 0.4
 playing = true
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
 [connection signal="timeout" from="Cycle Timer" to="." method="_on_Cycle_Timer_timeout"]
