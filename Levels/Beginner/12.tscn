@@ -19,7 +19,7 @@ nextLevelPath = "res://Levels/Beginner/13.tscn"
 [node name="Camera Related" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera Rotation Point" parent="Camera Related" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.013, -1, 20.8984 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.013, -1, 19.8984 )
 
 [node name="Cursor" parent="Camera Related" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 10 )

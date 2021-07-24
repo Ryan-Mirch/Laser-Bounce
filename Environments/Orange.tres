@@ -8,7 +8,7 @@ panorama = ExtResource( 1 )
 [resource]
 background_mode = 1
 background_sky = SubResource( 1 )
-background_color = Color( 0.784314, 0.588235, 0.25098, 1 )
+background_color = Color( 0.835294, 0.54902, 0.243137, 1 )
 ambient_light_color = Color( 0.6, 0.6, 0.6, 1 )
 ambient_light_energy = 1.4
 fog_enabled = true

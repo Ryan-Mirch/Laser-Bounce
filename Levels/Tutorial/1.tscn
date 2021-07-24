@@ -160,7 +160,6 @@ z_index = -1
 z_as_relative = false
 frames = SubResource( 2 )
 animation = "Press"
-frame = 1
 speed_scale = 0.4
 playing = true
 [connection signal="LevelComplete" from="Objects/Goal" to="." method="_on_Goal_LevelComplete"]
