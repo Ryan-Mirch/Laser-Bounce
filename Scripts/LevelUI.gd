@@ -77,6 +77,7 @@ func _on_Continue_pressed():
 	Sounds.play_sound_PickUp()
 	
 	if Global.get_current_tab() != 0: return
+	get_node("Level Complete Panel/Buttons/Continue").disabled = true
 	
 	transitionEffect.transition()
 	yield(transitionEffect.ap, "animation_finished")

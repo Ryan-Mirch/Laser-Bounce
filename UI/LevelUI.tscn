@@ -318,6 +318,7 @@ rect_min_size = Vector2( 450, 150 )
 focus_mode = 0
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 6 )
 enabled_focus_mode = 0
 __meta__ = {
