@@ -1,6 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Camera/Camera Related.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Pieces/AND Node.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/LevelUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Tile.tscn" type="PackedScene" id=10]
@@ -8,7 +9,6 @@
 [ext_resource path="res://Assets/Pieces/Base.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Pieces/AAbsorber.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=21]
-[ext_resource path="res://Assets/Pieces/OR Node.tscn" type="PackedScene" id=22]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 54.2461, 0.502, 100 )
@@ -23,7 +23,7 @@ nextLevelPath = "res://Levels/Tutorial/17.tscn"
 transform = Transform( 1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, -2, 2, 9 )
 
 [node name="Camera Rotation Point" parent="Camera Related" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.013, -1, 8.89839 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01302, -1, 9.89839 )
 
 [node name="Cursor" parent="Camera Related" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13 )
@@ -74,19 +74,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8 )
 [node name="Tile176" parent="Objects/Tiles" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6 )
 
-[node name="Tile177" parent="Objects/Tiles" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6 )
-
-[node name="Tile185" parent="Objects/Tiles" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6 )
-
 [node name="Tile198" parent="Objects/Tiles" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4 )
 
 [node name="Tile199" parent="Objects/Tiles" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6 )
 
 [node name="Tile200" parent="Objects/Tiles" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6 )
+
+[node name="Tile177" parent="Objects/Tiles" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4 )
+
+[node name="Tile185" parent="Objects/Tiles" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4 )
 
 [node name="Tile170" parent="Objects/Tiles" instance=ExtResource( 10 )]
@@ -188,35 +188,51 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 12 )
 
 [node name="AAbsorber" parent="Objects/Base8" instance=ExtResource( 17 )]
-activatedObjects = [ NodePath("../../OR Node") ]
+activatedObjects = [ NodePath("../../AND Node") ]
 
 [node name="Base10" parent="Objects" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 12 )
 
 [node name="AAbsorber" parent="Objects/Base10" instance=ExtResource( 17 )]
-activatedObjects = [ NodePath("../../OR Node") ]
+activatedObjects = [ NodePath("../../AND Node") ]
 
 [node name="Base9" parent="Objects" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 12 )
 
 [node name="AAbsorber" parent="Objects/Base9" instance=ExtResource( 17 )]
-activatedObjects = [ NodePath("../../OR Node") ]
+activatedObjects = [ NodePath("../../AND Node") ]
+
+[node name="Base11" parent="Objects" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 16 )
+draggable = true
+rotationType = "90"
+
+[node name="Laser" parent="Objects/Base11" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.53674e-07, 0, 0 )
 
 [node name="Base13" parent="Objects" instance=ExtResource( 13 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 0, 16 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 12 )
 draggable = true
 rotationType = "90"
 
 [node name="Laser" parent="Objects/Base13" instance=ExtResource( 11 )]
 
-[node name="Laser2" parent="Objects" instance=ExtResource( 11 )]
+[node name="Laser" parent="Objects" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 4 )
+
+[node name="Base12" parent="Objects" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 16 )
+draggable = true
+rotationType = "90"
+
+[node name="Laser" parent="Objects/Base12" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.76837e-07, 0, 0 )
 
 [node name="Walls" type="Spatial" parent="Objects"]
 
-[node name="OR Node" parent="Objects" instance=ExtResource( 22 )]
+[node name="AND Node" parent="Objects" instance=ExtResource( 5 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7, 1, 8 )
-activatedObjects = [ NodePath("../Laser2") ]
+activatedObjects = [ NodePath("../Laser") ]
 
 [node name="Cycle Timer" type="Timer" parent="."]
 wait_time = 0.4
