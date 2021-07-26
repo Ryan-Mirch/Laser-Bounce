@@ -19,7 +19,6 @@ extents = Vector3( 54.2461, 0.502, 100 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
-levelID = "tutorial11"
 nextLevelPath = "res://Levels/Tutorial/12.tscn"
 
 [node name="Camera Related" parent="." instance=ExtResource( 2 )]
@@ -137,7 +136,6 @@ shape = SubResource( 1 )
 
 [node name="AAbsorber" parent="Objects" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 0, 1 )
-color = Color( 1, 1, 1, 1 )
 activatedObjects = [ NodePath("../Door") ]
 
 [node name="AGate" parent="Objects" instance=ExtResource( 12 )]
@@ -146,7 +144,6 @@ activatedObjects = [ NodePath("../Door") ]
 
 [node name="AMirror" parent="Objects" instance=ExtResource( 13 )]
 transform = Transform( -0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, -0.353553, 15, 0, 5 )
-color = Color( 1, 1, 1, 1 )
 activatedObjects = [ NodePath("../Door") ]
 
 [node name="Laser" parent="Objects" instance=ExtResource( 6 )]

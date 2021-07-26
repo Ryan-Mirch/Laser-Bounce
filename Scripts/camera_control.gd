@@ -12,8 +12,8 @@ export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 2
 export var mouselook = true
 export (float, 0.0, 0.999, 0.001) var smoothness = 0.5 setget set_smoothness
 var pivot 
-export var min_distance = 1
-export var max_distance = 10
+var min_distance = 15
+var max_distance = 50
 export var distance = 5.0 setget set_distance
 export var rotate_pivot = false
 export var collisions = true setget set_collisions
@@ -21,7 +21,7 @@ export (int, 0, 360) var yaw_limit = 360
 #export (int, 0, 360) var pitch_limit = 360
 export (int, 0, 360) var upper_pitch_limit = 360
 export (int, 0, 360) var lower_pitch_limit = 360
-export var startDistance = 20
+var startDistance = 25
 
 
 
