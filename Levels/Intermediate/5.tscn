@@ -53,9 +53,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 8 )
 [node name="Tile184" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16 )
 
-[node name="Tile202" parent="Objects/Tiles" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16 )
-
 [node name="Tile185" parent="Objects/Tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 16 )
 

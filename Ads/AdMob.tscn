@@ -4,6 +4,7 @@
 
 [node name="AdMob" type="Node"]
 script = ExtResource( 1 )
+is_real = true
 banner_id = "ca-app-pub-8392398739941139/5564438865"
 interstitial_id = "ca-app-pub-8392398739941139/6741789162"
 rewarded_id = "ca-app-pub-8392398739941139/7488852480"

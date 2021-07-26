@@ -8,7 +8,6 @@
 [node name="Main" type="Node"]
 
 [node name="AdMob" parent="." instance=ExtResource( 5 )]
-is_real = true
 
 [node name="Level" parent="." instance=ExtResource( 4 )]
 

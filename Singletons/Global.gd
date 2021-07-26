@@ -36,11 +36,7 @@ func _ready():
 	manageAds()
 	
 	load_level(Saving.mostRecentLevelPath)
-	admob.connect("banner_loaded", self, "make_room_for_Banner")
-	
-func make_room_for_Banner():
-	if Saving.showAds:
-		setBannerOffset(Global.admob.get_banner_offset())
+	admob.connect("banner_loaded", self, "manageAds")
 	
 
 func setBannerOffset(h):
