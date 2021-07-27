@@ -45,7 +45,7 @@ func _process(_delta):
 
 func removeButton():
 	if Saving.showAds == false:
-		get_parent().visible = false
+		self.visible = false
 
 func purchases_updated(items):
 	for item in items:
