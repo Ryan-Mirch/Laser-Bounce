@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="Laser Bounce"
 run/main_scene="res://Main/Main.tscn"
 boot_splash/image="res://Icons/splash.png"
+boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.0666667, 0.0705882, 0.0862745, 1 )
 config/icon="res://icon.png"
 
@@ -36,8 +37,11 @@ Sounds="*res://Sounds/SoundManager.tscn"
 
 window/size/width=1080
 window/size/height=1920
-window/size/test_width=540
-window/size/test_height=960
+window/size/resizable=false
+window/size/borderless=true
+window/size/fullscreen=true
+window/size/test_width=1080
+window/size/test_height=1920
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"

@@ -21,6 +21,7 @@ var levelSelect = load("res://Menu/Level Select.tscn")
 
 
 signal tabChanged
+var isMobile
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +30,8 @@ func _ready():
 	var _x = Saving.connect("saveDataUpdated",self,"manageBanner")
 	var _y = Saving.connect("dataLoaded",self,"manageBanner")
 	pointerTranslation = Vector3(0,0,0)
+	
+	isMobile = (OS.get_name() == "Android")
 	
 	yield(get_tree(), "idle_frame")
 	

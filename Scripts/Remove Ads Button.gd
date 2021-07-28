@@ -44,7 +44,7 @@ func _process(_delta):
 	pass
 
 func removeButton():
-	if Saving.showAds == false:
+	if Saving.showAds == false || !Global.isMobile:
 		self.visible = false
 
 func purchases_updated(items):
