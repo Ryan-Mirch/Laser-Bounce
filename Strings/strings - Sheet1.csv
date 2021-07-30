@@ -4,71 +4,71 @@ NONE,,,,,,
 LEVEL_COMPLETE,Level Complete,Level geschafft,Niveau complet,Nivel completado,级别完成,レベルの完了
 MESSAGE_0,Great Job!,Gut gemacht!,Bon travail!,¡Gran trabajo!,做得好！,よくやった！
 MESSAGE_1,I knew you could do it!,"Ich wusste, dass du es schaffst!",Je savais que tu pouvais le faire!,¡Sabía que podrías hacerlo!,我知道你可以做到！,私はあなたがそれをすることができることを知っていました！
-MESSAGE_2,Not too shabby.,Nicht zu schäbig,Pas trop mal.,No está nada mal.,不是太寒酸。,汚すぎる格好はやめて。
-MESSAGE_3,Congrats!,Glückwunsch!,Félicitations!,¡Felicitaciones!,恭喜！,おめでとうございます！
-MESSAGE_4,"Dont worry, it gets harder.","Mach dir keine Sorgen, es wird schwieriger.","Ne vous inquiétez pas, ça devient plus difficile.","No te preocupes, se vuelve más difícil.",别担心，它变得越来越难。,心配しないで、それは難しくなります。
-MESSAGE_5,Impressive.,Beeindruckend.,Impressionnant.,Impresionante.,感人的。,印象的です。
-MESSAGE_6,Not bad.,Nicht schlecht.,Pas mal.,No está mal.,不错。,悪くない。
+MESSAGE_2,Not too shabby.,Gar nicht mal so schlecht.,Pas trop mal.,No está nada mal.,不是太寒酸。,汚すぎる格好はやめて。
+MESSAGE_3,Congrats!,Herzlichen Glückwunsch!,Félicitations!,¡Felicitaciones!,恭喜！,おめでとうございます！
+MESSAGE_4,"Dont worry, it gets harder.","Keine Sorge, es wird schwieriger.","Ne vous inquiétez pas, ça devient plus difficile.","No te preocupes, se vuelve más difícil.",别担心，它变得越来越难。,心配しないで、それは難しくなります。
+MESSAGE_5,Impressive.,Beeindruckend.,Impressionnant.,Impresionante.,感人的。,印象的。
+MESSAGE_6,Not bad.,Nicht schlecht.,Pas mal.,Nada mal.,不错。,悪くない。
 MESSAGE_7,You did it!,Du hast es geschafft!,Tu l'as fait!,¡Lo hiciste!,你做到了！,できたね！
 MESSAGE_8,That wasn't so hard.,Das war nicht so schwer.,Ce n'était pas si difficile.,Eso no fue tan duro.,那不是那么难。,それはそれほど難しくありませんでした。
-MESSAGE_9,Very nice!,Sehr schön!,Très agréable!,¡Muy agradable!,非常好！,非常に素晴らしい！
-MESSAGE_10,Superb!,Hervorragend!,Superbe!,¡Magnífico!,高超！,見事！
-MESSAGE_11,Well done!,Gut gemacht!,Bien fait!,¡Bien hecho!,做得好！,よくやった！
+MESSAGE_9,Very nice!,Sehr schön!,Très beau!,¡Muy agradable!,很不错！,非常に素晴らしい！
+MESSAGE_10,Superb!,Hervorragend!,Superbe!,¡Magnífico!,高超！,素晴らしいです！
+MESSAGE_11,Well done!,Gut gemacht!,Bien fait!,¡Bien hecho!,做得好！,素晴らしい！
 MESSAGE_12,Nicely done!,Schön gemacht!,Bien fait!,¡Bien hecho!,做得很好！,うまくやって！
 MESSAGE_13,Bravo,Bravo,Bravo,Bravo,布拉沃,ブラボー
 MESSAGE_14,Good Work,Gute Arbeit,Bon travail,Buen trabajo,良好的工作,よくできました
-MESSAGE_15,Way to go!,Weg zu gehen!,Marche à suivre!,¡Camino a seguir!,去的方式！,行く方法！
-MESSAGE_16,Perfect,Perfekt,Parfait,Perfecto,完美的,ぴんぴん
+MESSAGE_15,Way to go!,So wird's gemacht!,Marche à suivre!,¡Camino a seguir!,去的方式！,行く方法！
+MESSAGE_16,Perfect,Perfekt,Parfait,Perfecto,完美的,完全
 ,,,,,,
-SET_TUTORIAL,Tutorial,Lernprogramm,Didacticiel,Tutorial,教程,チュートリアル
+SET_TUTORIAL,Tutorial,Tutorial,Didacticiel,Tutorial,教程,チュートリアル
 SET_BEGINNER,Beginner,Anfänger,Débutant,Principiante,初学者,初心者
-SET_INTERMEDIATE,Intermediate,Mittlere,Intermédiaire,Intermedio,中间的,中間
+SET_INTERMEDIATE,Intermediate,Fortgeschrittener,Intermédiaire,Intermedio,中间的,中級
 SET_EXPERT,Expert,Experte,Expert,Experto,专家,エキスパート
 ,,,,,,
 SETTINGS_SOUND_EFFECTS,Sound Effects,Soundeffekte,Effets sonores,Efectos de sonido,声音特效,音響効果
-SETTINGS_MUSIC,Music,Musik,Musique,Música,音乐,音楽
-SETTINGS_CAMERA_SENSITIVITY,Camera Sensitivity,Kameraempfindlichkeit.,Sensibilité à la caméra,Sensibilidad de la cámara,相机敏感性,カメラの感度
+SETTINGS_MUSIC,Music,Musik,La musique,Música,音乐,音楽
+SETTINGS_CAMERA_SENSITIVITY,Camera Sensitivity,Kameraempfindlichkeit,Sensibilité à la caméra,Sensibilidad de la cámara,相机敏感性,カメラの感度
 SETTINGS_SHADOWS,Shadows,Schatten,Ombres,Oscuridad,阴影,影
-SETTINGS_BOUNCE_SPEED,Time Between Bounces,Zeit zwischen Bounces.,Temps entre les rebonds,Tiempo entre rebotes,反弹之间的时间,バウンス間の時間
+SETTINGS_BOUNCE_SPEED,Time Between Bounces,Zeit zwischen Bounces,Temps entre les rebonds,Tiempo entre rebotes,反弹之间的时间,バウンス間の時間
 ,,,,,,
 CUSTOMIZE_BOUNCE_SOUNDS,Bounce Sounds,Bounce Sounds,Bounce Sounds,Sonidos de rebote,反弹声音,バウンスサウンド
-SOUNDS_DEFAULT,Default,Standard,Défaut,Defecto,默认,デフォルト
+SOUNDS_DEFAULT,Default,Standard,Défaut,Defecto,默认,ディフォルト
 SOUNDS_GLISTEN,Glisten,Glitzern,Luire,Relucir,闪亮,輝く
 SOUNDS_CHIP,Chip,Chip,Ébrécher,Chip,芯片,チップ
-SOUNDS_SCIFISPARKLE,Sci Fi Sparkle,Sci Fi Sparkle.,Scintille scintillant,Brillo de ciencia ciencia,sci fi sparkle.,SCI FI輝き
+SOUNDS_SCIFISPARKLE,Sci Fi Sparkle,Sci-Fi Sparkle,Scintille scintillant,Brillo de ciencia ciencia,sci fi sparkle.,SCI FI輝き
 SOUNDS_MEOW,Meow,Miau,Miaou,maullar,喵,ニャー
 SOUNDS_ORGAN,Organ,Organ,Organe,Organo,器官,器官
 SOUNDS_SMOOTHMETAL,Smooth Metal,Glattes Metall,Métal lisse,Metal suave,光滑的金属,滑らかな金属
 ,,,,,,
 CUSTOMIZE_BACKGROUNDS,Backgrounds,Hintergründe,Arrière-plans,Antecedentes,背景,background
-BACKGROUNDS_TURQOISE,Turqoise,Turqoise.,Turquoise,Turqoise,turqoise.,ターコイズ
-BACKGROUNDS_ORANGE,Orange,Orange,Orange,naranja,橙子,オレンジ
+BACKGROUNDS_TURQOISE,Turqoise,Türkis,Turquoise,Turqoise,turqoise.,ターコイズ
+BACKGROUNDS_ORANGE,Orange,Orange,Orange,naranja,橙色的,オレンジ
 BACKGROUNDS_PURPLE,Purple,Lila,Mauve,Púrpura,紫色的,紫の
-BACKGROUNDS_SPACE,Space,Platz,Espace,Espacio,空间,スペース
+BACKGROUNDS_SPACE,Space,Weltraum,Espace,Espacio,空间,スペース
 BACKGROUNDS_CLEARBLUE,Clear Blue,Klares Blau,Bleu clair,Azul claro,浅蓝,澄んだ青い
-BACKGROUNDS_ANOTHERPLANET,Another Planet,Ein anderer Planet,Une autre planète,Otro planeta,另一个星球,他の惑星
-BACKGROUNDS_BLUESUNSET,Among the Clouds,Unter den Wolken,Parmi les nuages,Entre las nubes,在云中,雲の中で
+BACKGROUNDS_ANOTHERPLANET,Another Planet,Ein anderer Planet,Une autre planète,Otro planeta,另一个星球,別の惑星
+BACKGROUNDS_BLUESUNSET,Among the Clouds,Zwischen den Wolken,Parmi les nuages,Entre las nubes,在云中,雲の中で
 BACKGROUNDS_CARTOONNIGHT,Dark Blue,Dunkelblau,Bleu foncé,Azul oscuro,深蓝,濃紺
 BACKGROUNDS_OVERCAST,Overcast,Bedeckt,Couvert,Nublado,灰蒙蒙,曇りの
 BACKGROUNDS_DEEPDUSK,Deep Dusk,Tiefe Dämmerung,Crépuscule,Oscuridad,深黄昏,深い夕暮れ
-BACKGROUNDS_GAIA,Gaia,Gaia.,Gaia,Gaia,盖亚,ガイア
+BACKGROUNDS_GAIA,Gaia,Gaia,Gaia,Gaia,盖亚,ガイア
 BACKGROUNDS_COLDNIGHT,Cold Night,Kalte Nacht,Nuit froide,Noche fria,寒冷的夜晚,寒い夜
-BACKGROUNDS_RED,Red,rot,rouge,rojo,红色的,赤
+BACKGROUNDS_RED,Red,Rot,rouge,rojo,红色的,赤
 BACKGROUNDS_GREEN,Green,Grün,Vert,Verde,绿色的,緑
 BACKGROUNDS_BLUE,Blue,Blau,Bleu,Azul,蓝色的,青
 ,,,,,,
 CUSTOMIZE_TILES,Tiles,Fliesen,Carrelage,Losas,瓷砖,タイル
-TILES_DEFAULT,Default,Standard,Défaut,Defecto,默认,デフォルト
-TILES_DARK,Dark,Dunkel,Sombre,Oscuro,黑暗的,闇
-TILES_LIGHT,Light,Licht,Lumière,Luz,光,光
-TILES_STAINEDGLASS,Stained Glass,Buntglas.,Vitrail,Vitral,彩色玻璃,ステンドグラス
-TILES_WOOD,Wood,Holz,Bois,Madera,木头,木材
-TILES_BRICK,Brick,Backstein,Brique,Ladrillo,砖,煉瓦
-TILES_GROOVY,Groovy,Rolle,Sensationnel,Groovino,groovy.,溝のように
+TILES_DEFAULT,Default,Standard,Défaut,Defecto,默认,ディフォルト
+TILES_DARK,Dark,Dunkel,Sombre,Oscuro,黑暗的,暗い
+TILES_LIGHT,Light,Hell,Léger,Luz,光,光
+TILES_STAINEDGLASS,Stained Glass,Buntes Glas,Vitrail,Vitral,彩色玻璃,ステンドグラス
+TILES_WOOD,Wood,Holz,Bois,Madera,木头,木
+TILES_BRICK,Brick,Ziegel,Brique,Ladrillo,砖,煉瓦
+TILES_GROOVY,Groovy,Groovy,Sensationnel,Groovino,groovy.,溝のように
 TILES_HOLOGRAM,Hologram,Hologramm,Hologramme,Holograma,全息图,ホログラム
-TILES_BUBBLE,Rainbow Glass,Regenbogenglas.,Verre arc-en-ciel,Vidrio de arco iris,彩虹玻璃,レインボーガラス
-TILES_GRID,Grid,Gitter,Grille,Red,网格,グリッド
+TILES_BUBBLE,Rainbow Glass,Perlmuttglas,Verre arc-en-ciel,Vidrio de arco iris,彩虹玻璃,レインボーガラス
+TILES_GRID,Grid,Raster,Grille,Red,网格,グリッド
 ,,,,,,
 PURCHASE_CURRENCY,Currency,Währung,Devise,Divisa,货币,通貨
 REMOVE_ADS,Remove Ads,Anzeigen entfernen,Supprimez la pub,Quitar anuncios,移除广告,広告を削除
-CONTINUE,Continue,Fortsetzen,Continuer,Continuar,继续,継続する
+CONTINUE,Continue,Weitermachen,Continuer,Continuar,继续,継続する
